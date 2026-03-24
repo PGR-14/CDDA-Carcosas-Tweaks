@@ -1,0 +1,62 @@
+[
+  {
+    "id": "SUS_hunting_rifle",
+    "copy-from": "SUS_hunting_rifle",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "entries": [
+        { "item": "colt_lightning_recreated", "prob": 2, "charges": [ 0, 10 ] },
+        { "item": "raging_judge_recreated", "prob": 15 }
+      ]
+    }
+  },
+  {
+    "id": "launchers",
+    "copy-from": "launchers",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            { "item": "m79", "prob": 10 },
+            { "item": "RPG_recreated", "prob": 40 },
+            { "item": "RPG-7_ammo_recreated", "prob": 35 },
+            { "item": "RPG-7_og7v_recreated", "prob": 45 },
+            { "item": "RPG-7_tbg7v_recreated", "prob": 15 },
+            { "item": "RPG-7_pg7vr_recreated", "prob": 20 },
+            { "item": "flamethrower", "prob": 50 }
+            ] 
+        }
+  },
+  {
+    "id": "RPG_IGROUP",
+    "type": "item_group",
+        "items": [ 
+            { "item": "RPG_recreated", "prob": 40 },
+            { "item": "RPG-7_ammo_recreated", "prob": 35 },
+            { "item": "RPG-7_og7v_recreated", "prob": 45 },
+            { "item": "RPG-7_tbg7v_recreated", "prob": 15 },
+            { "item": "RPG-7_pg7vr_recreated", "prob": 20 }
+            ] 
+  },
+  {
+    "id": "pellet_gun",
+    "type": "item_group",
+    "items": [
+        { "item": "pellet_recreated", "prob": 50, "charges-min": 10, "charges-max": 50 },
+        { "item": "dhp_pellet_recreated", "prob": 24, "charges-min": 10, "charges-max": 50 },
+        { "item": "hp_pellet_recreated", "prob": 24, "charges-min": 10, "charges-max": 50 },
+        { "item": "alloy_pellet_recreated", "prob": 2, "charges-min": 10, "charges-max": 50 },
+        { "item": "pelletgun_recreated" }
+    ]
+  },
+  {
+    "id": "archery_common",
+    "copy-from": "archery_common",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            { "group": "pellet_gun", "prob": 1 }
+            ] 
+        }
+  }
+]

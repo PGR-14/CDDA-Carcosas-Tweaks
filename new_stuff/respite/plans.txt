@@ -1,0 +1,382 @@
+Basically want a place to give the player these rare guns, as well as quests to get the very special ones.
+
+3x3 (9) OMTs, arranged like so:
+D H W
+^ O J
+P | %
+
+D is Patricia's diner. X
+H is the Trading hub (Originally Desmond's Hardware store) X
+W is Toby's chop-shop (Unrelated to the Hub chop-shop) X
+P is an unused parkin' lot for the church. Free merchants will settle here eventually 
+J is John's Gas Station X
+% is the police office/jail (Used to be a DMV) X
+^ is Gospel church. 
+O is the center road 
+| is the entrance/checkpoint. 
+
+H & W are connected through a couple of doors
+% & P are connected
+
+Entrance:
+    Not much here, it's just the entrance.
+
+    Has a big 'ol rest stop sign claiming this is "Respite"
+    It used to say "Rest stop", but it's been painted over & different neon letters have changed the latter 1/2.
+    Lists: 
+        -John's Gas station, 
+        -Patricia's Diner,
+        -Toby's chop-shop.
+        -Gospel Church
+    A few signs have been painted over:
+        -Trading Hub (Originally said "Desmond's Hardware store")
+        -Sheriff's Office (Originally a DMV office)
+
+    A pair of guards are there, Adamska & John.
+    Adamska:
+        Has a special Colt Single Action Army.
+        Will spin it if asked.
+        Yes this is Revolver Ocelot
+    
+    John Gear:
+        Stone cold
+        Upon first encounter, will tell you some of the rules of the place.
+            No fighting
+            No stealing
+            Don't be an asshole
+            Keep guns out of your hands
+        No! That is not solid snake!
+
+    These tow are literally nothin' more than a reference & notifyin' the player of some rules.
+
+John's Gas station.
+    John runs this place, Dora sleeps upstairs.
+    Sells gas, tobacco, & liquor. Stock hasn't really changed since the Cataclysm.
+    Change inventory over time to have more biodiesel?
+    There's a jukebox playing music in the corner.
+    John set up a flatscreen w/ the help of Toby. Plays movies & random TV shows they had CDs/VHSs for.
+
+    John:
+        John is an old, bitter guy who owned the place before the Cataclysm. Ran the place with his wife, Dora. 
+        Always wanted a kid, tried so hard w/ Dora. Was devastated when she went into a coma.
+        Absolutely CONVINCED that she will wake up soon.
+        If asked about the baby or questioning Dora's condition, he'll tell the player to "shut the fuck up" about 
+            "business that isn't theirs".
+        If pushed, he'll get more agressive, if insulted or instistent that Dora won't wake up, he'll shoot the player.
+        Place becomes hostile, you broke the rules.
+        Red-blooded patriot.
+        More racists to Chinese people than to mutants & cyborgs. 
+        (He'll ask you if you're Chinese, if you say yes he'll laugh & pour you a drink)
+        Runs the place up front, at the counter/bar.
+        Takes care of Dora, feeding her & talking to her every night.
+
+        Appearance:
+            *White*.
+            Trucker/Redneck vibes.
+            Old, ~60?
+            Greyish, short hair.
+            Beard
+            Wears:
+                -Baseball cap (Red)
+                -Orange T-shirt
+                -Denim vest
+                -Black pants
+                -Boots
+                -Fingerless gloves
+    
+    Dora:
+        Got pregnant ~9 months before the Cataclysm, her water broke during the start.
+        Baby was a miscarrage, & she went into a coma.
+        A doctor that passed by did a checkup on her for some supplies, she doesn't have any illnesses that he can see.
+        When the player meets him, he's just as bitter, if not more, & is insistent that she WILL wake up eventually.
+        Upstairs is his house, you can find Dora sleepin' there.
+        Taken care of by John & Dennis.
+        Regular to Patricia's Diner.
+
+        Appearance:
+            Ghostly pale.
+            Still breathing.
+            High perception characters can see that she's twitchin' slightly, all over.
+            High medical characters notice that her eyes move slightly, she's still conscious.
+            Brown hair
+            Wears:
+                -PJs
+                -Comfy socks & slippers.
+                -Evidently put on by John.
+    
+    
+    There's also some gamblers/drunks:
+        The drunks will only accept alcohol or cash, if you give 'em some, you can ask them about their life & some tips.
+        Tips will be mostly useless (& some meta shit), some dunkified NPC tips, & maybe a hidden stash.
+        You can play cards w/ 5 gamblers, maybe a card game minigame?
+        Chances of winning should be (1+social)/(12*2).
+        0 = 1/24, 1 = 1/12, 2 = 1/8, 3 = 1/6, 4 = 5/24, 5 = 1/4, 6 = 7/24, 7 = 1/3, 8 = 3/8, 9 = 5/12, 10 = 11/24
+        Should be good enough.
+        Buy in is a default of 10 merch (25.00)
+        Pursuasion check to use items instead (Not extremely difficult.) 
+        Prizes will be:
+            -Merch (5-20?) ~40% of the time
+            -Jewlery (Rings, pocket watches, etc.) ~20% of the time
+            -Random currency (Not pre-Cataclysm cash, faction money & maybe bottle caps) ~15% of the time
+            -Alcohol (None of John's) ~10% of the time.
+            -Random valuable (Mansion loot, safe loot, etc.) ~10% of the time.
+            Very rare stuff here:
+            -'Ol lucky (Special revolver, random damage, but high crit chance) ~4% of the time.
+            -Mutagen (1 sealed container) ~0.5%
+            -Bionic (1 random) ~0.5%
+
+
+    Quests:
+        Simple as it seems, he's running out of alcohol, & wants to produce his own.
+        Includes a few quests:
+            John's Brewery:
+               Get 100u of yeast & 5 wooden barrels (Might need to check if brewing barrels are different)
+               Won't pay the player initially.
+                   If pushed, he'll let you choose between:
+                       - "A stiff drink" (1 bottle of whiskey), will comment that it's "American made".
+                       - "Some ciggarettes" (2 packs of regular cigs).
+                       - "Food from Patricia's" (1 burger, 2 fries), will shout over to her.
+                   If pushed but you don't take anything, a little bit of goodwill.
+                   If you don't push at all, he loses a bit of respect.
+                   If you're very agressive (*Several* insults), he pulls out a shotgun & blasts you.
+           
+           Bottles, Bottles, Bottles:
+               Get 60 glass bottles & 150 small glass bottles.
+               Mostly just buffer so the player won't get homemade beer 10 seconds after you get him the barrels.
+               Rewards are:
+                   - "An axe" (He honestly just found this lyin' around)
+                   - "Gas-O-Line" (1 jerrycan)
+                   - "Diesel" (1 jerrycan)
+
+           Oh Deer:
+               Brawl happened in the bar recently, & it broke a deer head he had. Can't exactly go to the taxidermist 
+                anymore, so he figures he could probably stretch the skin over a new head.
+               Gives you a single barrel shotgun & 20 rounds of 12 gauge, tells you to find one, & butcher it.
+               If asked how to butcher it (Food handlin' skill check?), he tells you "you're on your own".
+               Takes the shotgun back after you bring back the skull, tells you to keep the ammo.
+               (Mainly to prevent the player from havin' to find replacement shells to fufill the quest.)
+               Rewards are:
+                - The shotgun (Player has to ask for it)
+                - 
+
+           Sit still:
+               Grab a still, simple as can be.
+               He'll tell you to look "in the mountains", says he knew a couple of moonshiners.
+               If asked where their setup was, he'll ask if you're a cop.
+               If you are, he'll grumble a "well alright then".
+               Will pay the player this time, w/ a choice of:
+                   - "12-pack of beer" (His own special brew, not pre-Cataclysm), if player says it's worth less than
+                     everythin' else, he'll laugh & say "Just try it".
+                   - "40 bucks" (40 merch), he'll mention that a lot of traders/caravans passin' by use them, & 
+                   started usin' it himself.
+                   - "More 12 gauge" (4 boxes)
+          
+        After this, it's all done. Every 30 days, he'll give you an option of:
+           -10 packs of special brew beer (60 bottles in total)
+           -1 case of liquor (15 bottles, random drink)
+           -Some moonshine (3 jugs)
+
+Patricia's Diner:
+    Patricia runs this place w/ her 1 of her sons, Andrew.
+    Her other son, Dennis is in the church.
+    Sells food to the player (Burgers, fries, chicken, etc.)
+    Daily restock!!!
+    Will buy raw meat (chunks & scraps), flour, & yeast in bulk.
+    
+    Patricia Jenkinns:
+        Been running the place for over 30 years, & no Cataclysm is gonna stop her.
+        Sweet middle-aged black woman, the "Sure baby.", "You want grits w/ that?" kind.
+        Has 2 sons, Andrew & Dennis.
+        Had a husband, but after Henry & Dennis was born, he skipped town & left.
+        Still angry at him for it, says "I hope that bastard's a zombie now."
+        High perception/social characters can see that she doesn't really mean that.
+        Secretly still loves him, & if he were to appear, she'd wrap her arms around him.
+        Goes to church every Sunday, she's one of the gospel singers.
+        Works as the waitress in the diner.
+        Sometimes messes up & calls Dennis Denice, she's supportive of Dennis, but it's still new to her.
+
+        Appearance:
+            Black
+            Smiley
+            Pretty fat.
+            Middle-aged, but the years look good on her.
+            Cafeteria lady kind of stuff.
+            Wears:
+                -Apron
+                -White & blue water-dye shirt.
+                -Tan skirt
+                -Stockings
+                -Short heels
+
+    Andrew:
+        Works as the main chef at the diner, it's a home to him.
+        Went to culinary school, graduated the ~3 years before the Cataclysm.
+        Barely remembers his father, somewhat bitter about him leaving.
+        Can give the player food handling skill/proficiencies & Merch for working.
+        You can now get a 9-5.
+        Fully supportive of Dennis.
+        Smokes weed, tries not to get caught by Patricia
+        Appearance:
+            Young, ~25?
+            Afro
+            A little fat
+            Wears:
+                -Chef uniform
+                -Sneakers
+                -Joint
+    
+    No quests that I can think of.
+
+Toby's Chop-shop:
+    Toby has ran this place since before the Cataclysm.
+    Used to have some employees, but they all evacuated.
+    Toby can sell vehicles to the player, & repair them (if possible).
+    Will also give the player mechainics training.
+
+    Toby:
+        Simple man, works hard.
+        Will not talk about his life before the Cataclysm.
+        Helps produce the guns at the trading hub.
+        Appearance:
+            Wields a large adjustible wrench.
+            Black hair
+            Tanned skin
+            Otter
+            Wears:
+                -Jumpsuit
+                -Welding mask
+                -Steeltoed boots
+
+Gospel Church:
+    A small church, ran by Mark.
+    1/2 of the church is occupied by Dennis, who has started a small medical center.
+    Mark can give refuge to the player, letting them sleep in the pews.
+    Dennis can give the player medical treatment & supplies.
+
+    Dennis:
+        FtM Trans man, used to be Denice.
+        Went to college for nursin', switched to a full blown medical degree.
+        Transitioned during college.
+        Was out doin' a post-doc for his medical license when the Cataclysm started to hit.
+        Managed to get home a bit after the height of the Cataclysm.
+        Took them a bit to recognize him.
+        Needs glasses
+        Appearance:
+            Short
+            Average build
+            Brown dreads
+            A very small stubble, peach fuzz.
+            Wears:
+                -Binders
+                -Hoodie
+                -Baggy jeans
+                -Sneakers
+                -Face mask
+
+    Mark:
+        Only became the pastor a few months before the Cataclysm, was transferred when the old one (Winston) died.
+        Went to prison for robbery & GTA, found faith in prison.
+        Regular of Patricia's Diner, huge coffee addiction.
+        Has recently became very depressed & paranoid, Dennis & Patricia worry for him.
+        This is partly due to him bein' "preyed upon" by a supernatural creature.
+
+        Appearance:
+            *Tired* eyes
+            Red hair
+            Tall & lanky
+            Wears:
+                Preacher garbs idk.
+    
+    Quests:
+        Denice:
+            Find syringes:
+                Dennis has ran out of syringes, & he can't really sterilize them.
+                Find x50 syringes, not much else.
+                Reward is 15 merch.
+        
+        Mark:
+            Holy light:
+                Mark really needs some candles for sermons & memorials.
+                Give him x20 candles
+                Reward is a cross necklace & a blessing (Morale buff, better for spiritualist survivors)
+            A better cross:
+                Mark looks very worried, & he's asked you for a big favor, to find x50 gold & x100 silver.
+                If asked what it's for, he'll lie & say some of the designs on the big cross are worn.
+                A high social or perception survivor can tell he's lyin', & ask for the truth.
+                He'll get more worried, but won't say anythin'.
+                Reward is him nervously sayin' thanks.
+            A creature of the dark:
+                Mark comes to you for help again, giving you a big silver & gold knife fashioned from a cross.
+                If the player asks why, he breaks down & explains how every night, a creature of the dark has been 
+                 hauntin' him.
+                He tells you to go upstairs, where the creature is in his room.
+                A dialogue box opens.
+                From here, the quest can go 1 of 2 ways:
+                    Kill the creature:
+                        You exit the dialogue box,
+                        March straight towards the creature & kill it w/ the knife, it doesn't even resist.
+                        Mark is found dead, w/ the same exact injury as you gave the creature.
+                        Dennis, as witness, says he started screamin' about a "Swift taloned demon comin' towards him".
+                        Town believes your story, you keep the knife, it does increased damage to nether creatures.
+                    Wait, & listen:
+                        The creature, very slowly, walks up to you, picks you up, & it shoves many of its tendrils
+                         into your orfices & you lose all your senses for a moment.
+                        All of a sudden, you hear a roaring sound of white noise, & when it passes, you hear a voice.
+                        From here, the player meets Henry, & he explains everything.
+                        The player can then help him & Mark solve their problem by acting as a negotiator.
+                        All Henry needed was a place to stay at, he chose Mark's room.
+                        Mark is absolutely terrified of Henry
+                        Henry is bregrudgingly accepted by the town, & moves over to the trading hub.
+                        Your reward is a mutation that makes nether creatures ignore you sometimes.
+
+Sheriff's Office:
+    Ran by Amos, he keeps 2 people in the jail cell.
+    His real name is Jerry
+    Used to be an office worker, after the Cataclysm he was taken in by a band of Hell's raiders.
+    After a bad night when one of his friends died, he ran away from the group.
+    Eventually, after a while of hiding & running, he came across Respite.
+    They thought he was a police officer, on account of his gear & mishearing his profession.
+    Him killing a feral w/ a lucky shot cemented this belief
+    Paranoid that he'd be found out as a raider, he went w/ it, taking on the new name of Amos.
+    Is incredibly good at his job, but has *EXTREME* imposter syndrome.
+
+    Prisoners:
+        -Literally just a feral in a jail cell. Amos will ask you to put it down.
+        -A mad youth pastor, king in yellow kind of mad.
+
+Trading Hub:
+    Originally Desmond's Hardware store.
+    Desmond was a huge gun collector, but noone knows where he stashed everything.
+    After the Cataclysm, Desmond just left one day & never came back.
+    Locals decided to use the place as storage, kinda just tossing things into there.
+    After a while, Jenny moves in, decides to take care of the place, & organize everything.
+    Eventually, she finds a hatch leading to a bunker, containing Desmond's stash.
+    This includes a lot of very rare guns, but also schematics to make quite a lot of 'em.
+    Jenny & Toby start to produce some guns using the schematics, & they work great.
+    Contains several stalls w/ different items, one for materials, one for seeds, one for pipes, one for planks, etc.
+    Guns & ammo have be bought straight from P.
+    After Henry moves in, he & P go great together.
+
+    Henry:
+        Hard-working monster.
+        After doing the tendril thing once, you can converse w/ him normally.
+        Likes reading
+        Surprisingly pacifistic.
+
+        Appearance:
+            Headless horror
+    
+    Jenny:
+        Very mutated
+        Very big
+        Bonnie lass
+        Slightly flirtacious.
+
+        Appearance:
+            Goat legs & fur
+            Large 
+            Red hair
+            Green eyes
+            *Big*
+            Wears:
+                A lot of oversized clothes.

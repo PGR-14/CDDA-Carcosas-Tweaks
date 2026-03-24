@@ -1,0 +1,108 @@
+[
+  {
+    "type": "mutation_category",
+    "id": "WENDIGO",
+    "name": "Wendigo",
+    "threshold_mut": "THRESH_WENDIGO",
+    "mutagen_message": "You break out into a cold sweat that oddly smells like pine-sol.",
+    "memorial_message": "Reclaimed by nature.",
+    "vitamin": "mutagen_wendigo"
+  },
+  {
+    "id": "mutagen_wendigo",
+    "copy-from": "mutagen_flavor",
+    "type": "ITEM",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": "Contaminated wendigo mutagen",
+    "description": "Mutagen cocktail simply labeled 'DO NOT USE: CONTAMINATED BATCH'",
+    "vitamins": [ [ "mutagen_wendigo", 175 ], [ "mutagen", 125 ] ]
+  },
+  {
+    "id": "iv_mutagen_wendigo",
+    "copy-from": "iv_mutagen_flavor",
+    "type": "ITEM",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": "Contaminated wendigo mutagenic primer",
+    "description": "A super-concentrated black and purple sheened substance with glittering green flecks that reminds you of a tree. It is labeled 'DO NOT USE: MADE FROM CONTAMINATED BATCH'",
+    "color": "light_gray",
+    "healthy": -2,
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You inject the contaminated wendigo mutagenic primer.",
+      "tools_needed": { "syringe": -1 },
+      "vitamins": [ [ "mutagen_wendigo", 450, 550 ] ]
+    }
+  },
+  {
+    "id": "mutagen_wendigo",
+    "type": "vitamin",
+    "vit_type": "counter",
+    "name": { "str": "Wendigo mutagen" },
+    "excess": "mutagen_wendigo",
+    "min": 0,
+    "max": 2500,
+    "rate": "1 h",
+    "disease_excess": [ [ 100, 500 ], [ 501, 2199 ], [ 2200, 2500 ] ]
+  },
+  {
+    "type": "effect_type",
+    "id": "mutagen_wendigo",
+    "name": [ "Wendigo? Mutation", "Wendigo? Transformation", "Wendigo? Metamorphosis" ],
+    "desc": [
+      "You consumed contaminated Wendigo primer.",
+      "The woods could be your home, you just know it.",
+      "Maybe you should just fall into the inky black abyss..."
+    ],
+    "main_parts_only": true,
+    "max_intensity": 3,
+    "base_mods": {
+      "hurt_min": [ 1 ],
+      "hurt_max": [ 2 ],
+      "hurt_chance": [ -22 ],
+      "hurt_tick": [ 75 ],
+      "pain_min": [ 1 ],
+      "pain_max": [ 2 ],
+      "pain_chance": [ 100 ],
+      "pain_tick": [ 75 ]
+    },
+    "scaling_mods": { "hurt_chance": [ 21 ], "pain_chance": [ -30 ] },
+    "rating": "bad",
+    "blood_analysis_description": "Trace amounts of Slime Mutagen Contamination\nWendigo Mutagen Contamination"
+  },
+  {
+    "type": "dream",
+    "messages": [
+      "You have a strange dream about the mountain forests.",
+      "Your dreams give you a peculiar feeling of rotting into tar."
+    ],
+    "category": "wendigo",
+    "strength": 1
+  },
+  {
+    "type": "dream",
+    "messages": [ 
+        "You have a vivid dream of stalking through the woods.", 
+        "You dream of drinking copious amounts of warm water." 
+    ],
+    "category": "wendigo",
+    "strength": 2
+  },
+  {
+    "type": "dream",
+    "messages": [
+      "You have a dream of chasing something as a raw hunger sears your mind.",
+      "Recollections of stalking a human shakes you awake."
+    ],
+    "category": "wendigo",
+    "strength": 3
+  },
+  {
+    "type": "dream",
+    "messages": [
+      "You dream of absorbing more and more enemies.",
+      "You have a lucid dream where nature carefully welcomes your body."
+    ],
+    "category": "wendigo",
+    "strength": 4
+  }
+]

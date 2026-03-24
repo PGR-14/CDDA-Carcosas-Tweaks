@@ -1,0 +1,58 @@
+[
+  {
+    "id": "winchester_1887_recreated",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "winchester_1887_recreated",
+    "name": { "str": "bootleg lever-action shotgun" },
+    "extend": { "flags": [ "OLD_GUN" ] }
+  },
+  {
+    "id": "shotgun_410_recreated",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "shotgun_410_recreated",
+    "name": { "str": "Winchester M37 .410" },
+    "extend": { "flags": [ "OLD_GUN" ] }
+  },
+  {
+    "id": "fn1910_recreated",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "fn1910_recreated",
+    "name": { "str": "FN 1910 .380" },
+    "extend": { "flags": [ "OLD_GUN" ] }
+  },
+  {
+    "id": "mr73_recreated",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "mr73_recreated",
+    "name": { "str": "Manurhin MR 73" },
+    "extend": { "flags": [ "OLD_GUN" ] }
+  },
+  {
+    "id": "ppsh_recreated",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "ppsh_recreated",
+    "name": { "str": "PPSh-41 submachine gun" },
+    "extend": { "flags": [ "OLD_GUN" ] }
+  },
+  {
+    "id": "colt_lightning_recreated",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "colt_lightning_recreated",
+    "name": { "str": "Colt Lightning .45 Carbine" },
+    "extend": { "flags": [ "OLD_GUN" ] }
+  },
+  {
+    "id": "moss_brownie_recreated",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "moss_brownie_recreated",
+    "name": { "str": "Mossberg Brownie pistol" },
+    "extend": { "flags": [ "OLD_GUN" ] }
+  }
+]

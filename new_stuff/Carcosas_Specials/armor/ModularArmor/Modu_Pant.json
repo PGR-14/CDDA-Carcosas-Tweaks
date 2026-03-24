@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ModuPants_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuPants_Base",
+    "name": "pair of modular cotton scav pants",
+    "description": "A standard pair of cotton pants that've been ripped of most of it's contents. Stitch in fabric according to needs & haves.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "ModuPantsMut_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuPantsMut_Base",
+    "name": "pair of modular cotton mutant pants",
+    "description": "A standard pair of cotton pants that've been ripped of most of it's contents. They fit your new legs *perfectly*, & they're comfortable too. Stitch in fabric according to needs & haves.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "ModuPants_Synth",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuPants_Base",
+    "name": "pair of modular synthetic scav pants",
+    "description": "A cheap pair of synthetic fabric pants that've been ripped of most of it's contents. Stitch in fabric according to needs & haves.",
+    "material": [ "nylon" ]
+  },
+  {
+    "id": "ModuPantsMut_Synth",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuPantsMut_Base",
+    "name": "pair of modular synthetic mutant pants",
+    "description": "A cheap pair of synthetic pants that've been ripped of most of it's contents. They fit your new legs *perfectly*, & stretch accordingly. Stitch in fabric according to needs & haves.",
+    "material": [ "nylon" ]
+  },
+  {
+    "id": "ModuPants_Canvas",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuPants_Base",
+    "name": "pair of modular canvas scav pants",
+    "description": "A tough pair of canvas pants that've been ripped of most of it's contents. Stitch in fabric according to needs & haves.",
+    "material": [ "canvas" ]
+  },
+  {
+    "id": "ModuPantsMut_Canvas",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuPantsMut_Base",
+    "name": "pair of modular canvas mutant pants",
+    "description": "A tough pair of canvas pants that've been ripped of most of it's contents. They fit your new legs *perfectly*, & protects them from being maimed. Stitch in fabric according to needs & haves.",
+    "material": [ "cotton" ]
+  }
+]

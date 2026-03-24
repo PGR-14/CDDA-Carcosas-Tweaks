@@ -1,0 +1,22 @@
+[
+  {
+    "id": "guns_shotgun_milspec",
+    "copy-from": "guns_shotgun_milspec",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            { "group": "nested_remington_870_breacher_recreated", "prob": 20 }
+            ] 
+        }
+  },
+  {
+    "id": "guns_rifle_milspec",
+    "copy-from": "guns_rifle_milspec",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            { "item": "m231pfw_recreated", "prob": 1 }
+            ] 
+        }
+  }
+]

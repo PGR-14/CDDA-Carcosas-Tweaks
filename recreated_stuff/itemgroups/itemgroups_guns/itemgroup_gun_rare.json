@@ -1,0 +1,66 @@
+[
+  {
+    "id": "guns_pistol_display_pieces",
+    "copy-from": "guns_pistol_display_pieces",
+    "type": "item_group",
+    "extend": {
+      "items": [
+        { "item": "fn1910_recreated", "prob": 50 },
+        { "item": "draco_recreated", "prob": 10, "charges": 0 },
+        { "item": "draco_mini_recreated", "prob": 30, "charges": 0 },
+        { "item": "draco_micro_recreated", "prob": 40, "charges": 0 },
+        { "group": "nested_tec9", "prob": 1 },
+        { "group": "nested_draco_9mm", "prob": 29 },
+        {
+          "item": "box_longarm",
+          "variant": "box_longarm_handgun",
+          "contents-group": "firearm_box_extras",
+          "contents-item": [ "draco_9mm_recreated", "glock17_10" ],
+          "prob": 29
+        },
+        { "group": "nested_mr73", "prob": 8 },
+        { "item": "colt_lightning_recreated", "prob": 50 },
+        { "group": "nested_cop_38", "prob": 50 },
+        { "item": "j22_recreated", "prob": 20 },
+        { "group": "nested_raging_judge", "prob": 20 },
+        { "item": "ppsh_recreated", "prob": 50 },
+        { "item": "m1911-460_recreated", "prob": 20 },
+        { "group": "nested_moss_brownie", "prob": 60 },
+        { "item": "mp18_recreated", "prob": 30 },
+        { "group": "nested_oa93", "prob": 12 },
+        { "item": "lemat_revolver_recreated", "prob": 40 },
+        { "item": "lemat_revolver_conversion_recreated", "prob": 35 },
+        { "group": "nested_lemat_revolver", "prob": 20 },
+        { "group": "nested_bh_m89", "prob": 20 },
+        { "group": "nested_famas", "prob": 5 }
+      ]
+    }
+  },
+  {
+    "id": "guns_collectible",
+    "copy-from": "guns_collectible",
+    "type": "item_group",
+    "extend": {
+      "items": [
+        { "item": "fn1910_recreated", "prob": 10 },
+        { "group": "nested_mr73", "prob": 10 },
+        { "item": "colt_lightning_recreated", "prob": 15 },
+        { "item": "j22_recreated", "prob": 3 },
+        { "group": "nested_raging_judge", "prob": 4 },
+        { "item": "ppsh_recreated", "prob": 10 },
+        { "group": "nested_ksg-25", "prob": 8 },
+        { "item": "m1911-460_recreated", "prob": 2 },
+        { "group": "nested_moss_brownie", "prob": 10 },
+        { "item": "mp18_recreated", "prob": 3 },
+        { "group": "nested_oa93", "prob": 3 },
+        { "item": "lemat_revolver_recreated", "prob": 12 },
+        { "item": "lemat_revolver_conversion_recreated", "prob": 10 },
+        { "group": "nested_lemat_revolver", "prob": 5 },
+        { "group": "nested_bh_m89", "prob": 4 },
+        { "group": "nested_famas", "prob": 1 },
+        { "group": "nested_skorpion_61", "prob": 5 },
+        { "group": "nested_skorpion_82", "prob": 5 }
+      ]
+    }
+  }
+]

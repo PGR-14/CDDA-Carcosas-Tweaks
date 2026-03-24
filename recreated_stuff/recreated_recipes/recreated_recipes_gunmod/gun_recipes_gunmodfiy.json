@@ -1,0 +1,69 @@
+[
+  {
+    "type": "recipe",
+    "activity_level": "MODERATE_EXERCISE",
+    "result": "ruger_charger_auto_recreated",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_RANGED",
+    "skill_used": "gun",
+    "skills_required": [ [ "traps", 2 ], [ "fabrication", 3 ] ],
+    "difficulty": 2,
+    "time": "2 h",
+    "book_learn": [ [ "textbook_anarch", 2 ] ],
+    "qualities": [
+      { "id": "SAW_M_FINE", "level": 1 },
+      { "id": "SAW_M", "level": 2 },
+      { "id": "DRILL", "level": 3 },
+      { "id": "HAMMER", "level": 2 },
+      { "id": "FILE", "level": 2 },
+      { "id": "SCREW", "level": 1 }
+    ],
+    "proficiencies": [ { "proficiency": "prof_metalworking" } ],
+    "tools": [ [ [ "bench_vise", -1 ] ] ],
+    "components": [ [ [ "ruger_charger", 1 ] ], [ [ "qt_wire", 1 ] ], [ [ "sheet_metal_small", 2 ] ], [ [ "super_glue", 5 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "MODERATE_EXERCISE",
+    "result": "surv_six_shooter_recreated",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_RANGED",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "traps", 2 ], [ "gun", 3 ] ],
+    "difficulty": 4,
+    "time": "8 h",
+    "book_learn": [ [ "manual_pistol", 3 ] ],
+    "qualities": [ { "id": "SAW_M_FINE", "level": 1 } ],
+    "//": "60cm weld",
+    "using": [ [ "welding_standard", 60 ] ],
+    "proficiencies": [
+      { "proficiency": "prof_metalworking" },
+      { "proficiency": "prof_welding_basic" },
+      { "proficiency": "prof_gunsmithing_basic" },
+      { "proficiency": "prof_gunsmithing_revolver" }
+    ],
+    "components": [ [ [ "pipe", 1 ] ], [ [ "spring", 1 ] ], [ [ "steel_chunk", 2 ] ], [ [ "scrap", 2 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "MODERATE_EXERCISE",
+    "result": "surv_hand_cannon_recreated",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_RANGED",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "traps", 2 ], [ "gun", 4 ] ],
+    "difficulty": 5,
+    "time": "8 h",
+    "book_learn": [ [ "manual_pistol", 5 ] ],
+    "qualities": [ { "id": "SAW_M_FINE", "level": 1 } ],
+    "//": "60cm weld",
+    "using": [ [ "welding_standard", 60 ] ],
+    "proficiencies": [
+      { "proficiency": "prof_metalworking" },
+      { "proficiency": "prof_welding_basic" },
+      { "proficiency": "prof_gunsmithing_basic" },
+      { "proficiency": "prof_gunsmithing_revolver" }
+    ],
+    "components": [ [ [ "pipe", 1 ] ], [ [ "spring", 1 ] ], [ [ "steel_chunk", 2 ] ], [ [ "scrap", 2 ] ] ]
+  }
+]

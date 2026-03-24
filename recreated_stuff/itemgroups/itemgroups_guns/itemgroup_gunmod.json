@@ -1,0 +1,25 @@
+[
+  {
+    "id": "gunmod_common",
+    "copy-from": "gunmod_common",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            [ "pistol_grip_recreated", 30 ]
+            ] 
+        }
+  },
+  {
+    "id": "gunmod_rare",
+    "copy-from": "gunmod_rare",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            [ "light_grip_recreated", 50 ],
+            [ "waterproof_gunmod_recreated", 40 ],      
+            [ "gun_crossbow_recreated", 20 ],
+            [ "stabilizer_recreated", 10 ]
+            ] 
+        }
+  }
+]

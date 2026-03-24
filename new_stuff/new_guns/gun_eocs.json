@@ -1,0 +1,21 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_REVOLVER_SPIN",
+    "eoc_type": "ACTIVATION",
+    "condition": { "not": { "u_has_trait": "cowboy" }  },
+    "effect": [
+        { "u_message": "You spin your revolver.", "type": "neutral" },
+        { "u_add_morale": "Yeehaw!", "bonus": [ 0, 10 ], "max_bonus": 999 }
+    ],
+    "false_effect": [
+        { "u_message": "You expertly spin your revolver & ready to draw", "type": "neutral" },
+        { "u_add_morale": "Yeeee-haw!", "bonus": [ 10, 20 ], "max_bonus": 999 },
+        { "u_add_effect": "revolver_quickdraw_eyes", "duration": 10, "target_part": "eyes" },
+        { "u_add_effect": "revolver_quickdraw_arms", "duration": 10, "target_part": "arm_l" },
+        { "u_add_effect": "revolver_quickdraw_arms", "duration": 10, "target_part": "arm_r" },
+        { "u_add_effect": "revolver_quickdraw_hands", "duration": 10, "target_part": "hand_l" },
+        { "u_add_effect": "revolver_quickdraw_hands", "duration": 10, "target_part": "hand_r" }
+    ]
+  }
+]

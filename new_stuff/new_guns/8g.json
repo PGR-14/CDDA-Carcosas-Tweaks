@@ -1,0 +1,35 @@
+[
+  {
+    "id": "8g_shotgun_d",
+    "copy-from": "gun_base_shotgun_manual",
+    "looks_like": "shotgun_d",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "name": { "str": "double-barreled 8 gauge" },
+    "description": "The powerful 8-gauge double-barreled shotgun, with the barrels arranged side-by-side.  It consists of little more than 2 heavy barrels, a striker to hit the shell, and a wooden stock",
+    "ammo": [ "8g" ],
+    "ascii_picture": "2barrel_shotgun",
+    "volume": "2044 ml",
+    "weight": "4093 g",
+    "longest_side": "109 cm",
+    "barrel_length": "700 mm",
+    "price": "500 USD",
+    "material": [ "steel", "wood" ],
+    "dispersion": 210,
+    "durability": 9,
+    "clip_size": 2,
+    "barrel_volume": "866 ml",
+    "valid_mod_locations": [
+      [ "mechanism", 2 ],
+      [ "muzzle", 1 ],
+      [ "rail mount", 1 ],
+      [ "sights mount", 1 ],
+      [ "sling", 1 ],
+      [ "stock accessory", 1 ],
+      [ "stock mount", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "modes": [ [ "DEFAULT", "single", 1 ], [ "DOUBLE", "double", 2, "VOLLEY" ] ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "8g": 2 } } ]
+  }
+]

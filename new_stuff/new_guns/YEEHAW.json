@@ -1,0 +1,49 @@
+[
+    {
+        "id": "colt_saa",
+        "copy-from": "colt_saa",
+        "looks_like": "sw_619",
+        "type": "ITEM",
+        "subtypes": [ "GUN" ],
+        "valid_mod_locations": [ [ "barrel", 1 ], [ "mechanism", 2 ], [ "stock mount", 1 ], [ "grip", 1 ] ],
+        "use_action": [
+            {
+                "type": "effect_on_conditions",
+                "menu_text": "Spin your revolver",
+                "description": "Yeehaw!",
+                "need_wielding": true,
+                "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
+            }   
+        ],
+        "weight": "1048 g",
+        "volume": "324 ml",
+        "longest_side": "208 mm",
+        "barrel_length": "231 mm",
+        "//": "190.5mm + 40.6mm max OAL for 45LC. Revolvers just built different.",
+        "price": "479 USD",
+        "price_postapoc": "25 USD",
+        "material": [ "steel", "wood" ],
+        "ammo": [ "45colt" ],
+        "dispersion": 360
+    },
+    {
+        "id": "colt_saa_dual",
+        "type": "ITEM",
+        "subtypes": [ "GUN" ],
+        "copy-from": "gun_base_handgun_manual",
+        "valid_mod_locations": [ [ "barrel", 2 ], [ "mechanism", 4 ], [ "stock mount", 2 ], [ "grip", 2 ] ],
+        "name": "dual Colt Single Action Armies",
+        "description": "A pair of the ever-famous colt single action, chambered in .45 LC. If 6 shots are more than enough, 12 is overkill.",
+        "weight": "1048 g",
+        "volume": "324 ml",
+        "longest_side": "208 mm",
+        "barrel_length": "231 mm",
+        "price": "948 USD",
+        "price_postapoc": "50 USD",
+        "material": [ "steel", "wood" ],
+        "ammo": [ "45colt" ],
+        "dispersion": 400,
+        "clip_size": 12,
+        "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "45colt": 12 } } ]
+    }
+]

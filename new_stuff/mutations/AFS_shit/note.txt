@@ -1,0 +1,1 @@
+Do not load this w/ AFS. If need be, just delete the two mutation folders & delete all the YUGGOTH/MASTODON shit.

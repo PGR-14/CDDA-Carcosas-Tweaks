@@ -1,0 +1,14 @@
+[
+    {
+        "id": "cowboy",
+        "name": "Cowboy",
+        "type": "mutation",
+        "points": 2,
+        "visibility": 10,
+        "description": "Cowboy, gunslinger, fool who still uses revolvers, whatever they want to call you, the west still lives in you. Even if the place is probably full of huge mutated lizards & undead, you're still at home on the range.",
+        "starting_trait": true,
+        "valid": false,
+        "purifiable": false,
+        "social_modifiers": { "persuade": 10 }
+    }
+]

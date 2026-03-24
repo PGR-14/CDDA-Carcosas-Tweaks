@@ -1,0 +1,59 @@
+[
+  {
+    "id": "guns_pistol_common_display",
+    "copy-from": "guns_pistol_common_display",
+    "type": "item_group",
+    "extend": { "items": [ { "group": "guns_pistol_common_display_762_39", "prob": 1 } ] }
+  },
+  {
+    "id": "guns_pistol_common_display_other",
+    "copy-from": "guns_pistol_common_display_other",
+    "type": "item_group",
+    "extend": {
+      "items": [ { "item": "raging_judge_recreated", "prob": 20 }, { "item": "m1911-460_recreated", "prob": 10 } ]
+    }
+  },
+  {
+    "id": "guns_pistol_common_display_22",
+    "copy-from": "guns_pistol_common_display_22",
+    "type": "item_group",
+    "extend": {
+      "items": [ { "item": "cp33_recreated", "prob": 16 }, { "item": "ruger_charger_recreated", "prob": 16 }, { "group": "nested_sw_22", "prob": 40 } ]
+    }
+  },
+  {
+    "id": "guns_pistol_common_display_10mm",
+    "copy-from": "guns_pistol_common_display_10mm",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "TDI_10_recreated", "prob": 183 }, { "item": "sw_610_recreated", "prob": 34 } ] }
+  },
+  {
+    "id": "guns_pistol_common_display_32",
+    "copy-from": "guns_pistol_common_display_32",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "kp32_recreated", "prob": 100 } ] }
+  },
+  {
+    "id": "guns_pistol_common_display_57",
+    "copy-from": "guns_pistol_common_display_57",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "p50_recreated", "prob": 12 } ] }
+  },
+  {
+    "type": "item_group",
+    "id": "guns_pistol_common_display_762_39",
+    "items": [ { "item": "draco_recreated", "prob": 10 }, { "item": "draco_mini_recreated", "prob": 5 }, { "item": "draco_micro_recreated", "prob": 8 } ]
+  },
+  {
+    "id": "guns_rifle_common_display_223",
+    "copy-from": "guns_rifle_common_display_223",
+    "type": "item_group",
+    "extend": { "items": [ { "group": "cz600", "prob": 13 }, { "group": "nested_plr16", "prob": 3 } ] }
+  },
+  {
+    "id": "guns_rifle_common_display_762",
+    "copy-from": "guns_rifle_common_display_762",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "bren2_762_recreated", "prob": 1 } ] }
+  }
+]

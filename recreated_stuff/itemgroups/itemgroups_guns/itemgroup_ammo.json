@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ammo_common_loose",
+    "copy-from": "ammo_common_loose",
+    "type": "item_group",
+    "extend": {
+      "items": [
+        { "item": "460_rowland_recreated", "charges": [ 5, 50 ], "prob": 15 },
+        { "item": "460_fmj_recreated", "charges": [ 5, 50 ], "prob": 10 },
+        { "item": "shot_he_recreated", "charges": [ 5, 50 ], "prob": 10 }
+      ]
+    }
+  },
+  {
+    "id": "ammo_casings",
+    "copy-from": "ammo_casings",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "460_casing_recreated", "prob": 60 } ] }
+  },
+  {
+    "id": "on_hand_460_recreated",
+    "type": "item_group",
+    "//": "a collection of ammo that would be found with a loaded gun.",
+    "subtype": "distribution",
+    "items": [
+      { "item": "460_fmj_recreated", "prob": 100, "charges": [ 1, 20 ] },
+      { "item": "460_rowland_recreated", "prob": 100, "charges": [ 1, 20 ] },
+      { "item": "460_fmj_recreated", "prob": 75, "charges": [ 22, 40 ] },
+      { "item": "460_rowland_recreated", "prob": 75, "charges": [ 22, 40 ] },
+      { "item": "460_fmj_recreated", "prob": 30, "charges": [ 44, 80 ] },
+      { "item": "460_rowland_recreated", "prob": 30, "charges": [ 44, 80 ] }
+    ]
+  },
+  {
+    "id": "ammo_shotgun_milspec",
+    "copy-from": "ammo_shotgun_milspec",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+          { "item": "shot_he", "prob": 10 } 
+        ]
+      }
+  }
+]

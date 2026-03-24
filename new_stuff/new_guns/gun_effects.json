@@ -1,0 +1,65 @@
+[
+    {
+        "type": "effect_type",
+        "id": "revolver_quickdraw_hands",
+        "name": [ "Quickdraw" ],
+        "desc": [ "You've got your hand on your gun, & ready to draw." ],
+        "rating": "neutral",
+        "apply_message": "You put your dominant hand on your holster, your other hand ready to fan.",
+        "miss_messages": [ [ "Your shot whizzes & ricochets with an iconic noise.", 1] ],
+        "limb_score_mods": [
+                {
+                    "limb_score": "manipulation",
+                    "modifier": 2
+                },
+                {
+                    "limb_score": "grip",
+                    "modifier": 2
+                },
+                {
+                    "limb_score": "lift",
+                    "modifier": 2
+                }
+            ]
+    },
+    {
+        "type": "effect_type",
+        "id": "revolver_quickdraw_arms",
+        "name": [ "Quickdraw" ],
+        "desc": [ "You're reaching low, to your holster." ],
+        "rating": "neutral",
+        "apply_message": "You lean back & reach low on your hip.",
+        "limb_score_mods": [
+                {
+                    "limb_score": "manipulation",
+                    "modifier": 2
+                },
+                {
+                    "limb_score": "grip",
+                    "modifier": 2
+                },
+                {
+                    "limb_score": "lift",
+                    "modifier": 2
+                },
+                {
+                    "limb_score": "reaction",
+                    "modifier": 2
+                }
+            ]
+    },
+    {
+        "type": "effect_type",
+        "id": "revolver_quickdraw_eyes",
+        "name": [ "Quickdraw" ],
+        "desc": [ "You're squinting your eyes. The sun seems to shine bright." ],
+        "rating": "neutral",
+        "apply_message": "You squint your eyes, your gaze tightens.",
+        "limb_score_mods": [
+                {
+                    "limb_score": "vision",
+                    "modifier": 3
+                }
+            ]
+    }
+]

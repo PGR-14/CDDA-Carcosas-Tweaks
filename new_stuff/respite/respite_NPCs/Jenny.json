@@ -1,0 +1,325 @@
+[
+  {
+    "id": "MODULAR_BACK",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "CoatBack_Cott", "prob": 75 },
+      { "item": "CoatBackThin_Cott", "prob": 75 },
+      { "item": "CoatBackThick_Cott", "prob": 75 },
+      { "item": "CoatBack_Denim", "prob": 50 },
+      { "item": "CoatBackThin_Denim", "prob": 50 },
+      { "item": "CoatBackThick_Denim", "prob": 50 },
+      { "item": "CoatBackThick_BikerDenim", "prob": 50 },
+      { "item": "CoatBack_Leather", "prob": 50 },
+      { "item": "CoatBackThin_Leather", "prob": 50 },
+      { "item": "CoatBackThick_Leather", "prob": 50 },
+      { "item": "CoatBackThick_BikerLeather", "prob": 50 },
+      { "item": "CoatBack_Canvas", "prob": 50 },
+      { "item": "CoatBackThin_Canvas", "prob": 50 },
+      { "item": "CoatBackThick_Canvas", "prob": 50 },
+      { "item": "CoatBack_Hazmat", "prob": 50 },
+      { "item": "CoatBack_PackRat", "prob": 50 }
+    ]
+  },
+  {
+    "id": "MODULAR_LINER_JACK",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "CoatLine_Cott", "prob": 75 },
+      { "item": "CoatLinePock_Cott", "prob": 75 },
+      { "item": "CoatLine_Canvas", "prob": 75 },
+      { "item": "CoatLinePock_Canvas", "prob": 75 }
+    ]
+  },
+  {
+    "id": "MODULAR_LINER_PANT",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "PantLine_Cott", "prob": 75 },
+      { "item": "PantLine_Pock_Cott", "prob": 75 },
+      { "item": "PantLine_PockPlus_Cott", "prob": 75 },
+      { "item": "PantLine_Canvas", "prob": 75 },
+      { "item": "PantLine_Pock_Canvas", "prob": 50 },
+      { "item": "PantLine_PockPlus_Cott", "prob": 50 }
+    ]
+  },
+  {
+    "id": "MODULAR_INSERT",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "ModuArmor_Fore_Kevlar", "prob": 50 },
+      { "item": "ModuArmor_Fore_SheetMetal", "prob": 75 },
+      { "item": "ModuArmor_Shin_Kevlar", "prob": 50 },
+      { "item": "ModuArmor_Shin_SheetMetal", "prob": 75 }
+    ]
+  },
+  {
+    "id": "MODULAR_JACK",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "ModuCoat_Cott", "prob": 75 },
+      { "item": "ModuCoatMut_Cott", "prob": 50 },
+      { "item": "ModuBomb_Cott", "prob": 25 },
+      { "item": "ModuBombMut_Cott", "prob": 25 },
+      { "item": "ModuCoat_Nyl", "prob": 25 },
+      { "item": "ModuCoatMut_Nyl", "prob": 25 },
+      { "item": "ModuBomb_Nyl", "prob": 15 },
+      { "item": "ModuBombMut_Nyl", "prob": 15 },
+      { "item": "ModuCoat_Leather", "prob": 50 },
+      { "item": "ModuCoatMut_Leather", "prob": 50 },
+      { "item": "ModuBomb_Leather", "prob": 25 },
+      { "item": "ModuBombMut_Leather", "prob": 25 },
+      { "item": "ModuCoat_Kevlar", "prob": 25 },
+      { "item": "ModuCoatMut_Kevlar", "prob": 25 },
+      { "item": "ModuBomb_Kevlar", "prob": 15 },
+      { "item": "ModuBombMut_Kevlar", "prob": 15 }
+    ]
+  },
+  {
+    "id": "MODULAR_PANT",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "ModuPants_Cott", "prob": 75 },
+      { "item": "ModuPantsMut_Cott", "prob": 50 },
+      { "item": "ModuPants_Synth", "prob": 50 },
+      { "item": "ModuPantsMut_Synth", "prob": 25 },
+      { "item": "ModuPants_Canvas", "prob": 50 },
+      { "item": "ModuPantsMut_Canvas", "prob": 25 }
+    ]
+  },
+  {
+    "id": "MODULAR_ARMBANDS",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 },
+      { "item": "Armband", "prob": 75 }
+    ]
+  },
+  {
+    "id": "MODULAR_UTIL",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "ModuUtil_BandoR", "prob": 75 },
+      { "item": "ModuUtil_BandoS", "prob": 75 },
+      { "item": "ModuUtil_Emergency", "prob": 75 },
+      { "item": "ModuUtil_Armpouches", "prob": 75 }
+    ]
+  },
+  {
+    "id": "MODULAR_STOCK",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [ 
+      { "group": "MODULAR_BACK", "prob": 75 },
+      { "group": "MODULAR_LINER_JACK", "prob": 75 },
+      { "group": "MODULAR_LINER_PANT", "prob": 75 },
+      { "group": "MODULAR_INSERT", "prob": 75 },
+      { "group": "MODULAR_JACK", "prob": 75 },
+      { "group": "MODULAR_PANT", "prob": 75 },
+      { "group": "MODULAR_ARMBANDS", "prob": 75 },
+      { "group": "MODULAR_UTIL", "prob": 75 }
+    ]
+  },
+  {
+    "id": "GUNSGUNSGUNS",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [ 
+      { "group": "nested_cp33", "prob": 75 },
+      { "group": "nested_sw_610", "prob": 75 },
+      { "group": "nested_TDI_10", "prob": 75 },
+      { "group": "nested_savage_111f", "prob": 75 },
+      { "group": "nested_shotgun_410", "prob": 75 },
+      { "group": "nested_remington_870_breacher_recreated", "prob": 75 },
+      { "group": "nested_p50", "prob": 75 },
+      { "group": "nested_bren2_762", "prob": 75 },
+      { "group": "nested_cz600", "prob": 75 },
+      { "group": "nested_kp32", "prob": 75 },
+      { "group": "nested_calico", "prob": 75 },
+      { "group": "nested_tec9", "prob": 75 },
+      { "group": "nested_bfg50", "prob": 75 },
+      { "group": "nested_draco", "prob": 75 },
+      { "group": "nested_draco_mini", "prob": 75 },
+      { "group": "nested_draco_micro", "prob": 75 },
+      { "group": "nested_draco_9mm", "prob": 75 },
+      { "group": "nested_ruger_charger", "prob": 75 },
+      { "group": "nested_m1911-460", "prob": 75 },
+      { "group": "nested_mr73", "prob": 75 },
+      { "group": "nested_colt_lightning_recreated", "prob": 75 },
+      { "group": "nested_fs2000", "prob": 75 },
+      { "group": "nested_sw_22", "prob": 75 },
+      { "group": "nested_j22", "prob": 75 },
+      { "group": "nested_cop_38", "prob": 75 },
+      { "group": "nested_raging_judge", "prob": 75 },
+      { "group": "nested_american_180", "prob": 75 },
+      { "group": "nested_ksg-25", "prob": 75 },
+      { "group": "nested_moss_brownie", "prob": 75 },
+      { "group": "nested_plr16", "prob": 75 },
+      { "group": "nested_oa93", "prob": 75 },
+      { "group": "nested_lemat_revolver", "prob": 75 },
+      { "group": "nested_lemat_revolver_conversion", "prob": 75 },
+      { "group": "nested_bh_m89", "prob": 75 },
+      { "group": "nested_famas", "prob": 75 },
+      { "group": "nested_skorpion_61", "prob": 75 },
+      { "group": "nested_skorpion_82", "prob": 75 },
+      { "group": "pellet_gun", "prob": 75 },
+      { "group": "RPG_IGROUP", "prob": 25 },
+      { "group": "gunmod_common", "prob": 75 },
+      { "group": "gunmod_rare", "prob": 75 },
+      { "item": "mp18_recreated", "prob": 75 },
+      { "item": "hk_mp5_10_semi_recreated", "prob": 75 },
+      { "item": "fn1910_recreated", "prob": 75 },
+      { "item": "surv_six_shooter_recreated", "prob": 75 },
+      { "item": "surv_hand_cannon_recreated", "prob": 75 },
+      { "item": "m231pfw_recreated", "prob": 75 },
+      { "item": "ppsh_recreated", "prob": 75 },
+      { "item": "ppshdrum_recreated", "prob": 75 },
+      { "item": "ppshmag_recreated", "prob": 75 },
+      { "item": "winchester_1887_recreated", "prob": 75 },
+      { "item": "barrel_extension", "prob": 75 },
+      { "item": "barrel_extension", "prob": 75 },
+      { "item": "barrel_extension", "prob": 75 },
+      { "item": "gun_crossbow_recreated", "prob": 75 },
+      { "item": "gun_crossbow_recreated", "prob": 75 },
+      { "item": "stabilizer_recreated", "prob": 75 },
+      { "item": "stabilizer_recreated", "prob": 75 },
+      { "item": "arredondo_chute_breacher_recreated", "prob": 75 },
+      { "item": "arredondo_chute_breacher_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 },
+      { "item": "m1903_air", "prob": 75 }
+    ]
+  },
+  {
+    "id": "JENNY_STOCK",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [ 
+      { "group": "MODULAR_STOCK", "prob": 100 },
+      { "group": "GUNSGUNSGUNS", "prob": 100 }
+    ]
+  },
+  {
+    "id": "NC_JENNY_worn",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "bra" },
+      { "item": "panties" },
+      { "item": "jeans" },
+      { "item": "dress_shirt" },
+      { "item": "leather_belt" }
+    ]
+  },
+  {
+    "id": "NC_JENNY_weapon",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [ { "item": "mace" } ]
+  },
+  {
+    "type": "snippet",
+    "category": "<jenny_bye>",
+    "text": [ "Come again!", "See'ye later buddy!", "Don't get eaten' by them ghouls, ye'hear?", "Treat my guns nicely, would'ye?" ]
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_JENNY",
+    "name": "Jenny",
+    "job_description": "Jenny the gun manufacturer",
+    "common": false,
+    "worn_override": "NC_JENNY_worn",
+    "weapon_override": "NC_JENNY_weapon",
+    "bye_message_override": "<jenny_bye>",
+    "sells_belongings": true,
+    "shopkeeper_item_group": [ { "group": "JENNY_STOCK" } ],
+    "shopkeeper_consumption_rates": "basic_shop_rates",
+    "restock_interval": "7 days",
+    "proficiencies": [ "prof_gunsmithing_basic", "prof_spotting" ],
+    "skills": [
+      { "skill": "computer", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "cutting", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "electronics", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "fabrication", "bonus": { "rng": [ 4, 6 ] } },
+      { "skill": "gun", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 3, 5 ] } }
+    ],
+    "traits": [
+      { "trait": "SKIN_PINK", "prob": 100 },
+      { "trait": "eye_color", "variant": "green", "prob": 100 },
+      { "trait": "hair_messy", "variant": "red", "prob": 100 },
+      { "trait": "BOOMING_VOICE", "prob": 100 },
+      { "trait": "LARGE", "prob": 100 },
+      { "trait": "STR_UP_2", "prob": 100 },
+      { "trait": "FANGS", "prob": 100 },
+      { "trait": "LONG_TONGUE", "prob": 100 },
+      { "trait": "ANTLERS", "prob": 100 },
+      { "trait": "ANIMAL_FEET", "prob": 100 },
+      { "trait": "HOOVES", "prob": 100 },
+      { "trait": "FUR", "prob": 100 },
+      { "trait": "DENSE_BONES", "prob": 100 },
+      { "trait": "MUT_TOUGH", "prob": 100 },
+      { "trait": "SAP_SMELL", "prob": 100 },
+      { "trait": "NPC_STATIC_NPC", "prob": 100 },
+      { "trait": "IGNORE_SOUND", "prob": 100 },
+      { "trait": "RETURN_TO_START_POS", "prob": 100 },
+      { "trait": "PRETTY", "prob": 100 }
+    ]
+  },
+  {
+    "type": "npc",
+    "id": "NPC_JENNY",
+    "//": "Jenny.",
+    "name_unique": "Jenny Walker",
+    "name_suffix": "Hub handler", 
+    "class": "NC_JENNY",
+    "attitude": 0,
+    "mission": 0,
+    "chat": "TALK_JENNY",
+    "faction": "respite",
+    "age": 30,
+    "height": 190,
+    "str": 10,
+    "dex": 8,
+    "int": 9,
+    "per": 10,
+    "personality": { "aggression": 2, "bravery": 10, "collector": 0, "altruism": 5 }
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_JENNY",
+    "dynamic_line": "Hey there! The name's Jenny, I'm the owner of this here tradin' hub. Now, could I interest you in some of my firearms?\n\n Dev note: This dialogue is VERY unfinished, please tell me how I could improve it.",
+    "responses": [
+      { "text": "No thanks ma'am.", "topic": "TALK_DONE" },
+      { "text": "Yes ma'am.", "effect": "start_trade", "topic": "TALK_JENNY" }
+    ],
+    "replace_built_in_responses": true
+  }
+]

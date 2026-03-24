@@ -1,0 +1,8 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_vending_reinforced",
+    "copy-from": "f_vending_reinforced",
+    "max_volume": "5000 L"
+  }
+]

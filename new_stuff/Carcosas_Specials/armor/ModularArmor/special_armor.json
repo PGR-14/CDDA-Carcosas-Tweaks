@@ -1,0 +1,219 @@
+[
+  {
+    "id": "jacket_Ph_leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "leather survivor jacket" },
+    "description": "A modified jacket made from leather, kevlar, & nomex. Includes a scarf, but is mostly just pockets & stitches w/out a backing or liner. Offers more protection than your average cotton or denim jacket.",
+    "weight": "5000 g",
+    "volume": "5500 ml",
+    "price": "17900 cent",
+    "price_postapoc": "12500 cent",
+    "to_hit": 1,
+    "material": [ "nomex", "kevlar", "leather", "wool" ],
+    "symbol": "[",
+    "looks_like": "duster",
+    "color": "brown",
+    "armor": [
+      {
+        "material": [
+          { "type": "nomex", "covered_by_mat": 100, "thickness": 0.125 },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.125 },
+          { "type": "leather", "covered_by_mat": 100, "thickness": 0.25 }
+        ],
+        "encumbrance": 2,
+        "cover_vitals": 80,
+        "covers": [ "arm_l", "arm_r" ],
+        "specifically_covers": [
+          "arm_upper_r",
+          "arm_upper_l",
+          "arm_shoulder_r",
+          "arm_shoulder_l",
+          "arm_lower_l",
+          "arm_lower_r",
+          "arm_elbow_l",
+          "arm_elbow_r"
+        ]
+      },
+      {
+        "material": [
+          { "type": "nomex",  "thickness": 0.125 },
+          { "type": "kevlar", "thickness": 0.125 },
+          { "type": "leather", "thickness": 0.375 }
+        ],
+        "encumbrance": 3,
+        "coverage": 90,
+        "covers": [ "torso" ],
+        "specifically_covers": [ "torso_upper", "torso_lower", "torso_neck" ]
+      },
+      {
+        "material": [
+          { "type": "nomex",  "thickness": 0.125 },
+          { "type": "kevlar", "thickness": 0.125 },
+          { "type": "leather", "thickness": 0.375 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 86,
+        "encumbrance": [ 4, 5 ],
+        "specifically_covers": [ "leg_draped_l", "leg_draped_r" ],
+        "layers": [ "BELTED" ]
+      },
+      {
+        "material": [
+          { "type": "wool", "thickness": 0.125 },
+          { "type": "leather", "thickness": 0.125 }
+        ],
+        "encumbrance": 3,
+        "coverage": 70,
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_nape", "head_throat" ],
+        "layers": [ "BELTED" ]
+      }
+    ],
+    "pocket_data": [
+      {
+        "ammo_restriction": { "410shot": 25, "shot": 25, "20x66mm": 25, "signal_flare": 25 },
+        "moves": 15,
+        "volume_encumber_modifier": 1
+      },
+      {
+        "ammo_restriction": {
+          "32": 40,
+          "762x25": 40,
+          "38": 40,
+          "357mag": 40,
+          "357sig": 40,
+          "380": 40,
+          "38super": 40,
+          "40": 40,
+          "10mm": 40,
+          "44": 40,
+          "45": 40,
+          "45colt": 40,
+          "57": 40,
+          "9x18": 40,
+          "9mm": 40,
+          "454": 40,
+          "500": 40
+        },
+        "moves": 15,
+        "volume_encumber_modifier": 1
+      },
+      {
+        "ammo_restriction": {
+          "22": 44,
+          "223": 44,
+          "270win": 44,
+          "300blk": 44,
+          "545x39": 44,
+          "3006": 44,
+          "123ln": 44,
+          "303": 44,
+          "77mm_arisaka": 44,
+          "308": 44,
+          "300": 44,
+          "762": 44,
+          "762R": 44,
+          "8x40mm": 44,
+          "4570": 44,
+          "50beowulf": 44,
+          "450": 44,
+          "338lapua": 44,
+          "50": 44,
+          "458wm": 44
+        },
+        "moves": 20,
+        "volume_encumber_modifier": 0.3
+      },
+      {
+        "magazine_well": "350 ml",
+        "holster": true,
+        "volume_encumber_modifier": 1,
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "70 cm",
+        "moves": 20,
+        "flag_restriction": [ "SHEATH_KNIFE" ]
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "volume_encumber_modifier": 1,
+        "description": "Pocket for a large handgun.",
+        "min_item_volume": "500 ml",
+        "max_contains_volume": "1500 ml",
+        "max_contains_weight": "5 kg",
+        "max_item_length": "525 mm",
+        "moves": 70
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "//": "Pocket for a book",
+        "description": "Holdout pocket for a nice book.",
+        "max_contains_volume": "1100 ml",
+        "max_contains_weight": "1 kg",
+        "holster": true,
+        "moves": 80,
+        "volume_encumber_modifier": 1,
+        "max_item_length": "23 cm"
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "ablative": true,
+        "//": "Utility pocket, should be able to hold the ABSOLUTE max that the inserts can hold. No less, no more. Huge values are temporary, for now",
+        "description": "Stitching for a special utility slot",
+        "volume_encumber_modifier": 0,
+        "flag_restriction": [ "COAT_UTILITY" ],
+        "max_contains_volume": "200 L",
+        "max_contains_weight": "200 kg",
+        "moves": 600,
+        "max_item_length": "100 cm",
+        "holster": true
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "ablative": true,
+        "//": "Liner pocket, should be able to hold the ABSOLUTE max that the inserts can hold. No less, no more. Huge values are temporary, for now",
+        "description": "Stitching for a liner",
+        "volume_encumber_modifier": 0,
+        "flag_restriction": [ "COAT_LINER" ],
+        "max_contains_volume": "200 L",
+        "max_contains_weight": "200 kg",
+        "moves": 600,
+        "max_item_length": "100 cm",
+        "holster": true
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "ablative": true,
+        "//": "Filler pocket, should be able to hold the ABSOLUTE max that the inserts can hold. No less, no more. Huge values are temporary, for now",
+        "description": "Stitching for a filler",
+        "volume_encumber_modifier": 0,
+        "flag_restriction": [ "COAT_FILLER" ],
+        "max_contains_volume": "200 L",
+        "max_contains_weight": "200 kg",
+        "moves": 600,
+        "max_item_length": "100 cm",
+        "holster": true
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "ablative": true,
+        "//": "Backing pocket, should be able to hold the ABSOLUTE max that the inserts can hold. No less, no more. Huge values are temporary, for now",
+        "description": "Stitching for the backing of the coat",
+        "volume_encumber_modifier": 0,
+        "flag_restriction": [ "COAT_BACKER" ],
+        "max_contains_volume": "200 L",
+        "max_contains_weight": "200 kg",
+        "moves": 600,
+        "max_item_length": "100 cm",
+        "holster": true
+      }
+    ],
+    "warmth": 10,
+    "material_thickness": 3.5,
+    "environmental_protection": 5,
+    "flags": [ "VARSIZE", "POCKETS", "OUTER" ],
+    "use_action": [ { "type": "holster", "holster_prompt": "Stash item", "holster_msg": "You stash your %s away" } ]
+  }
+]

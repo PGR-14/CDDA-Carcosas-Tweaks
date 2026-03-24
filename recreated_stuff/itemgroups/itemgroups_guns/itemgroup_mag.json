@@ -1,0 +1,112 @@
+[
+  {
+    "id": "mags_pistol_hunting",
+    "copy-from": "mags_pistol_hunting",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "40_speedloader6_recreated", "prob": 5 } ] }
+  },
+  {
+    "id": "common_magazines_10mm",
+    "copy-from": "common_magazines_10mm",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "40_speedloader6_recreated", "prob": 16 } ] }
+  },
+  {
+    "id": "common_magazines_32",
+    "copy-from": "common_magazines_32",
+    "type": "item_group",
+    "extend": { "items": [ { "item": "kp32mag_recreated", "prob": 68 } ] }
+  },
+  {
+    "id": "common_magazines_22lr",
+    "copy-from": "common_magazines_22lr",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "group": "magazines_22_cp33", "prob": 5 } ] }
+  },
+  {
+    "id": "common_magazines_762",
+    "copy-from": "common_magazines_762",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "group": "magazines_bren2762", "prob": 44 } ] }
+  },
+  {
+    "id": "common_magazines_restricted_10mm",
+    "copy-from": "common_magazines_restricted_10mm",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "40_speedloader6_recreated", "prob": 16 } ] }
+  },
+  {
+    "id": "common_magazines_restricted_22lr",
+    "copy-from": "common_magazines_restricted_22lr",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "cp33_mag_recreated", "prob": 5 } ] }
+  },
+  {
+    "id": "common_magazines_restricted_762",
+    "copy-from": "common_magazines_restricted_762",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "item": "bren2_762mag10_recreated", "prob": 44 } ] }
+  },
+  {
+    "id": "common_magazines_9mm",
+    "copy-from": "common_magazines_9mm",
+    "type": "item_group",
+    "extend": { "items": [ { "group": "magazines_9mm_calico", "prob": 1 }, { "group": "magazines_9mm_tec9", "prob": 60 } ] }
+  },
+  {
+    "id": "mags_surplus",
+    "copy-from": "mags_surplus",
+    "type": "item_group",
+    "extend": {
+      "items": [
+        [ "a180mag_recreated", 5 ],
+        [ "a180mag1_recreated", 5 ],
+        [ "a180mag2_recreated", 5 ],
+        [ "a180mag3_recreated", 5 ],
+        [ "a180mag4_recreated", 5 ],
+        [ "ppshmag_recreated", 10 ],
+        [ "ppshdrum_recreated", 10 ]
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "magazines_bren2762",
+    "//": "Collections of magazines for the gun. Rough estimates of 1:2 for restricted to regular, 1:10 ratio of extended to regular, and 1:100 ratio of drums/very extended to regular.",
+    "items": [ { "item": "bren2_762mag30_recreated", "prob": 500 }, { "item": "bren2_762mag10_recreated", "prob": 400 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "magazines_9mm_calico",
+    "//": "Collections of magazines for the gun.  Rough estimates of 1:2 for restricted to regular, 1:10 ratio of extended to regular, and 1:100 ratio of drums/very extended to regular.",
+    "items": [ { "item": "calicomag_recreated", "prob": 500 }, { "item": "calicomag_100rd_recreated", "prob": 200 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "magazines_22_cp33",
+    "//": "Collections of magazines for the gun.  Rough estimates of 1:2 for restricted to regular, 1:10 ratio of extended to regular, and 1:100 ratio of drums/very extended to regular.",
+    "items": [ { "item": "cp33_mag_recreated", "prob": 500 }, { "item": "cp33_mag_50_recreated", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "magazines_9mm_tec9",
+    "//": "Collections of magazines for the gun.  Rough estimates of 1:2 for restricted to regular, 1:10 ratio of extended to regular, and 1:100 ratio of drums/very extended to regular.",
+    "items": [
+      { "item": "tec9mag_20rd_recreated", "prob": 400 },
+      { "item": "tec9mag_30rd_recreated", "prob": 450 },
+      { "item": "tec9mag_recreated", "prob": 500 },
+      { "item": "tec9mag_36rd_recreated", "prob": 200 },
+      { "item": "tec9mag_50rd_recreated", "prob": 20 },
+      { "item": "tec9mag_72rd_recreated", "prob": 1 }
+    ]
+  }
+]

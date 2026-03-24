@@ -1,0 +1,19 @@
+[
+  {
+    "//": "80372",
+    "id": "makeshift_bayonet_recreated",
+    "copy-from": "spike",
+    "type": "ITEM",
+    "subtypes": [ "GUNMOD" ],
+    "name": { "str": "makeshift bayonet" },
+    "description": "A makeshift version of a bayonet that consists of a mere spike with some string.",
+    "longest_side": "12 cm",
+    "integral_longest_side": "12 cm",
+      "location": "underbarrel",
+      "mod_targets": [ "shotgun", "rifle", "smg", "launcher", "crossbow" ],
+      "is_bayonet": true,
+      "blacklist_mod": [ "knife_combat_army", "knife_combat", "enfield_bayonet", "knife_combat_marine", "makeshift_bayonet", "sword_bayonet" ],
+      "install_time": "5 m",
+    "extend": { "flags": [ "PUMP_RAIL_COMPATIBLE" ] }
+  }
+]

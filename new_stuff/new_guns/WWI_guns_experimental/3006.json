@@ -1,0 +1,35 @@
+[
+    {
+        "id": "m1903_air",
+        "copy-from": "gun_base_rifle_manual",
+        "looks_like": "m1903",
+        "type": "ITEM",
+        "subtypes": [ "GUN" ],
+        "name": { "str": "Springfield air-service rifle" },
+        "description": "A powerful military rifle chambered in .30-06, developed to replace the US Army's older Krag rifle.  It served as the main American rifle in World War I, was used alongside the M1 Garand in World War II, and was used as a sniper rifle as late as the Vietnam War. This one has an absolutely humongous 25rd magazine, & was originally a very experimental weapon, that is now being produced by Jenny Manufacturing.\n\n \"It takes all of sunday to load, but you can fire it all week\" - Unknown.",
+        "weight": "4010 g",
+        "volume": "3240 ml",
+        "longest_side": "1102 mm",
+        "barrel_length": "610 mm",
+        "price": "800 USD",
+        "price_postapoc": "32 USD 50 cent",
+        "material": [ "steel", "wood" ],
+        "ammo": [ "3006" ],
+        "dispersion": 120,
+        "clip_size": 26,
+        "barrel_volume": "250 ml",
+        "valid_mod_locations": [
+          [ "barrel", 1 ],
+          [ "bayonet lug", 1 ],
+          [ "mechanism", 2 ],
+          [ "rail mount", 1 ],
+          [ "sights mount", 1 ],
+          [ "sling", 1 ],
+          [ "stock accessory", 1 ],
+          [ "stock mount", 1 ]
+        ],
+        "pocket_data": [
+          { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "3006": 26 }, "allowed_speedloaders": [ "3006_clip" ] }
+        ]
+    }
+]

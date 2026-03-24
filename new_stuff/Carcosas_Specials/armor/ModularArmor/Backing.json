@@ -1,0 +1,249 @@
+[
+  {
+    "id": "CoatBack_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBack_Base",
+    "name": "cotton coat backer",
+    "description": "A standard cotton backing for a jacket.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "CoatBackThick_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThick_Base",
+    "name": "thick cotton coat backer",
+    "description": "A thick cotton backing for a jacket. Warmer & more protective, but heavier.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "CoatBackThin_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThin_Base",
+    "name": "thin cotton coat backer",
+    "description": "A thin cotton backing for a jacket. Less protective, but it's pretty light.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "CoatBack_Denim",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBack_Base",
+    "name": "denim coat backer",
+    "description": "A well-worn denim backing for a jacket.",
+    "material": [ "denim" ]
+  },
+  {
+    "id": "CoatBackThick_Denim",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThick_Base",
+    "name": "thick denim coat backer",
+    "description": "A thick denim backing for a jacket. It feels like a warm hug. Warmer & more protective, but heavier.",
+    "material": [ "denim" ]
+  },
+  {
+    "id": "CoatBackThick_BikerDenim",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThick_Base",
+    "name": "denim Biker coat backer",
+    "description": "A thick denim backing for a jacket. covered in band patches & smelling of beer, it makes you feel like a proper biker. Warmer & more protective, but heavier.",
+    "material": [ "denim" ]
+  },
+  {
+    "id": "CoatBackThin_Denim",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThin_Base",
+    "name": "thin denim coat backer",
+    "description": "A thin denim backing for a jacket. It's decently light, but still pretty protective.",
+    "material": [ "denim" ]
+  },
+  {
+    "id": "CoatBack_Leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBack_Base",
+    "name": "leather coat backer",
+    "description": "A brown leather backing for a jacket.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "CoatBackThick_Leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThick_Base",
+    "name": "thick leather coat backer",
+    "description": "A layered leather backing for a jacket. Brings out the cowboy in you. Warmer & more protective, but heavier.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "CoatBackThick_BikerLeather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThick_Base",
+    "name": "leather biker coat backer",
+    "description": "A layered leather backing for a jacket. covered in band patches & smelling of beer, it makes you feel like a proper biker. Warmer & more protective, but heavier.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "CoatBackThin_Leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThin_Base",
+    "name": "thin leather coat backer",
+    "description": "A light leather backing for a jacket. Suitable to warm weather. It's decently light, but still pretty protective.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "CoatBack_Canvas",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBack_Base",
+    "name": "canvas coat backer",
+    "description": "A khaki canvas backing for a jacket.",
+    "material": [ "canvas" ]
+  },
+  {
+    "id": "CoatBackThick_Canvas",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThick_Base",
+    "name": "thick canvas coat backer",
+    "description": "A thick canvas backing for a jacket. It's good for protection, but weighs a little more on your weary shoulders.",
+    "material": [ "canvas" ]
+  },
+  {
+    "id": "CoatBackThin_Canvas",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThin_Base",
+    "name": "canvas coat backer",
+    "description": "A thin canvas backing for a jacket. Lighter than most, & keeps you breathable. ",
+    "material": [ "canvas" ]
+  },
+  {
+    "id": "CoatBack_Carcosa",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBackThick_Base",
+    "name": "Esoteric coat backer",
+    "description": "A layered leather & kevlar backing for a jacket. There's eyes all around it, & you're not sure if they're painted or stitched on. They keep looking at you... Did-Did that one just blink?",
+    "warmth": 8,
+    "material_thickness": 1.75,
+    "material": [ "leather", "kevlar" ]
+  },
+  {
+    "id": "CoatBack_Hazmat",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBack_Stripped",
+    "name": "Hazmat backer",
+    "description": "What used to be a hazmat suit is now tailored to fit a coat. It's fragile, pretty encumbering, & isn't very breathable, but it'll keep you safe from the dangers of cataclysm.",
+    "material": [ "plastic" ],
+    "price": "500 USD",
+    "price_postapoc": "60 USD",
+    "material_thickness": 0.5,
+    "environmental_protection": 4,
+    "proportional": { "encumbrance": 4.5 },
+    "extend": {"flags": [ "WATERPROOF", "IRRITANT_IMMUNE", "RAINPROOF", "GAS_PROOF", "RAD_PROOF", "ELECTRIC_IMMUNE", "OUTER", "SOFT" ]}
+  },
+  {
+    "id": "CoatBack_PackRat",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "CoatBack_Stripped",
+    "name": "Packrat backer",
+    "description": "A backing completely covered in pockets & attachment slots. Smart construction means that they aren't as encumbering as normal, & feel lighter. It even includes a sheath & gun holster! In recompense, you can't put armor nor any attackments.",
+    "material": [ "nylon", "kevlar" ],
+    "price": "50 USD",
+    "price_postapoc": "40 USD",
+    "material_thickness": 0.25,
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "description": "Button-fastened canteen pocket.",
+        "max_contains_volume": "1751 ml",
+        "max_contains_weight": "3800 g",
+        "max_item_length": "23 cm",
+        "moves": 40,
+        "volume_encumber_modifier": 0.2,
+        "weight_multiplier": 0.8
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "//": "6 inches tall, 4 inches wide, and 1.5 inches deep.",
+        "max_contains_volume": "590 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "15 cm",
+        "description": "Button-fastened hip pocket.",
+        "moves": 80,
+        "weight_multiplier": 0.8
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "//": "7 inches tall, 3 inches wide, and 1 inch deep.",
+        "max_contains_volume": "361 ml",
+        "max_contains_weight": "1500 g",
+        "max_item_length": "18 cm",
+        "description": "Button-fastened chest pocket.",
+        "moves": 80,
+        "weight_multiplier": 0.7
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "//": "7 inches tall, 3 inches wide, and 1 inch deep.",
+        "max_contains_volume": "361 ml",
+        "max_contains_weight": "1500 g",
+        "max_item_length": "18 cm",
+        "description": "Button-fastened chest pocket.",
+        "moves": 80,
+        "weight_multiplier": 0.7
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "//": "4 inches tall, 2 inches wide, and 1 inch deep.",
+        "max_contains_volume": "131 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "description": "Velcro-fastened internal pocket.",
+        "moves": 150,
+        "weight_multiplier": 0.5
+      },
+      {
+        "//": "hydration pouch storage",
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "3250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "30 cm",
+        "moves": 500,
+        "description": "Pouch sized for a hydration pack."
+      },
+      {
+        "magazine_well": "350 ml",
+        "pocket_type": "CONTAINER",
+        "description": "Holster for a gun.",
+        "holster": true,
+        "min_item_volume": "250 ml",
+        "max_contains_volume": "1000 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "30 cm",
+        "moves": 50
+      },
+      {
+        "magazine_well": "350 ml",
+        "description": "Sheath for a knife.",
+        "holster": true,
+        "max_contains_volume": "750 ml",
+        "max_contains_weight": "2 kg",
+        "max_item_length": "70 cm",
+        "moves": 20,
+        "flag_restriction": [ "SHEATH_KNIFE" ]
+      }
+    ]
+  }
+]

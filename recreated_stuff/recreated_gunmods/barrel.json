@@ -1,0 +1,27 @@
+[
+  {
+    "id": "barrel_extension",
+    "type": "ITEM",
+    "subtypes": [ "GUNMOD" ],
+    "name": { "str": "barrel extension" },
+    "description": "A lengthened barrel causes guns to shoot more accurately & allows gas to exert more force upon the bullet. This one is about 1 1/2 feet long.",
+    "volume": "100 ml",
+    "weight": "100 g",
+    "price": "120 USD",
+    "price_postapoc": "2 USD 50 cent",
+    "install_time": "0 s",
+    "integral_longest_side": "24 cm",
+    "integral_volume": "100 ml",
+    "integral_weight": "100 g",
+    "material": [ "steel" ],
+    "symbol": ":",
+    "color": "light_gray",
+    "location": "barrel",
+    "mod_targets": [ "pistol" ],
+    "dispersion_modifier": -75,
+    "loudness_modifier": -10,
+    "handling_modifier": 6,
+    "barrel_length": "24 cm",
+    "flags": [ "IRREMOVABLE" ]
+  }
+]

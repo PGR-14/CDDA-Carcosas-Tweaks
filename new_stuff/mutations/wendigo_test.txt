@@ -1,0 +1,24 @@
+[
+  {
+    "type": "mutation",
+    "id": "THRESH_WENDIGO",
+    "name": "Forest Guardian",
+    "points": 1,
+    "description": "The ancient forests have longed for your help, and this last cry shook the world.",
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "RESISTCHILL",
+    "copy-from": "RESISTCHILL",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STRONGER_RESISTCHILL",
+    "copy-from": "STRONGER_RESISTCHILL",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  }
+]

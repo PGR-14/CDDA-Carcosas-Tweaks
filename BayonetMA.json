@@ -1,0 +1,266 @@
+[
+  {
+    "id": "manual_WW1BMA",
+    "copy-from": "book_martial",
+    "looks_like": "manual_karate",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "name": { "str": "British Armed Forces Bayonet Manual", "str_pl": "copies of British Armed Forces Bayonet Manual" },
+    "description": "This is a bunch of photocopied pages from old field manual for bayonet procedures during WW1. The margins are covered w/ notes, & it seems well-read. Can be used w/out a bayonet, but it isn't effective.",
+    "martial_art": "WW1BMA"
+  },
+  {
+    "type": "martial_art",
+    "id": "WW1BMA",
+    "name": "British Forces",
+    "description": "Consisting of guards, thrusts, & stock bashes, this British martial art'll let you bash in skulls of the undead for the empire. Trades bashing damage for piercing & cutting damage in thrusts, & lets you compound attacks into an armor-crushing finish. Not particularly effective w/out a bayonet.",
+    "initiate": [ "You point your gun forward, & stand at attention for the Queen", "<npcname> points their gun forward" ],
+    "teachable": true,
+    "allow_all_weapons": false,
+    "strictly_melee": true,
+    "primary_skill": "rifles",
+    "priority": 1,
+    "learn_difficulty": 3,
+    "static_buffs": [
+      {
+        "id": "buff_WW1BMA_static",
+        "name": "Guard",
+        "description": "You are standing at guard and will hold the line, no matter what.\n\n+2 blocking effectiveness, +1 block attempt, -1.0 Dodging skill, blocked damage reduced by 50% of Strength.",
+        "melee_allowed": true,
+        "bonus_blocks": 1,
+        "flat_bonuses": [
+          { "stat": "block_effectiveness", "scale": 2.0 },
+          { "stat": "block", "scaling-stat": "str", "scale": 0.5 },
+          { "stat": "dodge", "scale": -1.25 }
+        ]
+      }
+    ],
+    "onpause_buffs": [
+      {
+        "id": "buff_WW1BMA_onpause",
+        "name": "Preparation to Hit",
+        "description": "You position your arms to savagely thrust your rifle through the enemy.\n\n+1 accuracy.  Lasts 2 turns.  Stacks 2 times.",
+        "unarmed_allowed": true,
+        "melee_allowed": true,
+        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "max_stacks": 2,
+        "buff_duration": 30
+      }
+    ],
+    "oncrit_buffs": [
+      {
+        "id": "WW1BMA_BUTTPREP",
+        "name": "Buttstroke preparation",
+        "description": "You stabbed them, now to bash their head in!\n\n+1 accuracy.  Lasts 2 turns.  Stacks 2 times.",
+        "melee_allowed": true,
+        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "max_stacks": 2,
+        "buff_duration": 2,
+        "flat_bonuses": [ { "stat": "hit", "scale": 1.0 } ]
+      }
+    ],
+    "onblock_buffs": [
+      {
+        "id": "WW1BMA_PARRY",
+        "name": "Parry",
+        "description": "Your next strike will find its mark much easier after your parry.\n\n+1 accuracy.\nLasts 1 turn.",
+        "skill_requirements": [ { "name": "melee", "level": 4 } ],
+        "melee_allowed": true,
+        "buff_duration": 1,
+        "flat_bonuses": [ { "stat": "hit", "scale": 1.5 } ]
+      }
+    ],
+    "onmove_buffs": [
+      {
+        "id": "WW1BMA_MOVE",
+        "name": "FORWARD!",
+        "description": "You move quickly, bayonet pointed in front of you, ready to impale someone.",
+        "melee_allowed": true,
+        "buff_duration": 2
+      }
+    ],
+    "weapon_category": [ "AUTOMATIC_RIFLES" ],
+    "techniques": [ "WW1BMA_THRUST", "WW1BMA_THRUST1", "WW1BMA_STOCK_BASH", "WW1BMA_COMP", "WW1BMA_PIN", "WW1BMA_AFTERPIN" ]
+  },
+  {
+    "type": "technique",
+    "id": "WW1BMA_CHARGE",
+    "name": "CHARGE!",
+    "melee_allowed": true,
+    "reach_ok": true,
+    "required_buffs_any": [ "WW1BMA_MOVE" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "condition": {
+      "and": [
+        { "math": [ "u_val('size') + 1 >= n_val('size')" ] },
+        { "math": [ "n_val('size') != 1" ] },
+        { "not": { "npc_has_effect": "downed" } },
+        { "or": [ { "npc_bodytype": "human" }, { "npc_bodytype": "angel" } ] },
+        { "or": [ { "not": { "npc_has_flag": "FLIES" } }, { "npc_has_flag": "DISABLE_FLIGHT" } ] }
+      ]
+    },
+    "flat_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0.3 },
+      { "stat": "damage", "type": "stab", "scaling-stat": "str", "scale": 5 },
+      { "stat": "damage", "type": "cut", "scaling-stat": "str", "scale": 5 }
+    ],
+    "condition_desc": "* Only works on a <info>non-downed humanoid</info> target of <info>similar or smaller</info> size incapable of flight",
+    "messages": [ "You impale %s & run them to the floor!", "<npcname> impales %s & runs them to the floor!" ],
+    "down_dur": 6,
+    "description": "Down 6 turns, min 3 melee",
+    "attack_vectors": [ "vector_null" ]
+  },
+  {
+    "type": "technique",
+    "id": "WW1BMA_THRUST1",
+    "name": "Run through",
+    "required_buffs_any": [ "buff_WW1BMA_static", "buff_fencing_onblock" ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "messages": [ "You pierce the %s!", "<npcname> pierces the %s" ],
+    "melee_allowed": true,
+    "aoe": "impale",
+    "weighting": 3,
+    "flat_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0.3 },
+      { "stat": "damage", "type": "stab", "scaling-stat": "str", "scale": 1.5 },
+      { "stat": "damage", "type": "cut", "scaling-stat": "str", "scale": 1.5 }
+    ],
+    "attack_vectors": [ "vector_null" ]
+  },
+  {
+    "type": "technique",
+    "id": "WW1BMA_PIN",
+    "name": "Pin 'em!",
+    "melee_allowed": true,
+    "reach_ok": true,
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "//condition": "Humanoids of similar size and no flying",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('size') + 1 >= n_val('size')" ] },
+        { "math": [ "n_val('size') != 1" ] },
+        { "not": { "npc_has_effect": "downed" } },
+        { "or": [ { "npc_bodytype": "human" }, { "npc_bodytype": "angel" } ] },
+        { "or": [ { "not": { "npc_has_flag": "FLIES" } }, { "npc_has_flag": "DISABLE_FLIGHT" } ] }
+      ]
+    },
+    "condition_desc": "* Only works on a <info>non-downed humanoid</info> target of <info>similar or smaller</info> size incapable of flight",
+    "messages": [ "You pin %s to the floor", "<npcname> pins %s to the floor" ],
+    "down_dur": 6,
+    "description": "Down 6 turns, min 3 melee",
+    "attack_vectors": [ "vector_null" ]
+  },
+  {
+    "type": "technique",
+    "id": "WW1BMA_AFTERPIN",
+    "name": "Withdrawl",
+    "melee_allowed": true,
+    "reach_ok": true,
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "condition": { "npc_has_effect": "downed" },
+    "mult_bonuses": [ { "stat": "movecost", "scale": 0.75 } ],
+    "messages": [ "You slice %s as they're down!", "<npcname> slices %s as they're down!" ],
+    "description": "After pinning them, you slice them for a movecost buff",
+    "attack_vectors": [ "vector_null" ]
+  },
+  {
+    "type": "technique",
+    "id": "WW1BMA_COMP",
+    "name": "Buttstrokes III",
+    "messages": [
+      "You swing your stock twice, then you cut the %s down,",
+      "<npcname> swings their stock twice, then finishes with a cut against the %s."
+    ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "melee_allowed": true,
+    "required_buffs_any": [ "WW1BMA_BUTTPREP", "WW1BMA_PARRY" ],
+    "weighting": 1,
+    "crit_ok": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 2.0 },
+      { "stat": "damage", "type": "bash", "scale": 1.66 },
+      { "stat": "damage", "type": "cut", "scale": 1.2 },
+      { "stat": "damage", "type": "stab", "scale": 1.2 }
+    ],
+    "attack_vectors": [ "vector_null" ]
+  },
+  {
+    "type": "technique",
+    "id": "WW1BMA_THRUST",
+    "messages": [ "You thrust your bayonet towards %s", "<npcname> thrusts at %s" ],
+    "name": "Bayonet thrust",
+    "required_buffs_any": [ "buff_WW1BMA_static" ],
+    "skill_requirements": [ { "name": "melee", "level": 1 } ],
+    "melee_allowed": true,
+    "weighting": 2,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.5 },
+      { "stat": "damage", "type": "bash", "scale": 0.1 },
+      { "stat": "damage", "type": "cut", "scale": 0.66 },
+      { "stat": "damage", "type": "stab", "scale": 0.66 }
+    ],
+    "attack_vectors": [ "vector_null" ]
+  },
+  {
+    "type": "technique",
+    "id": "WW1BMA_STOCK_BASH",
+    "name": "Brutal stock bash",
+    "melee_allowed": true,
+    "crit_tec": true,
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "stun_dur": 1,
+    "weighting": 8,
+    "knockback_dist": 1,
+    "required_buffs_any": [ "WW1BMA_BUTTPREP" ],
+    "//condition": "Basic size filtering, if the target is grabbing you contested roll of strength vs grab strength",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('size') >= n_val('size')" ] },
+        { "not": { "npc_has_effect": "stunned" } },
+        {
+          "and": [
+            { "not": { "npc_has_species": "NETHER" } },
+            { "not": { "npc_has_species": "NETHER_EMANATION" } },
+            { "not": { "npc_has_species": "LEECH_PLANT" } },
+            { "not": { "npc_has_species": "MIGO" } },
+            { "not": { "npc_has_species": "SLIME" } },
+            { "not": { "npc_has_species": "FUNGUS" } },
+            { "not": { "npc_has_species": "PLANT" } },
+            { "not": { "npc_has_species": "ROBOT" } },
+            { "not": { "npc_has_species": "CYBORG" } },
+            { "not": { "npc_has_species": "HALLUCINATION" } },
+            { "not": { "npc_has_species": "HORROR" } },
+            { "not": { "npc_has_species": "ABERRATION" } },
+            { "not": { "npc_has_species": "KRAKEN" } }
+          ]
+        },
+        {
+          "or": [
+            {
+              "and": [
+                { "npc_has_flag": "GRAB_FILTER" },
+                { "u_has_flag": "GRAB" },
+                {
+                  "roll_contested": { "math": [ "u_val('strength')" ] },
+                  "die_size": 20,
+                  "difficulty": { "math": [ "n_val('grab_strength')" ] }
+                }
+              ]
+            },
+            { "not": { "and": [ { "npc_has_flag": "GRAB_FILTER" }, { "u_has_flag": "GRAB" } ] } }
+          ]
+        }
+      ]
+    },
+    "condition_desc": "* Only works on a <info>non-stunned mundane</info> target of <info>similar or smaller</info> size, may fail on enemies grabbing you",
+    "messages": [ "You send %s reeling with your stock.", "<npcname> sends %s reeling" ],
+    "description": "Stun 1 turn, knockback 1 tile, crit only, min 2 melee",
+    "flat_bonuses": [
+      { "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 1.3 },
+      { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.3 },
+      { "stat": "damage", "type": "stab", "scale": 0.1 },
+      { "stat": "damage", "type": "cut", "scale": 0.1 }
+    ],
+    "attack_vectors": [ "vector_null" ]
+  }
+]

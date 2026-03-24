@@ -1,0 +1,41 @@
+[
+
+{ "point": [ 0, 0, 0 ], "overmap": "" }
+
+ USD",
+    "price_postapoc": " USD",
+
+  {
+    "type": "mutation",
+    "id": "",
+    "copy-from": "",
+    "extend": { "category": [ "WENDIGO" ], "thresh_req": [ "THRESH_WENDIGO" ] }
+  },
+
+"type": "gun",
+
+"type": "ITEM",
+    "subtypes": [ "GUN" ],
+
+  {
+    "id": "PLACEHOLD",
+    "copy-from": "PLACEHOLD",
+    "type": "item_group",
+    "extend": { 
+        "PLACEHOLDER": [ 
+            { "group": "PLACEHOLD", "prob": "#" }, 
+            [ "PLACEHOLD", 1 ]
+            ] 
+        }
+  },
+
+    {
+        "id": "",
+        "copy-from": "",
+        "name": "",
+        "description": "",
+        "ammo_type": [ "40", "357sig" ],
+        "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "40": 22, "357sig": 22 } } ]
+    }
+
+]

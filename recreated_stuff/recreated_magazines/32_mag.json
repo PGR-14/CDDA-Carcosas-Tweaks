@@ -1,0 +1,41 @@
+[
+  {
+    "//": "83666",
+    "id": "kp32mag_recreated",
+    "//2": "Audited with ImageJ.  Weight using ratio method.",
+    "looks_like": "glock17_17",
+    "type": "ITEM",
+    "subtypes": [ "MAGAZINE" ],
+    "name": { "str": "P-32 7-round magazine" },
+    "description": "A standard 7-round steel box magazine for the Kel-Tec P-32.",
+    "weight": "35 g",
+    "volume": "20 ml",
+    "longest_side": "81 mm",
+    "price": "26 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "steel", "plastic" ],
+    "symbol": "#",
+    "color": "light_gray",
+    "ammo_type": [ "32" ],
+    "flags": [ "MAG_COMPACT" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "32": 7 } } ]
+  },
+  {
+    "id": "skorpion61mag_recreated",
+    "looks_like": "mp5mag",
+    "type": "ITEM",
+    "subtypes": [ "MAGAZINE" ],
+    "name": { "str": "Škorpion vz. 61 20-round magazine" },
+    "description": "A standard 20-round magazine for the Škorpion vz. 61, in .32 ACP.",
+    "weight": "120 g",
+    "volume": "250 ml",
+    "price": "50 USD",
+    "price_postapoc": "13 USD",
+    "material": [ "steel" ],
+    "symbol": "#",
+    "color": "light_gray",
+    "ammo_type": [ "32" ],
+    "flags": [ "MAG_COMPACT" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "32": 20 } } ]
+  }
+]

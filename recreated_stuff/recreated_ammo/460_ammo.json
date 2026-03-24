@@ -1,0 +1,97 @@
+[
+  {
+    "type": "ammunition_type",
+    "id": "460_recreated",
+    "name": ".460",
+    "default": "460_rowland_recreated"
+  },
+  {
+    "id": "460_casing_recreated",
+    "copy-from": "casing",
+    "looks_like": "9mm_casing",
+    "type": "ITEM",
+    "subtypes": [ "COMPONENT" ],
+    "name": { "str": ".460 Rowland casing" },
+    "description": "An empty casing from a .460 Rowland round.  It looks deceptively like a .45 ACP casing.",
+    "weight": "4 g",
+    "volume": "6ml"
+  },
+  {
+    "id": "unprimed_460_casing_recreated",
+    "copy-from": "casing",
+    "looks_like": "9mm_casing",
+    "type": "ITEM",
+    "subtypes": [ "COMPONENT" ],
+    "name": { "str": "primerless .460 Rowland casing" },
+    "description": "An empty casing from a .460 Rowland round, with its primer removed. It looks deceptively like a .45 ACP casing.",
+    "weight": "4 g",
+    "volume": "6ml"
+  },
+  {
+    "id": "460_fmj_recreated",
+    "copy-from": "460_rowland_recreated",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "name": { "str_sp": ".460 Rowland HCFN" },
+    "description": "A plated, hard cast flat nosed variant of the .460 Rowland round.  This increases penetration slightly at the cost of reduced damage from expansion.",
+    "relative": { "damage": { "damage_type": "bullet", "amount": -4, "armor_penetration": 8 } }
+  },
+  {
+    "id": "460_rowland_recreated",
+    "copy-from": "44magnum",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "name": { "str_sp": ".460 Rowland" },
+    "description": ".460 Rowland ammunition with a 185gr JHP bullet.  The .460 Rowland round is designed to emulate hard-hitting .44 Magnum in common autoloading pistols.  Like the .44, .460 Rowland has exceptional power - and recoil.  It is almost dimensionally identical to .45ACP, save for having a longer case and deeper-seated bullets to prevent ammunition mix-ups.",
+    "ascii_picture": "460_rowland",
+    "ammo_type": "460_recreated",
+    "casing": "460_casing_recreated",
+    "proportional": { "range": 0.95, "damage": { "damage_type": "bullet", "amount": 0.95, "armor_penetration": 0.95 }, "recoil": 0.95 }
+  },
+  {
+    "id": "bp_460_fmj_recreated",
+    "copy-from": "460_fmj_recreated",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "name": { "str_sp": ".460 Rowland FMJ, black powder" },
+    "proportional": {
+      "price": 0.3,
+      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
+      "recoil": 0.76,
+      "dispersion": 1.2
+    },
+    "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] }
+  },
+  {
+    "id": "bp_460_rowland_recreated",
+    "copy-from": "460_rowland_recreated",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "name": { "str_sp": ".460 Rowland, black powder" },
+    "proportional": {
+      "price": 0.3,
+      "damage": { "damage_type": "bullet", "amount": 0.76, "armor_penetration": 0.5 },
+      "recoil": 0.76,
+      "dispersion": 1.2
+    },
+    "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] }
+  },
+  {
+    "id": "reloaded_460_fmj_recreated",
+    "copy-from": "460_fmj_recreated",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "name": { "str_sp": ".460 Rowland FMJ, reloaded" },
+    "proportional": { "price": 0.7, "damage": { "damage_type": "bullet", "amount": 0.9 }, "dispersion": 1.1 },
+    "extend": { "effects": [ "RECYCLED" ] }
+  },
+  {
+    "id": "reloaded_460_rowland_recreated",
+    "copy-from": "460_rowland_recreated",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "name": { "str_sp": ".460 Rowland, reloaded" },
+    "proportional": { "price": 0.7, "damage": { "damage_type": "bullet", "amount": 0.9 }, "dispersion": 1.1 },
+    "extend": { "effects": [ "RECYCLED" ] }
+  }
+]

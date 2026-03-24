@@ -1,0 +1,129 @@
+[
+  {
+    "id": "guns_pistol_common_boxed",
+    "copy-from": "guns_pistol_common_boxed",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "group": "guns_pistol_common_boxed_762_39", "prob": 1 } ] }
+  },
+  {
+    "id": "guns_pistol_common_boxed_22",
+    "copy-from": "guns_pistol_common_boxed_22",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "group": "boxed_cp33", "prob": 16 }, { "group": "boxed_ruger_charger", "prob": 16 } ] }
+  },
+  {
+    "id": "guns_pistol_common_boxed_10mm",
+    "copy-from": "guns_pistol_common_boxed_10mm",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "group": "boxed_witness_10", "prob": 10 }, { "group": "boxed_sw_610", "prob": 34 } ] }
+  },
+  {
+    "id": "guns_pistol_common_boxed_32",
+    "copy-from": "guns_pistol_common_boxed_32",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "group": "boxed_kp32", "prob": 100 } ] }
+  },
+  {
+    "id": "guns_pistol_common_boxed_57",
+    "copy-from": "guns_pistol_common_boxed_57",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": {
+      "items": [
+        { "group": "boxed_ruger_57", "prob": 100 },
+        { "group": "boxed_fn57", "prob": 13 },
+        { "group": "boxed_p50", "prob": 12 }
+      ]
+    }
+  },
+  {
+    "id": "guns_rifle_common_boxed_762",
+    "copy-from": "guns_rifle_common_boxed_762",
+    "type": "item_group",
+    "subtype": "distribution",
+    "extend": { "items": [ { "group": "boxed_bren2_762", "prob": 1 } ] }
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "guns_pistol_common_boxed_762_39",
+    "container-item": { "item": "box_longarm", "variant": "box_longarm_handgun" },
+    "entries": [
+      { "item": "akmag10", "count": [ 1, 2 ] },
+      { "group": "firearm_box_extras" },
+      {
+        "distribution": [ { "item": "draco_recreated", "prob": 10 }, { "item": "draco_mini_recreated", "prob": 5 }, { "item": "draco_micro_recreated", "prob": 8 } ]
+      }
+    ]
+  },
+  {
+    "id": "boxed_10mm_glocks",
+    "copy-from": "boxed_10mm_glocks",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "entries": [
+        {
+          "distribution": [
+            { "item": "glock_40", "prob": 100 },
+            { "item": "TDI_10_recreated", "prob": 183 },
+            { "item": "glock_20", "prob": 121 },
+            { "item": "glock_29", "prob": 62 }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "boxed_stanag_223",
+    "copy-from": "boxed_stanag_223",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": { "entries": [ { "group": "cz600", "prob": 4 } ] }
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "boxed_cp33",
+    "container-item": { "item": "box_longarm", "variant": "box_longarm_handgun" },
+    "items": [ { "item": "cp33_recreated" }, { "group": "firearm_box_extras" }, { "item": "cp33_mag_recreated", "count": [ 1, 2 ] } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "boxed_sw_610",
+    "container-item": { "item": "box_longarm", "variant": "box_longarm_handgun" },
+    "items": [ { "item": "sw_610_recreated" }, { "group": "firearm_box_extras" }, { "item": "40_speedloader6", "prob": 5 } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "boxed_p50",
+    "container-item": { "item": "box_longarm", "variant": "box_longarm_handgun" },
+    "items": [ { "item": "p50_recreated" }, { "group": "firearm_box_extras" }, { "item": "fnp90mag_10rd" } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "boxed_bren2_762",
+    "items": [ { "item": "bren2_762_recreated" }, { "group": "firearm_box_extras" }, { "item": "bren2_762mag10_recreated", "count": [ 1, 2 ] } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "boxed_kp32",
+    "container-item": { "item": "box_longarm", "variant": "box_longarm_handgun" },
+    "items": [ { "item": "kp32_recreated" }, { "group": "firearm_box_extras" }, { "item": "kp32mag_recreated", "count": [ 1, 2 ] } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "boxed_ruger_charger",
+    "container-item": { "item": "box_longarm", "variant": "box_longarm_handgun" },
+    "items": [ { "item": "ruger_charger_recreated" }, { "group": "firearm_box_extras" }, { "item": "ruger1022mag", "count": [ 1, 2 ] } ]
+  }
+]

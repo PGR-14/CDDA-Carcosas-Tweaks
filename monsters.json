@@ -1,0 +1,42 @@
+[
+  {
+    "id": "headless_cryptid",
+    "type": "MONSTER",
+    "name": { "str": "headless cryptid" },
+    "description": "This cryptid is frighteningly tall, towering at almost nine feet.  Six-foot-long feelers of black ooze blindly wave from its neck, violently twitching at nearby sounds.  Its long stride allows it to quickly pursue its targets, which it pummels into pulp with its huge, swollen fists.",
+    "copy-from": "mon_afs_headless_horror",
+    "looks_like": "mon_afs_headless_horror",
+    "default_faction": "dog",
+    "morale": 100,
+    "aggression": 0,
+    "flags": [ "SEES", "HEARS", "SMELLS", "NO_BREATHE" ],
+    "vision_day": 12,
+    "vision_night": 20,
+    "regenerates": 1,
+    "regeneration_modifiers": [ [ "onfire", -1 ], [ "corroding", -1 ] ],
+    "regen_morale": true,
+    "upgrades": false
+  },
+  {
+    "id": "zouzounaki",
+    "type": "MONSTER",
+    "copy-from": "mon_dog_auscattle_pup",
+    "looks_like": "mon_dog_auscattle_pup",
+    "name": { "str": "Zouzounaki" },
+    "hp": 40,
+    "description": "An adorable, defenseless Australian cattle dog puppy.  Her owner nearby however, isn't.",
+    "speed": 0,
+    "aggression": -12,
+    "morale": 10,
+    "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+    "dodge": 100,
+    "vision_night": 5,
+    "upgrades": { "age_grow": 9999999, "into": "zouzounaki" },
+    "default_faction": "dog",
+    "petfood": {
+      "food": [ "debug_nutrition" ],
+      "feed": "%s seems to like you!  She lets you pat her head and seems friendly.",
+      "pet": "%s happily wags her tail while you give her some scritchy-scratches."
+    }
+  }
+]

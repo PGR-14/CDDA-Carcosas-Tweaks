@@ -1,0 +1,10 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "Carcosa_Add",
+    "name": "Carcosa's additions",
+    "description": "Adds in removed guns & my own content.",
+    "category": "items",
+    "authors": [ "PG-14" ]
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "mon_feral_labsecurity_9mm",
+    "type": "MONSTER",
+    "copy-from": "mon_feral_labsecurity_9mm",
+    "description": "This security guard still breathes, but has been lost to some terrible madness.  They move among the undead, handgun at the ready and saucer pupils scanning for threats in a mockery of their former duty.",
+    "starting_ammo": { "9mm": 7 },
+    "extend": {
+      "special_attacks": [
+        {
+          "id": "feral_shoot_labsecurity",
+          "type": "gun",
+          "cooldown": 10,
+          "move_cost": 150,
+          "gun_type": "m9",
+          "ammo_type": "9mm",
+          "fake_skills": [ [ "gun", 1 ], [ "pistol", 2 ] ],
+          "fake_dex": 8,
+          "fake_per": 10,
+          "ranges": [ [ 2, 14, "DEFAULT" ] ],
+          "condition": { "and": [ { "not": { "u_has_effect": "maimed_arm" } }, { "not": { "u_has_effect": "disarmed" } } ] },
+          "require_targeting_player": false,
+          "description": "The feral security guard fires their Beretta M9A1!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_feral_prepper_mace",
+    "type": "MONSTER",
+    "copy-from": "mon_feral_prepper_mace",
+    "description": "A quick glance at this person would suggest that they have prepared well enough for the apocalypse.  Unfortunately, their bloodshot eyes, and the excluding treatment by the undead, shows that they have turned feral.  One of their hands clasps the handle of a makeshift weapon, while the other grips a handgun.",
+    "starting_ammo": { "9mm": 5 },
+    "extend": {
+      "special_attacks": [
+        {
+          "id": "feral_shoot_prepper",
+          "type": "gun",
+          "cooldown": 10,
+          "move_cost": 50,
+          "//": "(movecost is 50 to show that the feral prepper doesn't take time to aim, and just shoots barbaric-ly)",
+          "gun_type": "m9",
+          "ammo_type": "9mm",
+          "fake_skills": [ [ "gun", 0 ], [ "pistol", 0 ] ],
+          "fake_dex": 8,
+          "fake_per": 9,
+          "ranges": [ [ 2, 14, "DEFAULT" ], [ 10, 35, "DEFAULT" ] ],
+          "condition": { "and": [ { "not": { "u_has_effect": "maimed_arm" } }, { "not": { "u_has_effect": "disarmed" } } ] },
+          "require_targeting_player": false,
+          "description": "The feral prepper haphazardly fires their firearm!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_feral_militia",
+    "type": "MONSTER",
+    "copy-from": "mon_feral_militia",
+    "starting_ammo": { "223": 20 },
+    "extend": {
+      "special_attacks": [
+        {
+          "id": "feral_shoot_militia",
+          "type": "gun",
+          "cooldown": 5,
+          "move_cost": 150,
+          "gun_type": "sig_assault_rifle",
+          "ammo_type": "223",
+          "fake_skills": [ [ "gun", 2 ], [ "rifle", 2 ] ],
+          "fake_dex": 8,
+          "fake_per": 10,
+          "ranges": [ [ 2, 35, "DEFAULT" ] ],
+          "condition": { "and": [ { "not": { "u_has_effect": "maimed_arm" } }, { "not": { "u_has_effect": "disarmed" } } ] },
+          "require_targeting_player": false,
+          "target_moving_vehicles": true,
+          "description": "The mad militiaman fires their rifle!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_feral_jackboot",
+    "type": "MONSTER",
+    "copy-from": "mon_feral_jackboot",
+    "description": "A rough-looking feral human, clad in black leather and wielding a pump-action shotgun.  It seems body-armor wasn't one of their priorities however.",
+    "starting_ammo": { "shot_00": 12 },
+    "extend": {
+      "special_attacks": [
+        {
+          "id": "feral_shoot_jackboot",
+          "type": "gun",
+          "cooldown": 10,
+          "move_cost": 150,
+          "gun_type": "winchester_1887_recreated",
+          "ammo_type": "shot_00",
+          "fake_skills": [ [ "gun", 2 ], [ "shotgun", 2 ] ],
+          "fake_dex": 8,
+          "fake_per": 9,
+          "//": "(ferals don't care about max-effective range.)",
+          "ranges": [ [ 2, 25, "DEFAULT" ] ],
+          "condition": { "and": [ { "not": { "u_has_effect": "maimed_arm" } }, { "not": { "u_has_effect": "disarmed" } } ] },
+          "require_targeting_player": false,
+          "target_moving_vehicles": true,
+          "description": "The feral biker fires their shotgun!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_feral_officer",
+    "type": "MONSTER",
+    "copy-from": "mon_feral_officer",
+    "starting_ammo": { "9mm": 12 },
+    "extend": {
+      "special_attacks": [
+        {
+          "id": "feral_shoot_officer",
+          "type": "gun",
+          "cooldown": 10,
+          "move_cost": 150,
+          "gun_type": "m18",
+          "ammo_type": "9mm",
+          "fake_skills": [ [ "gun", 1 ], [ "pistol", 2 ] ],
+          "fake_dex": 8,
+          "fake_per": 10,
+          "ranges": [ [ 2, 14, "DEFAULT" ] ],
+          "condition": { "and": [ { "not": { "u_has_effect": "maimed_arm" } }, { "not": { "u_has_effect": "disarmed" } } ] },
+          "require_targeting_player": false,
+          "target_moving_vehicles": true,
+          "description": "The feral officer fires their M18!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mon_feral_marine_bayonet",
+    "type": "MONSTER",
+    "copy-from": "mon_feral_marine_bayonet",
+    "description": "This twitching, bloodied person is still clad in a ragged naval uniform, the insignia of the marines visible on their coat and a corresponding tattoo on their forearm.  Clutching a rifle in their quivering hands, you see them repeatedly almost pull the weapon's trigger, constantly muttering incoherently and constantly checking their ammo.  Seemingly having lost the capability to aim the rifle, you'd feel relatively safe were it not for the gleaming bayonet still attached to the end of their firearm.",
+    "starting_ammo": { "308": 12 },
+    "extend": {
+        "special_attacks": [
+        {
+          "id": "feral_shoot_marine",
+          "type": "gun",
+          "cooldown": 10,
+          "move_cost": 150,
+          "gun_type": "m1a",
+          "ammo_type": "9mm",
+          "fake_skills": [ [ "gun", 1 ], [ "rifle", 2 ] ],
+          "fake_dex": 8,
+          "fake_per": 10,
+          "ranges": [ [ 2, 14, "DEFAULT" ] ],
+          "condition": { "and": [ { "not": { "u_has_effect": "maimed_arm" } }, { "not": { "u_has_effect": "disarmed" } } ] },
+          "require_targeting_player": false,
+          "target_moving_vehicles": true,
+          "description": "The feral marine fires their rifle!"
+        }
+      ]
+        }
+  }
+]

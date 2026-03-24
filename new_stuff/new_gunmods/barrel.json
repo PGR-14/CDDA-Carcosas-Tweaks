@@ -1,0 +1,26 @@
+[
+  {
+    "id": "barrel_threaded",
+    "type": "ITEM",
+    "subtypes": [ "GUNMOD" ],
+    "name": { "str": "threaded barrel" },
+    "description": "A threaded barrel, lets you put on muzzle attachments to guns that can't use them. Usually not the perfect fit, but it'll do alright.",
+    "weight": "225 g",
+    "integral_weight": "0 g",
+    "volume": "200 ml",
+    "integral_volume": "0 ml",
+    "price": "720 USD",
+    "price_postapoc": "5 USD",
+    "install_time": "10 m",
+    "material": [ "steel" ],
+    "symbol": ":",
+    "color": "light_gray",
+    "location": "barrel",
+    "mod_targets": [ "smg", "rifle", "pistol", "shotgun" ],
+    "dispersion_modifier": 20,
+    "handling_modifier": 4,
+    "add_mod": [ [ "muzzle", 1 ] ],
+    "min_skills": [ [ "weapon", 3 ] ],
+    "flags": [ "IRREMOVABLE" ]
+  }
+]

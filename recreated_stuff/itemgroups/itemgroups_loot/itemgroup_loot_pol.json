@@ -1,0 +1,46 @@
+[
+  {
+    "//": "83780",
+    "id": "swat_ballistic_vest",
+    "copy-from": "swat_ballistic_vest",
+    "type": "item_group",
+    "extend": {
+      "items": [
+        { "item": "ballistic_vest_esapi", "variant": "swat_ballistic_vest", "contents-group": "some_esapi_plates" },
+        {
+          "item": "heavy_load_bearing_vest_breacher",
+          "contents-group": "custom_light_lbv",
+          "contents-item": "remington_870_breacher_recreated"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cop_evidence",
+    "copy-from": "cop_evidence",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            { "item": "RPG_recreated", "prob": 1 },
+            { "item": "RPG-7_ammo_recreated", "prob": 1 },
+            { "item": "RPG-7_og7v_recreated", "prob": 2 },
+            { "item": "RPG-7_tbg7v_recreated", "prob": 1 },
+            { "item": "RPG-7_pg7vr_recreated", "prob": 1 }
+            ] 
+        }
+  },
+  {
+    "id": "drugdealer",
+    "copy-from": "drugdealer",
+    "type": "item_group",
+    "extend": { 
+        "items": [ 
+            { "item": "RPG_recreated", "prob": 1 },
+            { "item": "RPG-7_ammo_recreated", "prob": 2 },
+            { "item": "RPG-7_og7v_recreated", "prob": 2 },
+            { "item": "RPG-7_tbg7v_recreated", "prob": 2 },
+            { "item": "RPG-7_pg7vr_recreated", "prob": 2 }
+            ] 
+        }
+  }
+]

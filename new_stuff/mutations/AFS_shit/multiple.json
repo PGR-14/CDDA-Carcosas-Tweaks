@@ -1,0 +1,161 @@
+[
+  {
+    "type": "mutation",
+    "id": "VERY_TALL",
+    "copy-from": "VERY_TALL",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "LARGE",
+    "copy-from": "LARGE",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "LARGE_OK",
+    "copy-from": "LARGE_OK",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ], "threshreq": [ "THRESH_WENDIGO", "THRESH_MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STR_UP",
+    "copy-from": "STR_UP",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STR_UP_2",
+    "copy-from": "STR_UP_2",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HIRSUTE",
+    "copy-from": "HIRSUTE",
+    "changes_to": [ "PATCHFUR" ],
+    "extend": { "category": [ "WENDIGO", "MASTODON", "SPIDER", "INSECT" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PATCHFUR",
+    "name": "Patched Fur",
+    "points": 0,
+    "visibility": 2,
+    "ugliness": 1,
+    "description": "Your skin has patches of light fur.  This has no impact on your life except marking you as not fully human.",
+    "types": [ "SKIN", "BODY_ARMOR", "BODY_ARMOR_MOD", "ARMOR" ],
+    "changes_to": [ "LIGHTFUR" ],
+    "category": [
+      "MASTODON",
+      "SPIDER",
+      "MOUSE",
+      "BEAST",
+      "CATTLE",
+      "RAT",
+      "FELINE",
+      "LUPINE",
+      "RABBIT",
+      "INSECT",
+      "URSINE",
+      "CHIROPTERAN",
+      "WENDIGO"
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "LIGHTFUR",
+    "copy-from": "LIGHTFUR",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FUR",
+    "copy-from": "FUR",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SMELLY",
+    "copy-from": "SMELLY",
+    "extend": { "category": [ "WENDIGO", "MASTODON", "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SMELLY2",
+    "copy-from": "SMELLY2",
+    "extend": { "category": [ "WENDIGO", "MASTODON", "MIGO" ], "changes_to": [ "SAP_SMELL" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "DENSE_BONES",
+    "copy-from": "DENSE_BONES",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "MUT_TOUGH",
+    "copy-from": "MUT_TOUGH",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "MUT_TOUGH2",
+    "copy-from": "MUT_TOUGH2",
+    "extend": { "category": [ "MASTODON", "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO", "THRESH_MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "MUT_TOUGH3",
+    "copy-from": "MUT_TOUGH3",
+    "extend": { "category": [ "MASTODON", "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO", "THRESH_MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SNOUT",
+    "copy-from": "SNOUT",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ], "changes_to": [ "TRUNK" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HUNGER",
+    "copy-from": "HUNGER",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "THIRST",
+    "copy-from": "THIRST",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "THIRST2",
+    "copy-from": "THIRST2",
+    "extend": { "category": [ "WENDIGO", "MASTODON" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "POISRESIST",
+    "copy-from": "POISRESIST",
+    "extend": { "category": [ "WENDIGO", "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "NIGHTVISION",
+    "copy-from": "NIGHTVISION",
+    "extend": { "category": [ "WENDIGO", "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "DISRESISTANT",
+    "copy-from": "DISRESISTANT",
+    "extend": { "category": [ "WENDIGO", "MIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "INFRESIST",
+    "copy-from": "INFRESIST",
+    "extend": { "category": [ "WENDIGO", "MIGO" ] }
+  }
+]

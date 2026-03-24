@@ -1,0 +1,4 @@
+A few things:
+-Make all the guns w/ multiple calibres use barrel & reciever/cylinder replacements. Or just make them 1 ammo.
+-Change up names, IDs, & descriptions.
+-Potentially debuff some of them.

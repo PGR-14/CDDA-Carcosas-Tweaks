@@ -1,0 +1,35 @@
+[
+  {
+    "id": "trenchie_carcosa",
+    "copy-from": "gun_base_shotgun_manual",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "name": { "str": "6-round trenchie" },
+    "description": "Whether or not you ever wondered what would happen if one was to attach a shotgun atop a sword, the result of such an inquiry now rests before you in all its metallic glory.  Coming outfitted with a large 17 inch sword bayonet and a wooden heat shield to protect the user's hands from the barrel when it heats up during firing, this pump-action shotgun practically drips menace and looks like it's straight out of the trenches of World War I.  There aren't any more trenches to clear, so the next zombie-infested town will have to suffice.",
+    "weight": "3500 g",
+    "volume": "2564 ml",
+    "longest_side": "989 mm",
+    "barrel_length": "510 mm",
+    "looks_like": "remington_870",
+    "price": "8 kUSD 500 USD",
+    "material": [ "steel", "wood" ],
+    "dispersion": 360,
+    "durability": 8,
+    "clip_size": 6,
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "mechanism", 2 ],
+      [ "muzzle", 1 ],
+      [ "rail mount", 1 ],
+      [ "bayonet lug", 1 ],
+      [ "sights mount", 1 ],
+      [ "sling", 1 ],
+      [ "stock accessory", 1 ],
+      [ "stock mount", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "default_mods": [ "sword_bayonet" ],
+    "melee_damage": { "bash": 12 },
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 6 } } ]
+  }
+]

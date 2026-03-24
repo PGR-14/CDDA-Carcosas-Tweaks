@@ -1,0 +1,392 @@
+[
+  {
+    "type": "mutation",
+    "id": "THRESH_WENDIGO",
+    "name": "Forest Guardian",
+    "points": 1,
+    "description": "The ancient forests have longed for your help, and this last cry shook the world.",
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "FORKED_TONGUE",
+    "copy-from": "FORKED_TONGUE",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FANGS",
+    "copy-from": "FANGS",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "LONG_TONGUE",
+    "copy-from": "LONG_TONGUE",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HEADBUMPS",
+    "copy-from": "HEADBUMPS",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HORNS",
+    "copy-from": "HORNS",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "ANIMAL_FEET",
+    "copy-from": "ANIMAL_FEET",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PADDED_FEET",
+    "copy-from": "PADDED_FEET",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HOOVES",
+    "copy-from": "HOOVES",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "BOOMING_VOICE",
+    "copy-from": "BOOMING_VOICE",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "RESISTCHILL",
+    "copy-from": "RESISTCHILL",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "STRONGER_RESISTCHILL",
+    "copy-from": "STRONGER_RESISTCHILL",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "NIGHTVISION2",
+    "copy-from": "NIGHTVISION2",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "NIGHTVISION3",
+    "copy-from": "NIGHTVISION3",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "WEAKSTOMACH",
+    "copy-from": "WEAKSTOMACH",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "NAUSEA",
+    "copy-from": "NAUSEA",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "VOMITOUS",
+    "copy-from": "VOMITOUS",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SPIRITUAL",
+    "copy-from": "SPIRITUAL",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FORGETFUL",
+    "copy-from": "FORGETFUL",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "BADTEMPER",
+    "copy-from": "BADTEMPER",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SAPROVORE",
+    "copy-from": "SAPROVORE",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "EATPOISON",
+    "copy-from": "EATPOISON",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "EATDEAD",
+    "copy-from": "EATDEAD",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "INT_UP",
+    "copy-from": "INT_UP",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "INT_SLIME",
+    "copy-from": "INT_SLIME",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PER_UP",
+    "copy-from": "PER_UP",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PER_SLIME",
+    "copy-from": "PER_SLIME",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PER_SLIME_OK",
+    "copy-from": "PER_SLIME_OK",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "ACIDPROOF",
+    "copy-from": "ACIDPROOF",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FAT",
+    "copy-from": "FAT",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TOXICFLESH",
+    "copy-from": "TOXICFLESH",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "POISONOUS",
+    "copy-from": "POISONOUS",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TROGLO",
+    "copy-from": "TROGLO",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "INFRARED",
+    "copy-from": "INFRARED",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SLIMY",
+    "copy-from": "SLIMY",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "VISCOUS",
+    "copy-from": "VISCOUS",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "AMORPHOUS",
+    "copy-from": "AMORPHOUS",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "ELFAEYES",
+    "copy-from": "ELFAEYES",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "ANTLERS",
+    "copy-from": "ANTLERS",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PAWS",
+    "copy-from": "PAWS",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "SLIME_HANDS",
+    "copy-from": "SLIME_HANDS",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "BENDY1",
+    "copy-from": "BENDY1",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "BENDY2",
+    "copy-from": "BENDY2",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "BENDY3",
+    "copy-from": "BENDY3",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "NAILS",
+    "copy-from": "NAILS",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TALONS",
+    "copy-from": "TALONS",
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TAIL_STUB",
+    "copy-from": "TAIL_STUB",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TAIL_THICK",
+    "copy-from": "TAIL_THICK",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "HUNGER2",
+    "copy-from": "HUNGER2",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FASTHEALER",
+    "copy-from": "FASTHEALER",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FASTHEALER2",
+    "copy-from": "FASTHEALER2",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "PHEROMONE_MAMMAL",
+    "copy-from": "PHEROMONE_MAMMAL",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "NMELD",
+    "name": "Nature's Boon",
+    "points": 3,
+    "description": "Your very presence is masked by nature itself.  You are slightly harder to detect.",
+    "valid": false,
+    "purifiable": false,
+    "prereqs": [ "SMELLY" ],
+    "threshreq": [ "THRESH_WENDIGO" ],
+    "category": [ "WENDIGO" ],
+    "enchantments": [ { "values": [ { "value": "STEALTH_MODIFIER", "add": 15 } ] } ]
+  },
+  {
+    "type": "mutation",
+    "id": "SAP_SMELL",
+    "name": { "str": "Sappy scent" },
+    "description": "You smell... Really good actually, like the scent of maple syrup and pine sap.  Monsters that track scent will find you very easily.",
+    "category": [ "WENDIGO" ],
+    "types": [ "SCENT" ],
+    "prereqs": [ "SMELLY2" ],
+    "points": 2,
+    "vitamin_cost": 160,
+    "ugliness": -12,
+    "scent_intensity": 1800
+  },
+  {
+    "type": "mutation",
+    "id": "MONSTROUSCARDIO",
+    "name": "Persistent Body",
+    "points": 2,
+    "description": "As you move, the world seems to breath life and energy into your limbs.  You simply tire much less readily than others.  Your maximum stamina is 50% higher than usual.",
+    "valid": false,
+    "purifiable": false,
+    "threshreq": [ "THRESH_WENDIGO" ],
+    "category": [ "WENDIGO" ],
+    "cancels": [ "BADCARDIO" ],
+    "enchantments": [
+      { "values": [ { "value": "CARDIO_MULTIPLIER", "multiply": 1.8 }, { "value": "STAMINA_REGEN_MOD", "multiply": 0.25 } ] }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "WENDIGO_ARMS",
+    "name": { "str": "Wendigo Limbs" },
+    "description": "There's the last two limbs you were expecting.  Unfortunately, you still can't coordinate them, so you're getting in your own way.  A lot.",
+    "category": [ "WENDIGO" ],
+    "types": [ "ARMS", "HANDS" ],
+    "changes_to": [ "WENDIGO_ARMS_OK" ],
+    "threshreq": [ "THRESH_WENDIGO" ],
+    "points": -7,
+    "purifiable": false,
+    "vitamin_cost": 210,
+    "visibility": 10,
+    "ugliness": -20,
+    "encumbrance_always": [ [ "arm_l", 40 ], [ "arm_r", 40 ] ],
+    "restricts_gear": [ "torso" ],
+    "enchantments": [ { "values": [ { "value": "DEXTERITY", "add": -4 } ] } ]
+  },
+  {
+    "type": "mutation",
+    "id": "WENDIGO_ARMS_OK",
+    "name": { "str": "Wendigo Arms" },
+    "description": "You have four handsome limbs, and then those mutant 'hand' and 'foot' things.  They probably aren't worth concealing.",
+    "category": [ "WENDIGO" ],
+    "types": [ "ARMS", "HANDS" ],
+    "prereqs": [ "WENDIGO_ARMS" ],
+    "threshreq": [ "THRESH_WENDIGO" ],
+    "points": 0,
+    "purifiable": false,
+    "vitamin_cost": 210,
+    "visibility": 6,
+    "ugliness": -20
+  }
+]

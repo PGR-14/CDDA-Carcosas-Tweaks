@@ -1,0 +1,2071 @@
+[
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "bicycle_spawn_recreated",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "faction_owner": [ { "id": "your_followers", "x": [ 0, 3 ], "y": [ 0, 3 ] } ],
+      "place_vehicles": [ { "vehicle": "bicycle", "x": 2, "y": 2, "chance": 100, "status": 0 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "bicycle_dirt_spawn_recreated",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "faction_owner": [ { "id": "your_followers", "x": [ 0, 3 ], "y": [ 0, 3 ] } ],
+      "place_vehicles": [ { "vehicle": "bicycle_dirt", "x": 2, "y": 2, "chance": 100, "status": 0 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "bicycle_electric_spawn_recreated",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "faction_owner": [ { "id": "your_followers", "x": [ 0, 3 ], "y": [ 0, 3 ] } ],
+      "place_vehicles": [ { "vehicle": "bicycle_electric", "x": 2, "y": 2, "chance": 100, "status": 0 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "motorcycle_enduro_spawn_recreated",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "faction_owner": [ { "id": "your_followers", "x": [ 0, 3 ], "y": [ 0, 3 ] } ],
+      "place_vehicles": [ { "vehicle": "motorcycle_enduro", "x": 2, "y": 2, "chance": 100, "status": 0 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "motorcycle_sidecart_spawn_recreated",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "faction_owner": [ { "id": "your_followers", "x": [ 0, 3 ], "y": [ 0, 3 ] } ],
+      "place_vehicles": [ { "vehicle": "motorcycle_sidecart", "x": 2, "y": 2, "chance": 100, "status": 0 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "scooter_spawn_recreated",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "faction_owner": [ { "id": "your_followers", "x": [ 0, 3 ], "y": [ 0, 3 ] } ],
+      "place_vehicles": [ { "vehicle": "scooter", "x": 2, "y": 2, "chance": 100, "status": 0 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "scooter_electric_spawn_recreated",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "faction_owner": [ { "id": "your_followers", "x": [ 0, 3 ], "y": [ 0, 3 ] } ],
+      "place_vehicles": [ { "vehicle": "scooter_electric", "x": 2, "y": 2, "chance": 100, "status": 0 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_enter_recreated" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_dirt",
+      "rows": [
+        "                        ",
+        "                  ##### ",
+        "  #####           #S+T# ",
+        "  #...+           +.### ",
+        "  #T.S#           #.+T# ",
+        "  #####           ##### ",
+        "                        ",
+        " $    $           0   0 ",
+        "                        ",
+        " $    $           0   0 ",
+        "                        ",
+        " $    $           0   0 ",
+        "                        ",
+        " $    $           0   0 ",
+        "                        ",
+        " $    $           0   0 ",
+        "                        ",
+        " $    $           0   0 ",
+        "       !       x!       ",
+        "########pppppppP########",
+        "       !       x!       ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_member" } },
+      "terrain": { " ": "t_region_groundcover", ".": "t_rock_floor" },
+      "furniture": { "0": "f_training_dummy_heavy", "$": "f_training_dummy_light", "S": "f_sink", "T": "f_toilet" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_right_corner_recreate" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_rock_floor",
+      "rows": [
+        "                       #",
+        "        !n!            #",
+        "                       #",
+        "  ####+#### ####+####  #",
+        "  #nh....o# #nh....o#  #",
+        "  #1..d.@@# #1..d.@@#  #",
+        "  ######### #########  #",
+        "                       #",
+        "  ####+#### ####+####  #",
+        "  #nh..!.o# #nh....o#  #",
+        "  #1..d.@@# #1..d.@@#  #",
+        "  ######### #########  #",
+        "                       #",
+        "  ####+#### ####+####  #",
+        "  #nh....o# #nh..!.o#  #",
+        "  #1..d.@@# #1..d.@@#  #",
+        "  ######### #########  #",
+        "                       #",
+        "                       #",
+        "########################",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_member" } },
+      "terrain": { " ": "t_region_groundcover", ".": "t_rock_floor" },
+      "furniture": { "1": "f_firefly_terrarium" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_left_corner_recreated" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_rock_floor",
+      "rows": [
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "# ####+#### ####+####   ",
+        "# #nh....o# #nh....o#   ",
+        "# #1..d.@@# #1..d.@@#   ",
+        "# ######### #########   ",
+        "#                       ",
+        "# ####+#### ####+####   ",
+        "# #nh..!.o# #nh....o#   ",
+        "# #1..d.@@# #1..d.@@#   ",
+        "# ######### #########   ",
+        "#                       ",
+        "# ####+#### ####+####   ",
+        "# #nh....o# #nh..!.o#   ",
+        "# #1..d.@@# #1..d.@@#   ",
+        "# ######### #########   ",
+        "#                       ",
+        "#                       ",
+        "########################",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_member" } },
+      "terrain": { " ": "t_region_groundcover", ".": "t_rock_floor" },
+      "furniture": { "1": "f_firefly_terrarium" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_right_corner_recreated_up" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_rock_floor",
+      "rows": [
+        "########################",
+        "                       #",
+        "                       #",
+        "  ####+#### ####+####  #",
+        "  #nh....o# #nh....o#  #",
+        "  #1..d.@@# #1..d.@@#  #",
+        "  ######### #########  #",
+        "                       #",
+        "  ####+#### ####+####  #",
+        "  #nh..!.o# #nh....o#  #",
+        "  #1..d.@@# #1..d.@@#  #",
+        "  ######### #########  #",
+        "                       #",
+        "  ####+#### ####+####  #",
+        "  #nh....o# #nh..!.o#  #",
+        "  #1..d.@@# #1..d.@@#  #",
+        "  ######### #########  #",
+        "                       #",
+        "  ####+#### ####+####  #",
+        "  #nh....o# #nh..!.o#  #",
+        "  #1..d.@@# #1..d.@@#  #",
+        "  ######### #########  #",
+        "                       #",
+        "                       #"
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_member" } },
+      "terrain": { " ": "t_region_groundcover", ".": "t_rock_floor" },
+      "furniture": { "1": "f_firefly_terrarium" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_left_corner_recreated_up" ],
+    "weight": 100,
+    "object": {
+      "faction_owner": [ { "id": "valhallists", "x": [ 0, 23 ], "y": [ 0, 23 ] } ],
+      "fill_ter": "t_rock_floor",
+      "rows": [
+        "########################",
+        "#                       ",
+        "#                       ",
+        "#  ####+###+##########  ",
+        "#  #L2o.ooo.r.r2r.r.r#  ",
+        "#  #L.o.....r.r.r.r.r#  ",
+        "#  #L.1..2..r.1.1.r.1#  ",
+        "#  #L...............r#  ",
+        "#  #L.1.....r.1.1.r.1#  ",
+        "#  #L.o..1..r.r.r.r2r#  ",
+        "#  #L.o.....r.r#######  ",
+        "#  #L.1..2..r.r#33333#  ",
+        "#  #2..........+..!.3#  ",
+        "#  #LLL..1..LLL#]]]]]#  ",
+        "#  #2.........2#.....#  ",
+        "#  #LLLLLLLLLLL#hnh..#  ",
+        "#  ################+##  ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_shopkeep" }, "2": { "class": "pagan_cult_member" } },
+      "terrain": { " ": "t_region_groundcover", ".": "t_rock_floor", "]": "t_bars" },
+      "furniture": { "1": "f_firefly_terrarium", "3": "f_rack_wood", "L": "f_rack_wood", "r": "f_rack_wood" },
+      "items": {
+        "L": [
+          { "item": "condiments", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "groce_ingredient", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "groce_bread", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "pantry_liquids", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "dry_goods", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "preserved_food", "chance": 80, "repeat": [ 2, 4 ] }
+        ],
+        "o": [
+          { "item": "homebooks", "chance": 80, "repeat": [ 1, 2 ] },
+          { "item": "manuals", "chance": 80, "repeat": [ 1, 2 ] },
+          { "item": "textbooks", "chance": 80, "repeat": [ 1, 2 ] }
+        ],
+        "r": [
+          { "item": "hardware_bulk", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "plumbing_bulk", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "wood_workshop", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "supplies_hardware", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "supplies_farming", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "supplies_fuel", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "supplies_metal", "chance": 80, "repeat": [ 2, 4 ] }
+        ],
+        "3": [
+          { "item": "valhallist_shopkeep_0", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "valhallist_shopkeep_1", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "valhallist_weapons", "chance": 80, "repeat": [ 2, 4 ] }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_long_wall_recreated" ],
+    "//": "Garage",
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_dirt",
+      "rows": [
+        "#                       ",
+        "#    ###...###          ",
+        "#    #T+...+T#          ",
+        "#    ###S.S###          ",
+        "#    #T+...+T#          ",
+        "#    ###S.S###          ",
+        "#    #T+...+T#          ",
+        "#    #########          ",
+        "#                !      ",
+        "#     #.........#       ",
+        "#     #1.........       ",
+        "#     #r.........       ",
+        "#     #r2........       ",
+        "#     #r.........       ",
+        "#     #1.........       ",
+        "#     #.........#       ",
+        "#               !       ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       ",
+        "#                       "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_member" }, "2": { "class": "pagan_cult_mechanic" } },
+      "terrain": { " ": "t_region_groundcover", ".": "t_rock_floor", "2": "t_rock_floor", "S": "t_rock_floor", "T": "t_rock_floor" },
+      "furniture": { "1": "f_firefly_terrarium", "r": "f_rack", "S": "f_sink", "T": "f_toilet" },
+      "items": {
+        "r": [
+          { "item": "hardware_bulk", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "supplies_fuel", "chance": 80, "repeat": [ 2, 4 ] },
+          { "item": "supplies_metal", "chance": 80, "repeat": [ 2, 4 ] }
+        ]
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_long_wall_recreated" ],
+    "//": "garden",
+    "weight": 70,
+    "object": {
+      "fill_ter": "t_dirt",
+      "rows": [
+        "#                       ",
+        "#                 !     ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD  !DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#    DD DD   DD DD      ",
+        "#   !DD DD   DD DD      ",
+        "#                       ",
+        "#                       ",
+        "#                       "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "sealed_item": { "D": { "item": { "item": "seed_corn" }, "furniture": "f_plant_seedling", "chance": 70 } },
+      "npcs": { "!": { "class": "pagan_cult_member" } },
+      "terrain": { " ": "t_region_groundcover", "D": "t_dirtmound" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_longhouse_recreated" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_rock_floor",
+      "rows": [
+        "########################",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "       ##############   ",
+        "       #@@1.hnh.1#.T#   ",
+        "       #@@.......+..#   ",
+        "       #######+###1S#   ",
+        "       #!...1...!####   ",
+        "       #....2....#      ",
+        "       #.........#      ",
+        "       #1.......1#      ",
+        "       #.........#      ",
+        "       #.........#      ",
+        "       #!.1...1.!#      ",
+        "       ####+++####      ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_member" }, "2": { "class": "pagan_cult_leader" } },
+      "terrain": { " ": "t_region_groundcover" },
+      "furniture": { "1": "f_firefly_terrarium", "2": "f_chair", "S": "f_sink", "T": "f_toilet" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "pagan_cult_henge_recreated" ],
+    "weight": 100,
+    "object": {
+      "fill_ter": "t_dirt",
+      "rows": [
+        "                        ",
+        "               ...      ",
+        "               .~!..    ",
+        "    ....        ....    ",
+        "    .~.......   ....    ",
+        " ....!   ....     ....  ",
+        " ...... ......  ........",
+        "  ....................~.",
+        "  .~........~...........",
+        " ..........ss...p.....  ",
+        " ........~ssssss....... ",
+        "     ..sssssssss.....   ",
+        "   ..pssss2npsss.~..... ",
+        " ......sssssssss.....~. ",
+        " .~.....~ss#sssp.....!. ",
+        " .......ss..ss.......   ",
+        "   .......p!......      ",
+        "  ..................    ",
+        "   .................... ",
+        "  ...~..  ...........~. ",
+        "   .....   ......   ... ",
+        "           ....~..      ",
+        "             .....      ",
+        "                        "
+      ],
+      "palettes": [ "bandit_camp" ],
+      "npcs": { "!": { "class": "pagan_cult_member" }, "2": { "class": "pagan_cult_gode" } },
+      "terrain": { " ": "t_region_groundcover", "s": "t_grass", ".": [ "t_region_soil", "t_region_groundcover" ] },
+      "furniture": { "2": "f_chair", "p": "f_boulder_large", "~": "f_boulder_small", "#": "f_brazier" }
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_place_bicycle",
+    "object": { "place_nested": [ { "chunks": [ "bicycle_spawn_recreated" ], "x": 13, "y": 11 } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_place_bicycle_dirt",
+    "object": { "place_nested": [ { "chunks": [ "bicycle_dirt_spawn_recreated" ], "x": 13, "y": 11 } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_place_bicycle_electric",
+    "object": { "place_nested": [ { "chunks": [ "bicycle_electric_spawn_recreated" ], "x": 13, "y": 11 } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_place_motorcycle_enduro",
+    "object": { "place_nested": [ { "chunks": [ "motorcycle_enduro_spawn_recreated" ], "x": 13, "y": 11 } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_place_motorcycle_sidecart",
+    "object": { "place_nested": [ { "chunks": [ "motorcycle_sidecart_spawn_recreated" ], "x": 13, "y": 11 } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_place_scooter",
+    "object": { "place_nested": [ { "chunks": [ "scooter_spawn_recreated" ], "x": 13, "y": 11 } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_place_scooter_electric",
+    "object": { "place_nested": [ { "chunks": [ "scooter_electric_spawn_recreated" ], "x": 13, "y": 11 } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_remove_raiding_party",
+    "object": { "remove_npcs": [ { "class": "pagan_cult_member_rescue", "x": [ 0, 23 ], "y": [ 0, 23 ] } ] }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "valahllist_remove_slaves",
+    "object": { "remove_npcs": [ { "class": "hells_raiders_slave", "x": [ 0, 23 ], "y": [ 0, 23 ] } ] }
+  },
+  {
+    "type": "npc",
+    "id": "slave",
+    "name_suffix": "slave",
+    "class": "NC_SLAVE",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_MI-GO_PRISONER1",
+    "faction": "slaves"
+  },
+  {
+    "id": "MISSION_JOIN_VALHALLISTS",
+    "type": "mission_definition",
+    "name": { "str": "Join The Valhallists" },
+    "goal": "MGOAL_KILL_MONSTER",
+    "description": "Kill the giant rat roaming the fields for the Valhallists.  Return to their leader when it is dead.",
+    "difficulty": 5,
+    "value": 0,
+    "start": {
+      "assign_mission_target": { "om_terrain": "field", "reveal_radius": 1, "random": true, "min_distance": 5, "z": 0 },
+      "update_mapgen": { "place_monster": [ { "monster": "mon_nakedmolerat_giant", "x": 11, "y": 11, "target": true } ] }
+    },
+    "end": {
+      "effect": [
+        { "u_spawn_item": "helmet_skull" },
+        { "u_spawn_item": "signed_chit", "count": 8 },
+        { "u_add_var": "u_joined_valhallists", "type": "general", "value": "yes" }
+      ]
+    },
+    "origins": [ "ORIGIN_OPENER_NPC" ],
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Kill a giant mole rat to join the Valhallists.",
+      "offer": ".",
+      "accepted": ".",
+      "rejected": ".",
+      "advice": ".",
+      "inquire": "Any luck with the rat?",
+      "success": "Welcome to the clan.  We'll get to making a helmet for you straight away.  Gudene vil det!",
+      "success_lie": "My scouts say otherwise, liar.",
+      "failure": "Not everyone is cut out for this life, I suppose."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_EXTERMINATE_FUNGAL_BLOOM",
+    "type": "mission_definition",
+    "name": { "str": "Pyromanic Dreams" },
+    "goal": "MGOAL_KILL_MONSTER",
+    "description": "Exterminate a fungal blossom.",
+    "difficulty": 5,
+    "value": 0,
+    "start": {
+      "assign_mission_target": {
+        "om_terrain": "fungal_flowers",
+        "om_special": "Fungal Flowers",
+        "reveal_radius": 2,
+        "random": false,
+        "min_distance": 2,
+        "z": 0
+      },
+      "update_mapgen": { "place_monster": [ { "monster": "mon_fungaloid_seeder", "x": [ 1, 21 ], "y": [ 1, 21 ], "target": true } ] },
+      "effect": [ { "u_spawn_item": "molotov", "count": 5 } ]
+    },
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 80 } ] },
+    "origins": [ "ORIGIN_OPENER_NPC" ],
+    "has_generic_rewards": false,
+    "followup": "MISSION_VALHALLISTS_KILL_300_Z",
+    "dialogue": {
+      "describe": "Destroy a fungal bloom for the Valhallists.",
+      "offer": "My scouts have reported activity of those <mycus_slur>s nearby.  I want you to go over there and kill all the <mycus_slur> you see, then burn their colony to ash.  I have some Molotovs ready for you to do that with.",
+      "accepted": "May Thor protect you.",
+      "rejected": "They'll pay with their lives eventually.",
+      "advice": "Wear a gas mask and a hazard suit, which I wish we had to lend you.  Walking in those spore clouds can get you infected with them, and I'd rather not have to send an assassin to incinerate you.",
+      "inquire": "I don't see any ash on you.",
+      "success": "Those aliens had it coming to them.  You have done Odins' will today.",
+      "success_lie": "I still see mushrooms around.",
+      "failure": "Not everyone is cut out for this life, I suppose."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_KILL_300_Z",
+    "type": "mission_definition",
+    "name": { "str": "Kill 300 Zombies" },
+    "goal": "MGOAL_KILL_MONSTER_SPEC",
+    "monster_species": "ZOMBIE",
+    "monster_kill_goal": 300,
+    "difficulty": 5,
+    "value": 0,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_KILL_MIGOS",
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 100 } ] },
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Kill 300 zombies for the Valhallists",
+      "offer": "You've proven yourself as a competent warrior, and we need your services again.  Scavenging runs have been delayed recently due to hordes of undead blocking off towns, and nearly killing one of us last time.  I need you to help exterminate this threat, so go kill three hundred of those <name_b>s for us.",
+      "accepted": "May Thor protect you.",
+      "rejected": "We are going to have to face them sometime, now is better than ever.",
+      "advice": "Slay a few at a time, and don't let them surround you.",
+      "inquire": "Are the dead laid to rest?",
+      "success": "We shall see a great success in the future now that our supply lines are open again.  Gudene vil det!",
+      "success_lie": "My scouts say otherwise.",
+      "failure": "Not everyone is cut out for this life, I suppose."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_KILL_MIGOS",
+    "type": "mission_definition",
+    "name": { "str": "At Dooms' Gate" },
+    "goal": "MGOAL_KILL_MONSTER",
+    "description": "Find a mi-go scout tower and kill its residents.",
+    "difficulty": 5,
+    "value": 0,
+    "start": {
+      "assign_mission_target": {
+        "om_terrain": "mi-go_scout_tower_3",
+        "om_special": "Mi-Go Scout Tower",
+        "reveal_radius": 2,
+        "random": false,
+        "min_distance": 2,
+        "z": 3
+      },
+      "update_mapgen": { "place_monster": [ { "monster": "mon_mi_go", "x": [ 1, 21 ], "y": [ 1, 21 ], "target": true } ] }
+    },
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 120 } ] },
+    "origins": [ "ORIGIN_OPENER_NPC" ],
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Clear out a mi-go tower for the Valhallists.",
+      "offer": "We've found more aliens in the area.  My scouts have reported a scout tower for those weird multi limbed aliens showed up recently, and that they might have prisoners inside.  I want you to go over there and kill every last <name_b> you can find, and free those prisoners.  I'm not looking to recruit anyone you free from there, just make sure they're alright.  Come back to me when you're done.",
+      "accepted": "May Thor protect you.",
+      "rejected": "They'll pay with their lives eventually, why wait?.",
+      "advice": "That tower is like a furnace on the interior, the scouts could even feel it from the outside.  They've got to have some source of heat though, so I'd destroy whatever's belching it out.  Also, shoot those <name_b>s from a distance, they'll fuck you up in hand-to-hand fighting.",
+      "inquire": "You're pretty clean for someone who should be killing <name_b>s.",
+      "success": "Those aliens had it coming to them.  You have done Odins' will today.",
+      "success_lie": "I can still hear their screams at night.",
+      "failure": "Not everyone is cut out for this life, I suppose."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_KILL_1000_Z",
+    "type": "mission_definition",
+    "name": { "str": "Exterminate 1000 Zombies" },
+    "goal": "MGOAL_KILL_MONSTER_SPEC",
+    "monster_species": "ZOMBIE",
+    "monster_kill_goal": 1000,
+    "difficulty": 7,
+    "value": 0,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_KILL_MIGOS",
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 500 } ] },
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Kill 1000 zombies for the Valhallists",
+      "offer": "With the recent success we've had in killing the otherworldly threats, we must take grander strides in making the world safe again.  I need you to go out and kill one thousand <zombies> to do your new part in this endeavor.  A handsome reward will be provided upon your return.",
+      "accepted": "May Thor protect you.",
+      "rejected": "If we don't kill them now, they'll only come for us later.  It's better to fight them on our terms.",
+      "advice": "Slay a few at a time, and don't let them surround you.",
+      "inquire": "Are the dead laid to rest?",
+      "success": "You have done a great work for us today.",
+      "success_lie": "My scouts say otherwise.",
+      "failure": "Not everyone is cut out for this life, I suppose."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_GET_3_HAZMAT_SUITS",
+    "type": "mission_definition",
+    "name": { "str": "Obtain 3 Hazmat Suits" },
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 36000,
+    "item": "hazmat_suit",
+    "count": 3,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_GET_30_GLASS_BOTTLES",
+    "end": { "effect": [ { "npc_add_var": "can_loan_hazmat_suits", "type": "general", "value": "yes" } ] },
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Bring me three hazmat suits.",
+      "offer": "Our warriors have been dealing with fungal infestations recently, but we don't have the equipment to properly deal with them.  Their spores have been giving us trouble, so I want you to find three hazmat suits.  With those, we could circumvent their biggest threat while we torch those <mycus_slur>s to the ground.  I'll pay you liberally with whatever we have in stock.",
+      "accepted": "Gudene vil det!",
+      "rejected": "Do you have any better ideas?",
+      "advice": "One of those old waste containment facilities should have a few, along with those labs.",
+      "inquire": "Do you have the suits?",
+      "success": "I can't thank you enough for what you've done.  If you ever need to loan one of them, I'd be glad to lend it.",
+      "success_lie": "I don't see them, <name_b>.",
+      "failure": "I'll have to do it myself, I guess."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_GET_30_GLASS_BOTTLES",
+    "type": "mission_definition",
+    "name": { "str": "Obtain 30 Glass Bottles" },
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 1,
+    "item": "bottle_glass",
+    "count": 30,
+    "value": 3000,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_GET_100_MUSHROOM_SPORES",
+    "end": { "effect": [ { "npc_add_var": "buys_glass_bottles", "type": "general", "value": "yes" } ] },
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Bring me thirty glass bottles.",
+      "offer": "Those hazmat suits really helped out with the fungus problem, but we're in need of incendiaries to burn up those fungal beds.  If you could get me thirty glass bottles, I can provide the rest of what we need for the Molotovs.  How's that sound for a days' work?",
+      "accepted": "Thanks, <name_g>.",
+      "rejected": "Do you have any better ideas?",
+      "advice": "Check some grocery stores or bars in town, they should have a lot.",
+      "inquire": "Do you have the bottles?",
+      "success": "Hopefully that wasn't too hard.  Only problem is, we might run out again.",
+      "success_lie": "I don't see them, <name_b>.",
+      "failure": "I'll have to do it myself, I guess."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_GET_100_MUSHROOM_SPORES",
+    "type": "mission_definition",
+    "name": { "str": "Obtain 100 Mushroom Spores" },
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 1,
+    "item": "seed_mushroom",
+    "count": 100,
+    "value": 10000,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_RESCUE_RAIDERS",
+    "end": { "effect": [ { "npc_add_var": "npc_growing_mushrooms", "type": "timer", "time": true } ] },
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Bring me one hundred mushroom spores.",
+      "offer": "The high gode is starting a project to replace biospheres ravaged by the Mycus, and to make some money on farming.  Right now, I need to get one hundred mushroom spores for him, but I haven't the slightest idea where.  If you could do it, I'd pay fairly for them.",
+      "accepted": "Thanks, <name_g>.",
+      "rejected": "Do you have any better ideas?",
+      "advice": "If you know anything about wild fungi, you could make some starters from those.",
+      "inquire": "Do you have the spores?",
+      "success": "I'll pass these along, then.  They should grow in about a month or so.",
+      "success_lie": "I don't see them, <name_b>.",
+      "failure": "I'll have to do it myself, I guess."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_RESCUE_RAIDERS",
+    "type": "mission_definition",
+    "name": { "str": "Emergency Evac" },
+    "goal": "MGOAL_RECRUIT_NPC",
+    "description": "Rescue a raiding party that got stuck in town.",
+    "difficulty": 5,
+    "value": 0,
+    "start": {
+      "assign_mission_target": {
+        "om_terrain": "house_01_roof",
+        "om_special": "house_01",
+        "reveal_radius": 2,
+        "random": true,
+        "min_distance": 10,
+        "z": 1
+      },
+      "update_mapgen": {
+        "place_npcs": [
+          { "class": "pagan_cult_member_rescue", "x": [ 4, 20 ], "y": [ 5, 14 ], "target": true },
+          { "class": "pagan_cult_member_rescue", "x": [ 4, 20 ], "y": [ 5, 14 ], "target": true },
+          { "class": "pagan_cult_member_rescue", "x": [ 4, 20 ], "y": [ 5, 14 ], "target": true },
+          { "class": "pagan_cult_member_rescue", "x": [ 4, 20 ], "y": [ 5, 14 ], "target": true },
+          { "class": "pagan_cult_member_rescue", "x": [ 4, 20 ], "y": [ 5, 14 ], "target": true }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_spawn_item": "signed_chit", "count": 100 },
+        { "mapgen_update": "valahllist_remove_raiding_party", "om_terrain": "pagan_cult_henge_recreated" }
+      ]
+    },
+    "followup": "MISSION_VALHALLISTS_GET_SPIRAL_STONE",
+    "origins": [ "ORIGIN_OPENER_NPC" ],
+    "has_generic_rewards": false,
+    "deadline_low": 3,
+    "deadline_high": 7,
+    "dialogue": {
+      "describe": "Rescue a raiding party.",
+      "offer": "One of the raiding parties sent out a distress signal.  They're stuck in town on the roof of a house and are surrounded, with only enough supplies for a few days.  I need you to go over there, rescue them, and bring them back alive.",
+      "accepted": "May Thor protect you.",
+      "rejected": "They'll die out there if no one helps!  Have you no mercy?",
+      "advice": "If you don't want to fight anything, sneak them out at night.  If not, bring a melee weapon or a bow; guns will draw out half the city.",
+      "inquire": "Where's the raiding party?",
+      "success": "Blessed be thee, they are saved!  Come, let us rejoice for your deeds!",
+      "success_lie": "Strange, they should've been back by now.",
+      "failure": "I'll go prepare their funerary rites…"
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_GET_SPIRAL_STONE",
+    "type": "mission_definition",
+    "name": { "str": "Season Of The Stones" },
+    "description": "Retrieve a spiral stone.",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 1,
+    "item": "spiral_stone",
+    "count": 1,
+    "value": 0,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_KILL_BANDITS",
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 8 } ] },
+    "dialogue": {
+      "describe": "Bring me a spiral stone.",
+      "offer": "I've been looking into some of those otherworldly things the scouts have documented.  The other day, they went to an old mine, and found it filled with spiral patters.  I want you to bring me one of the stones from that place, so that I may study it.",
+      "accepted": "Thanks, <name_g>.",
+      "rejected": "I can understand if you don't want to.",
+      "advice": "The team turned around after getting in a firefight with something down there, they couldn't describe what.  I'd be careful.",
+      "inquire": "Do you have the stone?",
+      "success": "Hopefully that wasn't too hard.  I should have some results in a couple of days.",
+      "success_lie": "These patterns seem handmade…",
+      "failure": "Ah, well.  I'll see about an alternative."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_KILL_BANDITS",
+    "type": "mission_definition",
+    "name": { "str": "Blood Gulch" },
+    "description": "Eliminate a bandit gang in exchange for <reward_count:signed_chit> chits.",
+    "goal": "MGOAL_ASSASSINATE",
+    "difficulty": 5,
+    "value": 0,
+    "start": {
+      "assign_mission_target": { "om_terrain": "field", "reveal_radius": 1, "random": true },
+      "update_mapgen": {
+        "place_loot": [
+          { "group": "cannedfood", "x": [ 6, 18 ], "y": [ 3, 15 ], "chance": 100 },
+          { "group": "alcohol_bottled_canned", "x": [ 6, 18 ], "y": [ 3, 15 ], "repeat": 5, "chance": 75 },
+          { "group": "trash_forest", "x": [ 6, 18 ], "y": [ 3, 15 ], "repeat": 2, "chance": 75 },
+          { "group": "stash_drugs", "x": [ 6, 18 ], "y": [ 3, 15 ], "repeat": 3, "chance": 75 },
+          { "group": "dresser", "x": [ 9, 10 ], "y": [ 10, 14 ], "chance": 75 },
+          { "group": "softdrugs", "x": [ 9, 10 ], "y": [ 10, 14 ], "repeat": 2, "chance": 50 },
+          { "group": "camping", "x": [ 9, 10 ], "y": [ 10, 14 ], "repeat": 2, "chance": 75 }
+        ],
+        "place_npcs": [
+          { "class": "bandit", "x": 15, "y": 7, "target": true },
+          { "class": "thug", "x": 12, "y": 5, "target": true },
+          { "class": "thug", "x": [ 0, 23 ], "y": [ 0, 23 ], "target": true },
+          { "class": "thug", "x": [ 0, 23 ], "y": [ 0, 23 ], "target": true },
+          { "class": "bandit", "x": [ 0, 23 ], "y": [ 0, 23 ], "target": true },
+          { "class": "bandit", "x": 9, "y": 8, "target": true }
+        ],
+        "place_vehicles": [
+          { "vehicle": "cube_van", "x": 12, "y": 12, "rotation": 270, "fuel": 500, "status": 0, "chance": 100 },
+          { "vehicle": "quad_bike", "x": 18, "y": 7, "rotation": 270, "fuel": 500, "status": 0, "chance": 100 },
+          { "vehicle": "motorcycle", "x": 10, "y": 3, "rotation": 315, "fuel": 500, "status": 0, "chance": 100 },
+          { "vehicle": "motorcycle", "x": 7, "y": 7, "rotation": 90, "fuel": 500, "status": 0, "chance": 70 }
+        ]
+      }
+    },
+    "fail": {
+      "update_mapgen": {
+        "remove_npcs": [ { "class": "bandit", "x": [ 0, 23 ], "y": [ 0, 23 ] }, { "class": "thug", "x": [ 0, 23 ], "y": [ 0, 23 ] } ]
+      }
+    },
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 60 } ] },
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_RESCUE_SLAVES",
+    "has_generic_rewards": false,
+    "deadline_low": 2,
+    "deadline_high": 4,
+    "dialogue": {
+      "describe": "Kill some bandits for me.",
+      "offer": "As of late, we've had some of the Hells Raiders trying to encroach on us and the local area.  We've picked up a radio broadcast for one of their caravans, so I want you to go over and kill every <name_b> who's there.  You'll get a payment from me, and you'll have claim to all the stuff they were carrying.",
+      "accepted": "Be careful out there.  A kjempe!",
+      "rejected": "There's quite a bit in it for you…",
+      "advice": "I'd bring some anti-personnel grenades.",
+      "inquire": "Have you dealt with them?",
+      "success": "Thank you, the world is a better place without those scum.",
+      "success_lie": "The radio must not have shut off, I'm still picking up a broadcast.",
+      "failure": "You let them escape?!"
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_RESCUE_SLAVES",
+    "type": "mission_definition",
+    "name": { "str": "Emancipation" },
+    "goal": "MGOAL_RECRUIT_NPC",
+    "description": "Rescue slaves from a raider encampment for <reward_count:signed_chit> chits.",
+    "difficulty": 15,
+    "value": 0,
+    "start": {
+      "assign_mission_target": {
+        "om_terrain": "bandit_camp_1",
+        "om_special": "bandit_camp",
+        "reveal_radius": 2,
+        "random": false,
+        "min_distance": 10,
+        "z": 0
+      },
+      "update_mapgen": {
+        "place_npcs": [
+          { "class": "slave", "x": 10, "y": 15, "target": true },
+          { "class": "slave", "x": 10, "y": 16, "target": true },
+          { "class": "slave", "x": 11, "y": 15, "target": true }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_spawn_item": "signed_chit", "count": 150 },
+        { "mapgen_update": "valahllist_remove_slaves", "om_terrain": "pagan_cult_henge_recreated" }
+      ]
+    },
+    "origins": [ "ORIGIN_OPENER_NPC" ],
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Emancipate slaves for the Valhallists.",
+      "offer": "We've tracked some bandits back to one of their camps, and our scouts have reported that slaves are being held there.  I need you to destroy the camp and free those slaves, then bring them back here.  We'll give them room and board, and hopefully they'll join us.",
+      "accepted": "May Thor protect you.",
+      "rejected": "Are you certain?  It'll be worth your while.",
+      "advice": "I'd ambush the bandits at night, if it were me.  They've got the perimeter trapped with mines, too.",
+      "inquire": "Where are they?",
+      "success": "The world will be a better place without thieves walking its surface.",
+      "success_lie": "I don't see them anywhere.",
+      "failure": "Its unfortunate, how many fall to barbarism…"
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_GET_25L_acetylene",
+    "type": "mission_definition",
+    "name": { "str": "Obtain 25 liters of acetylene" },
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 0,
+    "item": "acetylene",
+    "count": 100,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_GET_100_welding_rod_steel",
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 552 } ] },
+    "//": "15% upcharge for a delivery fee.",
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Bring me 25 liters of acetylene.",
+      "offer": "With all the repairs we've been doing around here, my team is running low on welding gas.  Without it, I can't fix any busted bikes or make any new ones, so I need you to get me twenty-five liters of acetylene.  I'll pay you well for it.",
+      "accepted": "Thanks, <name_g>.",
+      "rejected": "Those bikes are vital to our operations, we'll collapse without them.",
+      "advice": "I'd check a garage in town.",
+      "inquire": "Do you have the gas?",
+      "success": "This ought'a keep us afloat for a bit.  If you need any mechanical work done, come by and see me.",
+      "success_lie": "I don't see the <swear> gas, <name_b>.",
+      "failure": "I'll have to do it myself, I guess."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_GET_100_welding_rod_steel",
+    "type": "mission_definition",
+    "name": { "str": "Obtain 100 steel welding rods" },
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 0,
+    "item": "welding_rod_steel",
+    "count": 100,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_VALHALLISTS_GET_25_tire_motorbike",
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 69 } ] },
+    "//": "15% upcharge for a delivery fee.",
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Bring me 100 steel welding rods.",
+      "offer": "The acetylene pulled us through, but now we're out of welding rods.  If you could get about 100, I'll buy 'em.",
+      "accepted": "Thanks, <name_g>.",
+      "rejected": "I can't work without them, ya know.",
+      "advice": "I'd check a garage in town, or you could make your own.",
+      "inquire": "Do you have the rods?",
+      "success": "This ought'a keep us afloat for a bit.",
+      "success_lie": "I don't see the rods.",
+      "failure": "I'll have to do it myself, I guess."
+    }
+  },
+  {
+    "id": "MISSION_VALHALLISTS_GET_25_tire_motorbike",
+    "type": "mission_definition",
+    "name": { "str": "Obtain 25 motorbike tires" },
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 0,
+    "item": "tire_motorbike",
+    "count": 25,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "end": { "effect": [ { "u_spawn_item": "signed_chit", "count": 53 } ] },
+    "//": "15% upcharge for a delivery fee.",
+    "has_generic_rewards": false,
+    "dialogue": {
+      "describe": "Bring me 25 car tires.",
+      "offer": "There's been a few too many flats around here, and I'm low on working tires.  If you bring me 25 of them, I'll pay fairly.",
+      "accepted": "Thanks, <name_g>.",
+      "rejected": "You can always walk, if ya want.",
+      "advice": "Some crashed bikes along the highway might have intact wheels.",
+      "inquire": "Do you have the tires?",
+      "success": "This ought'a keep us afloat for a bit.  I'll get the work rolling.",
+      "success_lie": "I don't see the tires.",
+      "failure": "I'll have to do it myself, I guess."
+    }
+  },
+  {
+    "type": "snippet",
+    "category": "<mycus_slur>",
+    "text": [
+      "fungus-fucker",
+      "mushroom fiend",
+      "spore cummer",
+      "'shroom addict",
+      "'shroom-dick",
+      "alien hippie",
+      "yeast infection bastard",
+      "walking fuel-stick"
+    ]
+  },
+  {
+    "type": "npc",
+    "id": "pagan_cult_member",
+    "//": "A generic follower of the Valhallists.",
+    "name_suffix": "valhallist",
+    "class": "NC_VALHALLIST",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_VALHALLIST_MEMBER_1",
+    "faction": "valhallists"
+  },
+  {
+    "type": "npc",
+    "id": "pagan_cult_member_rescue",
+    "//": "Mission-specific, should not spawn naturally.",
+    "name_suffix": "valhallist",
+    "class": "NC_VALHALLIST",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_VALHALLIST_MEMBER_Rescue",
+    "faction": "valhallists"
+  },
+  {
+    "type": "npc",
+    "id": "pagan_cult_shopkeep",
+    "name_suffix": "valhallist",
+    "class": "NC_VALHALLIST_SHOPKEEP",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_VALHALLIST_SHOPKEEPER_1",
+    "mission_offered": "MISSION_VALHALLISTS_GET_3_HAZMAT_SUITS",
+    "faction": "valhallists"
+  },
+  {
+    "type": "npc",
+    "id": "pagan_cult_mechanic",
+    "name_suffix": "valhallist",
+    "class": "NC_VALHALLIST",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_VALHALLIST_MECHANIC_1",
+    "mission_offered": "MISSION_VALHALLISTS_GET_25L_acetylene",
+    "faction": "valhallists"
+  },
+  {
+    "type": "npc",
+    "id": "pagan_cult_gode",
+    "//": "A priest of the Valhallists.",
+    "name_suffix": "gode",
+    "class": "NC_VALHALLIST",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_VALHALLIST_GODE_1",
+    "mission_offered": "MISSION_VALHALLISTS_RESCUE_RAIDERS",
+    "faction": "valhallists"
+  },
+  {
+    "type": "npc",
+    "id": "pagan_cult_leader",
+    "//": "The leader of the Valhallists.",
+    "name_suffix": "high gode",
+    "class": "NC_VALHALLIST",
+    "attitude": 0,
+    "mission": 7,
+    "chat": "TALK_VALHALLIST_LEADER_1",
+    "mission_offered": "MISSION_VALHALLISTS_EXTERMINATE_FUNGAL_BLOOM",
+    "faction": "valhallists"
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_VALHALLIST",
+    "name": { "str": "Valhallist" },
+    "job_description": "I worship the Norse gods.",
+    "traits": [ { "group": "BG_survival_story_RURAL" }, { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "bonus_str": { "rng": [ 2, 5 ] },
+    "weapon_override": "valhallist_weapons",
+    "worn_override": "valhallist_worn",
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ 0, -4 ] } ] } ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "swimming", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "driving", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "gun", "bonus": { "rng": [ 0, 2 ] } }
+    ]
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_SLAVE",
+    "name": { "str": "Slave" },
+    "job_description": "I've had very bad luck recently.",
+    "traits": [ { "group": "BG_survival_story_EVACUEE" }, { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "carry_override": "naked_prisoner",
+    "weapon_override": "naked_prisoner",
+    "worn_override": "slave_worn",
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 4, 2 ] }, { "rng": [ -4, -1 ] } ] } ] } }
+    ]
+  },
+  {
+    "type": "npc_class",
+    "id": "NC_VALHALLIST_SHOPKEEP",
+    "name": { "str": "Valhallist Shopkeeper" },
+    "job_description": "I worship the Norse gods.",
+    "traits": [ { "group": "BG_survival_story_RURAL" }, { "group": "NPC_starting_traits" }, { "group": "Appearance_demographics" } ],
+    "bonus_str": { "rng": [ 2, 5 ] },
+    "bonus_int": { "rng": [ 1, 3 ] },
+    "weapon_override": "valhallist_weapons",
+    "worn_override": "valhallist_worn",
+    "shopkeeper_item_group": [
+      { "group": "valhallist_shopkeep_0" },
+      { "group": "valhallist_shopkeep_1", "trust": 3 },
+      { "group": "valhallist_weapons", "trust": 10 }
+    ],
+    "skills": [
+      { "skill": "ALL", "level": { "mul": [ { "one_in": 3 }, { "sum": [ { "dice": [ 2, 2 ] }, { "rng": [ 0, -4 ] } ] } ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "swimming", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 4 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "driving", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "gun", "bonus": { "rng": [ 0, 2 ] } }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "valhallist_weapons",
+    "subtype": "collection",
+    "entries": [
+      { "group": "guns_pistol_common", "prob": 35 },
+      { "group": "guns_smg_common", "prob": 35 },
+      { "group": "guns_rifle_common", "prob": 35 },
+      { "item": "longsword", "prob": 35 },
+      { "item": "arming_sword", "prob": 35 },
+      { "item": "broadsword", "prob": 35 },
+      { "item": "katana", "prob": 35 },
+      { "item": "mace", "prob": 35 },
+      { "item": "morningstar", "prob": 35 },
+      { "item": "zweihander", "prob": 35 },
+      { "item": "lucern_hammer", "prob": 35 },
+      { "item": "spear_steel", "prob": 35 },
+      { "item": "ax", "prob": 35 },
+      { "item": "bat", "prob": 35 },
+      { "item": "machete", "prob": 35 },
+      { "item": "survivor_machete", "prob": 35 },
+      { "item": "bullwhip", "prob": 35 },
+      { "item": "trimmer_off", "prob": 35, "charges": 600 },
+      { "item": "chainsaw_off", "prob": 35, "charges": 450 },
+      { "item": "elec_chainsaw_off", "prob": 35, "charges": 500 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "valhallist_worn",
+    "subtype": "collection",
+    "entries": [
+      { "item": "armguard_metal", "prob": 100 },
+      { "item": "boots_steel", "prob": 100 },
+      { "item": "helmet_skull", "prob": 100 },
+      { "item": "legguard_metal", "prob": 100 },
+      { "item": "armor_lamellar", "prob": 100 },
+      { "item": "pants", "prob": 100 },
+      { "item": "tshirt", "prob": 100 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "slave_worn",
+    "subtype": "collection",
+    "entries": [ { "item": "pants", "prob": 100 }, { "item": "tshirt", "prob": 100 }, { "item": "boxer_briefs", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "valhallist_shopkeep_0",
+    "subtype": "collection",
+    "entries": [
+      { "group": "condiments" },
+      { "group": "groce_ingredient" },
+      { "group": "groce_bread" },
+      { "group": "pantry_liquids" },
+      { "group": "dry_goods" },
+      { "group": "preserved_food" },
+      { "group": "homebooks" },
+      { "group": "manuals" },
+      { "group": "textbooks" },
+      { "group": "tools_common" },
+      { "group": "tools_workshop" },
+      { "group": "tools_home" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "valhallist_shopkeep_1",
+    "subtype": "collection",
+    "entries": [
+      { "group": "homebooks" },
+      { "group": "manuals" },
+      { "group": "textbooks" },
+      { "group": "drugs_heal_simple" },
+      { "group": "drugs_emergency" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_GODE_1",
+    "dynamic_line": "Hallo, reisendre.  What is it you want?",
+    "speaker_effect": { "effect": { "npc_first_topic": "TALK_VALHALLIST_GODE_2" } },
+    "responses": [
+      { "text": "Who are you, exactly?", "topic": "TALK_VALHALLIST_GODE_WHO" },
+      { "text": "What's your deal here?", "topic": "TALK_VALHALLIST_GODE_Job" },
+      { "text": "I don't need anything, just gotta got.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_GODE_2",
+    "dynamic_line": "Hello again, how can I help you?",
+    "responses": [
+      { "text": "I'm sorry, who are you again?", "topic": "TALK_VALHALLIST_GODE_WHO" },
+      { "text": "What's your deal here?", "topic": "TALK_VALHALLIST_GODE_Job" },
+      {
+        "text": "Do you mind if we just talk a bit?",
+        "condition": { "not": { "npc_has_effect": "asked_to_socialize" } },
+        "topic": "TALK_FRIEND_CHAT"
+      },
+      {
+        "text": "Any jobs you need done?",
+        "condition": {
+          "and": [
+            { "u_has_var": "u_joined_valhallists", "type": "general", "value": "yes" },
+            { "not": "has_assigned_mission" },
+            { "not": "has_many_assigned_missions" }
+          ]
+        },
+        "topic": "TALK_MISSION_LIST"
+      },
+      { "text": "A pleasure chatting.  Gotta go!", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_GODE_WHO",
+    "dynamic_line": "I'm a wanderer like you who found purpose and a home with the gods.  I'm not who I was, but somebody new.  A disciple of the truth to spread the word of the mighty.",
+    "responses": [
+      { "text": "What are you a prophet of?", "topic": "TALK_VALHALLIST_GODE_Religion" },
+      { "text": "What is that purpose?", "topic": "TALK_VALHALLIST_GODE_PURPOSE" },
+      { "text": "I have to go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_GODE_PURPOSE",
+    "dynamic_line": "That purpose is to serve the true lords of this world, and enter Valhalla on some coming day.  There I will not worry about the wandering dead, but see the might of battle and feast with those worthy.  Odin the Allfather will smile on me that day, and everyone I brought with me.",
+    "responses": [
+      { "text": "Let's talk about something else.", "topic": "TALK_VALHALLIST_GODE_2" },
+      { "text": "Good luck with that.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_GODE_Job",
+    "dynamic_line": "This is our holy henge devoted to the gods.  Here we stay between pillaging the ruins of the old world, perform our rites for divine favor, and feast in merriment.  We all help each other in these trying times, united in our divine strength and sharp blades.  I help guide our warriors in battle and feast.",
+    "responses": [
+      { "text": "What are you guiding them toward?", "topic": "TALK_VALHALLIST_GODE_Religion" },
+      { "text": "How could I get in on this?", "topic": "TALK_VALHALLIST_GODE_Join" },
+      { "text": "Enjoy yourself then, I have to go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_GODE_Join",
+    "dynamic_line": "Our leader should be around here somewhere, likely in their hall.  While I can teach you about our way, they're the ones who could let you join us.  Gudene vil det!",
+    "responses": [ { "text": "Thanks.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_GODE_Religion",
+    "dynamic_line": "It seems likely you wouldn't know.  Before there was anything in the world, there was fires of Muspelhiem and the frigid ice of Niflheim.  When these two came together, the ice melted and became the first of the giants, Ymir.  As he slept, more giants sprung from his sweat and saliva.  From the melt came the cow Audhumla, who licked away the ice until she uncovered Buri, the first of the gods.  His children were Odin, Vili, and Ve; who slew Ymir to fashion the world from him.  They made the first people, Ask and Embla.  Odin fashioned all things which we see, but the destructive giants opposed and fought him; these undead which invaded the earth came from Hel as an army of the dead during Ragnarok.  As foretold in Vafthrúdnismál, Vidar and some of the younger generation of gods will create a new world.  Only then shall we undo <the_cataclysm>, and fashion the world anew.",
+    "responses": [
+      { "text": "Let's talk about something else.", "topic": "TALK_VALHALLIST_GODE_2" },
+      { "text": "How could I help you?", "topic": "TALK_VALHALLIST_GODE_Join" },
+      { "text": "Good luck with that.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_1",
+    "dynamic_line": "Who are you to come before me?",
+    "speaker_effect": { "effect": { "npc_first_topic": "TALK_VALHALLIST_LEADER_2" } },
+    "responses": [
+      { "text": "I don't know, who are you?", "topic": "TALK_VALHALLIST_LEADER_WHO" },
+      { "text": "I'll leave.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_2",
+    "dynamic_line": "Hello again.  What do you want?",
+    "responses": [
+      {
+        "text": "Do you think I could join your organization?",
+        "topic": "TALK_VALHALLIST_LEADER_Join",
+        "condition": { "not": { "u_has_var": "u_joined_valhallists", "type": "general", "value": "yes" } }
+      },
+      {
+        "text": "Any jobs you need done?",
+        "condition": {
+          "and": [
+            { "u_has_var": "u_joined_valhallists", "type": "general", "value": "yes" },
+            { "not": "has_assigned_mission" },
+            { "not": "has_many_assigned_missions" }
+          ]
+        },
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "switch": true,
+        "default": true,
+        "text": "Could you tell me more about yourself?",
+        "condition": { "not": { "u_has_var": "u_know_valhallistslore", "type": "dialogue", "value": "yes" } },
+        "trial": { "type": "PERSUADE", "difficulty": 20 },
+        "success": { "topic": "TALK_VALHALLIST_LEADER_Backstory", "opinion": { "trust": 1, "value": 1 } },
+        "failure": { "topic": "TALK_VALHALLIST_LEADER_No_Talk" }
+      },
+      {
+        "text": "Could you tell me more about yourself?",
+        "condition": { "u_has_var": "u_know_valhallistslore", "type": "dialogue", "value": "yes" },
+        "topic": "TALK_VALHALLIST_LEADER_Told_U"
+      },
+      { "text": "I gotta go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_WHO",
+    "dynamic_line": "That's very funny of you, but I'm not interested in humor.  Since you ask, I'm the head around here, the best warrior who leads.  What I want to know is why you're here, hmm?",
+    "responses": [
+      { "text": "I'm just passing through, really.", "topic": "TALK_VALHALLIST_LEADER_Traveler" },
+      {
+        "text": "It's a big claim to say you're the best.  Want to test that?",
+        "topic": "TALK_VALHALLIST_LEADER_Fight"
+      },
+      { "text": "I'll leave.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Traveler",
+    "dynamic_line": "That's quite common these days, a lot of people have nowhere to go.  Fortunately, myself and my followers have a home protected from the outside world, with enough material to lead a comfortable life.  If need be, we can protect it ourselves.",
+    "responses": [
+      { "text": "Do you think I could join?", "topic": "TALK_VALHALLIST_LEADER_Join" },
+      { "text": "I need to go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Join",
+    "dynamic_line": "We don't just take anyone in here, only the strongest and worthy will prevail.  If you want to test your strength, my scouts have noticed a gargantuan rat wandering close to here.  It's already tried to kill somebody once, and since I can't let it live, you're going to be the one to put it to rest.  Once you've done that, I'll let you in.",
+    "responses": [
+      {
+        "text": "I'll kill it for you.  If I don't come back, see you in Valhalla.",
+        "topic": "TALK_DONE",
+        "condition": { "not": { "u_has_mission": "MISSION_JOIN_VALHALLISTS" } },
+        "effect": [ { "add_mission": "MISSION_JOIN_VALHALLISTS" } ]
+      },
+      {
+        "text": "I'm not the strongest person around here, you better get someone else to do it.",
+        "condition": { "not": { "u_has_mission": "MISSION_JOIN_VALHALLISTS" } },
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "You already told me.  I better get back to it.",
+        "condition": { "u_has_mission": "MISSION_JOIN_VALHALLISTS" },
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Fight",
+    "dynamic_line": "I'll take your offer, but I would advise that you're making an unwise choice in a duel against me.",
+    "responses": [
+      { "text": "I don't think so.  See you in Valhalla.", "topic": "TALK_DONE", "effect": "hostile" },
+      { "text": "You're right, I better not.  Bye.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_No_Talk",
+    "dynamic_line": "No, that information I'd rather not share right now.  Besides, I have work to do.",
+    "responses": [ { "text": "<done_conversation_section>", "topic": "TALK_NONE" }, { "text": "<end_talking>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Told_U",
+    "dynamic_line": "We already talked about that.  It's something I'd rather not go over again.",
+    "responses": [ { "text": "<done_conversation_section>", "topic": "TALK_NONE" }, { "text": "<end_talking>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_1",
+    "dynamic_line": "Hallo, reisendre.  What is it you want?",
+    "speaker_effect": { "effect": { "npc_first_topic": "TALK_VALHALLIST_MECHANIC_2" } },
+    "responses": [
+      { "text": "Who are you, exactly?", "topic": "TALK_VALHALLIST_MECHANIC_WHO" },
+      { "text": "What's your deal here?", "topic": "TALK_VALHALLIST_MECHANIC_Job" },
+      { "text": "I don't need anything, just gotta got.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_WHO",
+    "dynamic_line": "I'm a wanderer like you who found purpose and a home with the gods.  I'm not who I was, but somebody new.",
+    "responses": [
+      { "text": "What is that purpose?", "topic": "TALK_VALHALLIST_MECHANIC_PURPOSE" },
+      { "text": "I have to go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_PURPOSE",
+    "dynamic_line": "That purpose is to serve the true lords of this world, and enter Valhalla on some coming day.  There I will not worry about the wandering dead, but see the might of battle and feast with those worthy.  Odin the Allfather will smile on me that day.",
+    "responses": [
+      { "text": "Let's talk about something else.", "topic": "TALK_VALHALLIST_MECHANIC_2" },
+      { "text": "Good luck with that.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_2",
+    "dynamic_line": "Here to do business?",
+    "responses": [
+      { "text": "I'm sorry, who are you again?", "topic": "TALK_VALHALLIST_MECHANIC_WHO" },
+      { "text": "What's your deal here?", "topic": "TALK_VALHALLIST_MECHANIC_Job" },
+      {
+        "text": "Do you mind if we just talk a bit?",
+        "condition": { "not": { "npc_has_effect": "asked_to_socialize" } },
+        "topic": "TALK_FRIEND_CHAT"
+      },
+      {
+        "text": "Any jobs you need done?",
+        "condition": {
+          "and": [
+            { "u_has_var": "u_joined_valhallists", "type": "general", "value": "yes" },
+            { "not": "has_assigned_mission" },
+            { "not": "has_many_assigned_missions" }
+          ]
+        },
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "text": "Would you be willing to sell a car?",
+        "condition": { "not": { "npc_has_var": "currently_busy", "type": "general", "value": "yes" } },
+        "topic": "TALK_VALHALLIST_MECHANIC_Buy_Vehicles"
+      },
+      {
+        "text": "I'm here to pick up my order.",
+        "condition": { "npc_compare_time_since_var": "npc_making_car", "type": "timer", "op": ">=", "time": "3 d" },
+        "topic": "TALK_VALHALLIST_MECHANIC_Pick_Up_Vehicles"
+      },
+      {
+        "text": "I'm here to pick up my order.",
+        "condition": { "npc_compare_time_since_var": "npc_making_car", "type": "timer", "op": "<", "time": "3 d" },
+        "topic": "TALK_VALHALLIST_MECHANIC_Not_Ready"
+      },
+      { "text": "A pleasure chatting.  Gotta go!", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_Job",
+    "dynamic_line": "I'm a mechanic.  I do maintenance work on all the vehicles around here, even some non-automotive machinery.",
+    "responses": [
+      { "text": "Good to know.", "topic": "TALK_NONE" },
+      { "text": "A pleasure chatting.  Gotta go!", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_Buy_Vehicles",
+    "dynamic_line": "Sure, I'll get something for you.  I specialize in bikes of any sort, and I'll have it to you in reasonable time; all payments are upfront in signed chit.  So, what would you like?",
+    "responses": [
+      {
+        "text": "[200$]  I'll take a bicycle.",
+        "condition": { "u_has_items": { "item": "signed_chit", "count": 80 } },
+        "effect": [
+          { "npc_add_var": "npc_making_car", "type": "timer", "time": true },
+          { "npc_add_var": "currently_busy", "type": "general", "value": "yes" },
+          { "npc_add_var": "u_want_bicycle", "type": "general", "value": "yes" },
+          { "u_sell_item": "signed_chit", "count": 80 }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[400$]  I'll take a mountain bike.",
+        "condition": { "u_has_items": { "item": "signed_chit", "count": 160 } },
+        "effect": [
+          { "npc_add_var": "npc_making_car", "type": "timer", "time": true },
+          { "npc_add_var": "u_want_bicycle_dirt", "type": "general", "value": "yes" },
+          { "npc_add_var": "currently_busy", "type": "general", "value": "yes" },
+          { "u_sell_item": "signed_chit", "count": 160 }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[550$]  I'll take an electric bike.",
+        "condition": { "u_has_items": { "item": "signed_chit", "count": 220 } },
+        "effect": [
+          { "npc_add_var": "npc_making_car", "type": "timer", "time": true },
+          { "npc_add_var": "u_want_bicycle_electric", "type": "general", "value": "yes" },
+          { "npc_add_var": "currently_busy", "type": "general", "value": "yes" },
+          { "u_sell_item": "signed_chit", "count": 220 }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[750$]  I'll take a dirt bike.",
+        "condition": { "u_has_items": { "item": "signed_chit", "count": 300 } },
+        "effect": [
+          { "npc_add_var": "npc_making_car", "type": "timer", "time": true },
+          { "npc_add_var": "u_want_motorcycle_enduro", "type": "general", "value": "yes" },
+          { "npc_add_var": "currently_busy", "type": "general", "value": "yes" },
+          { "u_sell_item": "signed_chit", "count": 300 }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[900$]  I'll take a motorcycle.",
+        "condition": { "u_has_items": { "item": "signed_chit", "count": 360 } },
+        "effect": [
+          { "npc_add_var": "npc_making_car", "type": "timer", "time": true },
+          { "npc_add_var": "u_want_motorcycle_sidecart", "type": "general", "value": "yes" },
+          { "npc_add_var": "currently_busy", "type": "general", "value": "yes" },
+          { "u_sell_item": "signed_chit", "count": 360 }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[1,200$]  I'll take a scooter.",
+        "condition": { "u_has_items": { "item": "signed_chit", "count": 480 } },
+        "effect": [
+          { "npc_add_var": "npc_making_car", "type": "timer", "time": true },
+          { "npc_add_var": "u_want_scooter", "type": "general", "value": "yes" },
+          { "npc_add_var": "currently_busy", "type": "general", "value": "yes" },
+          { "u_sell_item": "signed_chit", "count": 480 }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "[2,000$]  I'll take a electric scooter.",
+        "condition": { "u_has_items": { "item": "signed_chit", "count": 800 } },
+        "effect": [
+          { "npc_add_var": "npc_making_car", "type": "timer", "time": true },
+          { "npc_add_var": "u_want_scooter_electric", "type": "general", "value": "yes" },
+          { "npc_add_var": "currently_busy", "type": "general", "value": "yes" },
+          { "u_sell_item": "signed_chit", "count": 800 }
+        ],
+        "topic": "TALK_DONE"
+      },
+      { "text": "I've changed my mind, I don't want anything.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_Pick_Up_Vehicles",
+    "dynamic_line": "It's ready!  I'll pull it around here for ya.",
+    "responses": [
+      {
+        "text": "Thanks.",
+        "condition": { "npc_has_var": "u_want_bicycle", "type": "general", "value": "yes" },
+        "effect": [
+          { "mapgen_update": "valahllist_place_bicycle", "om_terrain": "pagan_cult_long_wall_recreated" },
+          { "npc_lose_var": "currently_busy", "type": "general" },
+          { "npc_lose_var": "npc_making_car", "type": "timer" },
+          { "npc_lose_var": "u_want_bicycle", "type": "general" }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Thanks.",
+        "condition": { "npc_has_var": "u_want_bicycle_dirt", "type": "general", "value": "yes" },
+        "effect": [
+          { "mapgen_update": "valahllist_place_bicycle_dirt", "om_terrain": "pagan_cult_long_wall_recreated" },
+          { "npc_lose_var": "currently_busy", "type": "general" },
+          { "npc_lose_var": "npc_making_car", "type": "timer" },
+          { "npc_lose_var": "u_want_bicycle_dirt", "type": "general" }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Thanks.",
+        "condition": { "npc_has_var": "u_want_bicycle_electric", "type": "general", "value": "yes" },
+        "effect": [
+          { "mapgen_update": "valahllist_place_bicycle_electric", "om_terrain": "pagan_cult_long_wall_recreated" },
+          { "npc_lose_var": "currently_busy", "type": "general" },
+          { "npc_lose_var": "npc_making_car", "type": "timer" },
+          { "npc_lose_var": "u_want_bicycle_electric", "type": "general" }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Thanks.",
+        "condition": { "npc_has_var": "u_want_motorcycle_enduro", "type": "general", "value": "yes" },
+        "effect": [
+          { "mapgen_update": "valahllist_place_motorcycle_enduro", "om_terrain": "pagan_cult_long_wall_recreated" },
+          { "npc_lose_var": "currently_busy", "type": "general" },
+          { "npc_lose_var": "npc_making_car", "type": "timer" },
+          { "npc_lose_var": "u_want_motorcycle_enduro", "type": "general" }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Thanks.",
+        "condition": { "npc_has_var": "u_want_motorcycle_sidecart", "type": "general", "value": "yes" },
+        "effect": [
+          { "mapgen_update": "valahllist_place_motorcycle_sidecart", "om_terrain": "pagan_cult_long_wall_recreated" },
+          { "npc_lose_var": "currently_busy", "type": "general" },
+          { "npc_lose_var": "npc_making_car", "type": "timer" },
+          { "npc_lose_var": "u_want_motorcycle_sidecart", "type": "general" }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Thanks.",
+        "condition": { "npc_has_var": "u_want_scooter", "type": "general", "value": "yes" },
+        "effect": [
+          { "mapgen_update": "valahllist_place_scooter", "om_terrain": "pagan_cult_long_wall_recreated" },
+          { "npc_lose_var": "currently_busy", "type": "general" },
+          { "npc_lose_var": "npc_making_car", "type": "timer" },
+          { "npc_lose_var": "u_want_scooter", "type": "general" }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Thanks.",
+        "condition": { "npc_has_var": "u_want_scooter_electric", "type": "general", "value": "yes" },
+        "effect": [
+          { "mapgen_update": "valahllist_place_scooter_electric", "om_terrain": "pagan_cult_long_wall_recreated" },
+          { "npc_lose_var": "currently_busy", "type": "general" },
+          { "npc_lose_var": "npc_making_car", "type": "timer" },
+          { "npc_lose_var": "u_want_scooter_electric", "type": "general" }
+        ],
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MECHANIC_Not_Ready",
+    "dynamic_line": "Sorry, it's not ready yet.  Wait a bit and come back later.",
+    "responses": [ { "text": "Okay.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_1",
+    "dynamic_line": "Hallo, reisendre.  What is it you want?",
+    "speaker_effect": { "effect": { "npc_first_topic": "TALK_VALHALLIST_MEMBER_2" } },
+    "responses": [
+      { "text": "Who are you, exactly?", "topic": "TALK_VALHALLIST_MEMBER_WHO" },
+      { "text": "What's your deal here?", "topic": "TALK_VALHALLIST_MEMBER_Job" },
+      { "text": "I don't need anything, just gotta got.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_2",
+    "dynamic_line": "Hello again.  What's up?",
+    "responses": [
+      { "text": "I'm sorry, who are you again?", "topic": "TALK_VALHALLIST_MEMBER_WHO" },
+      { "text": "What's your deal here?", "topic": "TALK_VALHALLIST_MEMBER_Job" },
+      {
+        "text": "Do you mind if we just talk a bit?",
+        "condition": { "not": { "npc_has_effect": "asked_to_socialize" } },
+        "topic": "TALK_FRIEND_CHAT"
+      },
+      { "text": "A pleasure chatting.  Gotta go!", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_WHO",
+    "dynamic_line": "I'm a wanderer like you who found purpose and a home with the gods.  I'm not who I was, but somebody new.",
+    "responses": [
+      { "text": "What is that purpose?", "topic": "TALK_VALHALLIST_MEMBER_PURPOSE" },
+      { "text": "I have to go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_PURPOSE",
+    "dynamic_line": "That purpose is to serve the true lords of this world, and enter Valhalla on some coming day.  There I will not worry about the wandering dead, but see the might of battle and feast with those worthy.  Odin the Allfather will smile on me that day.",
+    "responses": [
+      { "text": "Let's talk about something else.", "topic": "TALK_VALHALLIST_MEMBER_2" },
+      { "text": "Good luck with that.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_Job",
+    "dynamic_line": "This is our holy henge devoted to the gods.  Here we stay between pillaging the ruins of the old world, perform our rites for divine favor, and feast in merriment.  We all help each other in these trying times, united in our divine strength and sharp blades.",
+    "responses": [
+      { "text": "How could I get in on this?", "topic": "TALK_VALHALLIST_MEMBER_Join" },
+      { "text": "Enjoy yourself then, I have to go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_Join",
+    "dynamic_line": "Our leader should be around here somewhere, likely in their hall.  They're the ones who could guide you proper.  Gudene vil det!",
+    "responses": [ { "text": "Thanks.", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_Rescue",
+    "dynamic_line": [
+      "*prays unintelligibly.",
+      "Great Tyr, defendeth me.",
+      "Just in time for the party.  Get your sword ready!",
+      "Hallelujah, rescue!",
+      "I can't believe my eyes.  Thank you, thank you!"
+    ],
+    "responses": [
+      {
+        "text": "Get up, we're going home.",
+        "topic": "TALK_DONE",
+        "effect": [ { "npc_first_topic": "TALK_VALHALLIST_MEMBER_Rescue_2" }, "follow_only" ]
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_MEMBER_Rescue_2",
+    "dynamic_line": [ "What's up?" ],
+    "responses": [
+      { "text": "I want you to follow me.", "topic": "TALK_DONE", "effect": "follow_only" },
+      { "text": "I want you to stop following me.", "topic": "TALK_DONE", "effect": "stop_following" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_1",
+    "dynamic_line": "Hallo, reisendre.  What can I get for you?",
+    "speaker_effect": { "effect": { "npc_first_topic": "TALK_VALHALLIST_SHOPKEEPER_2" } },
+    "responses": [
+      { "text": "Who are you, exactly?", "topic": "TALK_VALHALLIST_SHOPKEEPER_WHO" },
+      { "text": "What's your deal here?", "topic": "TALK_VALHALLIST_SHOPKEEPER_Job" },
+      { "text": "I don't need anything, just gotta got.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_2",
+    "dynamic_line": "Hello again, <name_g>.  What would you like today?",
+    "responses": [
+      { "text": "I'm sorry, who are you again?", "topic": "TALK_VALHALLIST_SHOPKEEPER_WHO" },
+      { "text": "I need some supplies.", "effect": "start_trade", "topic": "TALK_VALHALLIST_SHOPKEEPER_2" },
+      {
+        "text": "Do you have any jobs you need done?",
+        "condition": {
+          "and": [
+            { "u_has_var": "u_joined_valhallists", "type": "general", "value": "yes" },
+            { "not": "has_assigned_mission" },
+            { "not": "has_many_assigned_missions" }
+          ]
+        },
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "text": "I'd like to loan a hazmat suit.",
+        "condition": {
+          "and": [
+            { "not": { "npc_has_var": "u_loaned_suit", "type": "general", "value": "yes" } },
+            { "npc_has_var": "can_loan_hazmat_suits", "type": "general", "value": "yes" }
+          ]
+        },
+        "topic": "TALK_VALHALLIST_SHOPKEEPER_Loan_Hazmat"
+      },
+      {
+        "text": "I'd like to return a hazmat suit.",
+        "condition": {
+          "and": [
+            { "u_has_item": "hazmat_suit" },
+            { "npc_has_var": "u_loaned_suit", "type": "general", "value": "yes" }
+          ]
+        },
+        "topic": "TALK_VALHALLIST_SHOPKEEPER_Return_Hazmat"
+      },
+      {
+        "text": "Do you want to buy any more Molotov containers?",
+        "condition": { "npc_has_var": "buys_glass_bottles", "type": "general", "value": "yes" },
+        "topic": "TALK_VALHALLIST_SHOPKEEPER_Buy_Glass_Bottles"
+      },
+      {
+        "text": "How are those mushrooms coming along?",
+        "condition": {
+          "npc_compare_time_since_var": "npc_growing_mushrooms",
+          "type": "timer",
+         
+          "op": ">=",
+          "time": "30 d"
+        },
+        "topic": "TALK_VALHALLIST_SHOPKEEPER_Sell_Mushrooms"
+      },
+      {
+        "text": "Do you mind if we just talk a bit?",
+        "condition": { "not": { "npc_has_effect": "asked_to_socialize" } },
+        "topic": "TALK_FRIEND_CHAT"
+      },
+      { "text": "A pleasure chatting.  Gotta go!", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_WHO",
+    "dynamic_line": "I'm the warehouse manager, I just keep track of what we have at the moment.  Its not as exciting as what the warriors do, but its a necessary job.",
+    "responses": [
+      { "text": "What's your job around here?", "topic": "TALK_VALHALLIST_SHOPKEEPER_Job" },
+      { "text": "That's cool, but I gotta got.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_Job",
+    "dynamic_line": "This is our warehouse, which I run and stock.  We've got everything here from our scavenging runs; books, food, tools, materials, you name it.  I'd be willing to sell a few things for the right price.",
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_VALHALLIST_SHOPKEEPER_WHO" },
+      { "text": "Lets talk business, then.", "effect": "start_trade", "topic": "TALK_VALHALLIST_SHOPKEEPER_2" },
+      { "text": "That's cool, but I gotta got.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_Loan_Hazmat",
+    "dynamic_line": "Certianly <name_g>, they've been a real help for us recently.  I can only spare one at a time though, so make sure to bring it back.",
+    "responses": [
+      {
+        "text": "Thanks.  I'll return it when I'm done.",
+        "effect": [
+          { "u_spawn_item": "hazmat_suit" },
+          { "npc_add_var": "u_loaned_suit", "type": "general", "value": "yes" }
+        ],
+        "topic": "TALK_DONE"
+      },
+      { "text": "I think I'll hold off on renting it for now.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_Return_Hazmat",
+    "dynamic_line": "Thanks <name_g>, hope it worked well for ya.",
+    "responses": [
+      {
+        "text": "You're welcome.  I might be back for it in the future.",
+        "effect": [ { "u_sell_item": "hazmat_suit" }, { "npc_lose_var": "u_loaned_suit", "type": "general" } ],
+        "topic": "TALK_DONE"
+      },
+      { "text": "I've changed my mind, I'll return it later.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_Sell_Mushrooms",
+    "dynamic_line": "They're doing great!  In fact, we've started selling them for some extra profit, if you'd like any.  Twenty of 'em for two dollars is the going rate.",
+    "responses": [
+      { "text": "I'd like some.", "effect": [ { "u_buy_item": "mushroom", "cost": 200, "count": 20 } ], "topic": "TALK_DONE" },
+      { "text": "I don't think I want any, but thanks anyways.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_SHOPKEEPER_Buy_Glass_Bottles",
+    "dynamic_line": "Sure, we could always use more of them.  Show me what you've got, and we'll square out a deal.",
+    "//": "Includes some things besides glass bottles, assuming it shatters easily and you could stick a rag in it if filled with oil.  Some of these could be used to make larger or smaller molotovs, with a glass bottle being a 'medium' size.",
+    "repeat_responses": {
+      "for_item": [ "bottle_glass", "flask_glass", "clay_canister", "jar_3l_glass_sealed", "jar_glass_sealed" ],
+      "response": { "text": "I have <topic_item>.", "topic": "TALK_DELIVER_ASK" }
+    },
+    "responses": [
+      {
+        "text": "I don't have anything at the moment.  Could we talk about something else?",
+        "topic": "TALK_VALHALLIST_SHOPKEEPER_2"
+      },
+      { "text": "I don't have anything at the moment, and I should be going.  Bye!", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Backstory",
+    "dynamic_line": "I suppose I can trust you that much.  What do you want to know?",
+    "responses": [
+      { "text": "What did you do before <the_cataclysm>?", "topic": "TALK_VALHALLIST_LEADER_Ex_Job" },
+      { "text": "How did you come to power here?", "topic": "TALK_VALHALLIST_LEADER_Position" },
+      { "text": "When did you build this place?", "topic": "TALK_VALHALLIST_LEADER_Compound" },
+      { "text": "<done_conversation_section>", "topic": "TALK_VALHALLIST_LEADER_2" },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Ex_Job",
+    "dynamic_line": "I was a big history buff back then, but I worked in dead-end accounting for a university.  I had three friends who I hung with after-hours; we were out on the town when <the_cataclysm> came.",
+    "responses": [
+      { "text": "When did you build this place?", "topic": "TALK_VALHALLIST_LEADER_Compound" },
+      { "text": "<done_conversation_section>", "topic": "TALK_VALHALLIST_LEADER_2" },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Compound",
+    "dynamic_line": "One of my buddies wanted to get in the re-enacting business, so they started setting up this place as a to-scale model of what a Norse fort might have looked like.  I was planning on getting in to it with them, but <the_cataclysm> put a stop to it.  We came here from town, found the place wasn't occupied by those horrors, and set up camp here.  The Norse-obsessed guy decided to make a full religion out of it, and managed to bring back a large group fleeing one of those FEMA camps.",
+    "responses": [
+      { "text": "What did you do before <the_cataclysm>?", "topic": "TALK_VALHALLIST_LEADER_Ex_Job" },
+      { "text": "How did you come to power here?", "topic": "TALK_VALHALLIST_LEADER_Position" },
+      { "text": "<done_conversation_section>", "topic": "TALK_VALHALLIST_LEADER_2" },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Position",
+    "dynamic_line": "One of my buddies was the head before me.  They were really interested in Norse mythology, almost obsessed with it.  After <the_cataclysm>, they started preaching to a group who ran from town, and set up here.  I followed along, not wanting to abandon them in the wilderness.",
+    "responses": [
+      { "text": "What did you do before <the_cataclysm>?", "topic": "TALK_VALHALLIST_LEADER_Ex_Job" },
+      { "text": "What happened after that?", "topic": "TALK_VALHALLIST_LEADER_Position_2" },
+      { "text": "<done_conversation_section>", "topic": "TALK_VALHALLIST_LEADER_2" },
+      { "text": "<end_talking>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Position_2",
+    "dynamic_line": "We were out on a routine scavenging run one day, like we'd done many times before.  Some horde followed us out of town, and we had to fight them off.  Something was off about this one zombie though, huge and burly towards the back.  We managed to handle the rest of them easy, but this one guy was a bit much for the three of us…",
+    "responses": [ { "text": "I'm guessing that didn't go well.", "topic": "TALK_VALHALLIST_LEADER_Position_3" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_VALHALLIST_LEADER_Position_3",
+    "dynamic_line": "*begins to weep, hanging their head down.*  \"I'm sorry, I couldn't save them.  They all died to that horrid monster.  I buried all three of them, and was chosen to rule by a will one of them left.  I realized then that my friend was right; only the strong survive, and only the strong live long enough to enjoy that.",
+    "speaker_effect": { "effect": { "u_add_var": "u_know_valhallistslore", "type": "dialogue", "value": "yes" } },
+    "responses": [
+      { "text": "I'm sorry for your loss.  <done_conversation_section>", "topic": "TALK_VALHALLIST_LEADER_2" },
+      { "text": "I'm sorry for your loss, I should get going.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "faction",
+    "id": "slaves",
+    "name": "Enslaved individuals",
+    "likes_u": 0,
+    "respects_u": 0,
+    "known_by_u": false,
+    "size": 1,
+    "power": 1,
+    "food_supply": 1,
+    "wealth": 1,
+    "relations": {
+      "slaves": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "hells_raiders": {
+        "kill on sight": false,
+        "watch your back": false,
+        "share my stuff": false,
+        "guard your stuff": false,
+        "lets you in": false,
+        "defends your space": false,
+        "knows your voice": false
+      },
+      "free_merchants": { "kill on sight": false },
+      "old_guard": { "kill on sight": false },
+      "your_followers": { "kill on sight": false }
+    },
+    "description": "Individuals who have been enslaved or held prisoner for a long period of time, for various reasons."
+  },
+  {
+    "type": "faction",
+    "id": "valhallists",
+    "name": "Norse Evangelicals",
+    "likes_u": 2,
+    "respects_u": 0,
+    "known_by_u": false,
+    "size": 100,
+    "power": 100,
+    "food_supply": 172800,
+    "wealth": 25000,
+    "currency": "signed_chit",
+    "relations": {
+      "valhallists": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "your_followers": {
+        "kill on sight": false,
+        "watch your back": false,
+        "share my stuff": false,
+        "guard your stuff": false,
+        "lets you in": true,
+        "defends your space": false,
+        "knows your voice": false
+      },
+      "marloss": { "kill on sight": true },
+      "hells_raiders": { "kill on sight": true }
+    },
+    "description": "A band of people practicing 'Asatro' or 'Forn Sidr'; the worship of the Norse pantheon.  Thay have the common goal of recruiting new members, entering Valhalla, and exterminating the Marloss Evangelists; whom they deem heretics."
+  },
+  {
+    "type": "overmap_special",
+    "id": "valhalla_cult_recreated",
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "pagan_cult_henge_recreated_north" },
+      { "point": [ -1, 0, 0 ], "overmap": "pagan_cult_long_wall_recreated_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "pagan_cult_long_wall_recreated_south" },
+      { "point": [ 0, -1, 0 ], "overmap": "pagan_cult_longhouse_recreated_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "pagan_cult_enter_recreated_north" },
+      { "point": [ 1, -1, 0 ], "overmap": "pagan_cult_right_corner_recreated_up_north" },
+      { "point": [ -1, -1, 0 ], "overmap": "pagan_cult_left_corner_recreated_up_north" },
+      { "point": [ 1, 1, 0 ], "overmap": "pagan_cult_right_corner_recreated_north" },
+      { "point": [ -1, 1, 0 ], "overmap": "pagan_cult_left_corner_recreated_north" }
+    ],
+    "locations": [ "land" ],
+    "city_distance": [ 8, 30 ],
+    "occurrences": [ 30, 70 ],
+    "flags": [ "CLASSIC", "UNIQUE", "MAN_MADE" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": [
+      "pagan_cult_enter_recreated",
+      "pagan_cult_right_corner_recreate",
+      "pagan_cult_right_corner_recreated_up",
+      "pagan_cult_left_corner_recreated",
+      "pagan_cult_left_corner_recreated_up",
+      "pagan_cult_long_wall_recreated"
+    ],
+    "name": "wall",
+    "sym": "W",
+    "color": "brown",
+    "see_cost": 5,
+    "flags": [ "RISK_LOW", "SOURCE_SAFETY", "SOURCE_FOOD" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "pagan_cult_longhouse_recreated",
+    "name": "longhouse",
+    "sym": "O",
+    "color": "brown",
+    "see_cost": 5
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "pagan_cult_henge_recreated",
+    "name": "henge",
+    "sym": "^",
+    "color": "brown",
+    "see_cost": 5
+  }
+]

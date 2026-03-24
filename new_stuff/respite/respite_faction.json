@@ -1,0 +1,81 @@
+[
+{
+    "type": "faction",
+    "id": "respite",
+    "name": "the folk of Respite",
+    "likes_u": 30,
+    "respects_u": 30,
+    "trusts_u": 30,
+    "known_by_u": false,
+    "size": 12,
+    "power": 50,
+    "fac_food_supply": [ [ 0, { "calories": 9000000000, "vitamins": { "iron": 288000, "calcium": 288000, "vitC": 288000 } } ] ],
+    "consumes_food": false,
+    "//": "I don't want them to starve",
+    "wealth": 5000000,
+    "currency": "FMCNote",
+    "price_rules": [
+      { "item": "money_strap_FMCNote", "fixed_adj": 0 },
+      { "item": "money_bundle_FMCNote", "fixed_adj": 0 }
+    ],
+    "relations": {
+      "free_merchants": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": false,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "old_guard": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": false,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "tacoma_commune": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": false,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "lobby_beggars": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": false,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": false,
+        "knows your voice": true
+      },
+      "wasteland_scavengers": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": false,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": false,
+        "knows your voice": true
+      },
+      "no_faction": {
+        "kill on sight": false,
+        "watch your back": false,
+        "share my stuff": false,
+        "guard your stuff": false,
+        "lets you in": false,
+        "defends your space": false,
+        "knows your voice": true
+      },
+      "hells_raiders": { "kill on sight": true }
+    },
+    "description": "A small town that almost completely avoided the Cataclysm, & has now turned into an important caravan stop."
+
+}
+]

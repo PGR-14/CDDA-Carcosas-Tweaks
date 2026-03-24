@@ -1,0 +1,146 @@
+[
+  {
+    "id": "ModuCoat_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoat_Base",
+    "name": { "str": "modular cotton scav jacket" },
+    "description": "An average cotton jacket stripped of all it's parts, just an empty hollow. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "ModuCoatMut_Cott", 
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoatMut_Base",
+    "name": { "str": "modular cotton mutant jacket" },
+    "description": "An average cotton jacket stripped of all it's parts, just an empty hollow for your new, beautiful form to crawl into. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "ModuBomb_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBomb_Base",
+    "name": { "str": "modular cotton nomad bomber" },
+    "description": "A standard cotton bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit to your needs.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "ModuBombMut_Cott",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBombMut_Base",
+    "name": { "str": "modular cotton mutant bomber" },
+    "description": "A standard cotton bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit for a beautiful critter like yourself.",
+    "material": [ "cotton" ]
+  },
+  {
+    "id": "ModuCoat_Nyl",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoat_Base",
+    "name": { "str": "modular synthetic scav jacket" },
+    "description": "A synthetic fabric jacket stripped of all it's parts, just an empty hollow. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "nylon" ]
+  },
+  {
+    "id": "ModuCoatMut_Nyl",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoatMut_Base",
+    "name": { "str": "modular synthetic mutant jacket" },
+    "description": "A synthetic fabric jacket stripped of all it's parts, just an empty hollow for your new, beautiful form to crawl into. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "nylon" ]
+  },
+  {
+    "id": "ModuBomb_Nyl",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBomb_Base",
+    "name": { "str": "modular synthetic nomad bomber" },
+    "description": "A synthetic nylon bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit to your needs.",
+    "material": [ "nylon" ]
+  },
+  {
+    "id": "ModuBombMut_Nyl",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBombMut_Base",
+    "name": { "str": "modular synthetic mutant bomber" },
+    "description": "A synthetic nylon bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit for a beautiful critter like yourself.",
+    "material": [ "nylon" ]
+  },
+  {
+    "id": "ModuCoat_Leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoat_Base",
+    "name": { "str": "modular leather scav jacket" },
+    "description": "A proper leather jacket stripped of all it's parts, just an empty hollow. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "ModuCoatMut_Leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoatMut_Base",
+    "name": { "str": "modular leather mutant jacket" },
+    "description": "A proper leather jacket stripped of all it's parts, just an empty hollow for your new, beautiful form to crawl into. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "ModuBomb_Leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBomb_Base",
+    "name": { "str": "modular leather nomad bomber" },
+    "description": "A top-cut leather bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit to your needs.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "ModuBombMut_Leather",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBombMut_Base",
+    "name": { "str": "modular leather mutant bomber" },
+    "description": "A top-cut leather bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit for a beautiful critter like yourself.",
+    "material": [ "leather" ]
+  },
+  {
+    "id": "ModuCoat_Kevlar",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoat_Base",
+    "name": { "str": "modular kevlar scav jacket" },
+    "description": "A protective kevlar jacket stripped of all it's parts, just an empty hollow. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "kevlar" ]
+  },
+  {
+    "id": "ModuCoatMut_Kevlar",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuCoatMut_Base",
+    "name": { "str": "modular kevlar mutant jacket" },
+    "description": "A protective kevlar jacket stripped of all it's parts, just an empty hollow for your new, beautiful form to crawl into. Insert your desired cloth, & create a nice jacket.",
+    "material": [ "kevlar" ]
+  },
+  {
+    "id": "ModuBomb_Kevlar",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBomb_Base",
+    "name": { "str": "modular kevlar nomad bomber" },
+    "description": "A tough kevlar bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit to your needs.",
+    "material": [ "kevlar" ]
+  },
+  {
+    "id": "ModuBombMut_Kevlar",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "ModuBombMut_Base",
+    "name": { "str": "modular kevlar mutant bomber" },
+    "description": "A tough kevlar bomber stripped of all it's parts, but also some additional waterproofing, breathability, & environmental protection, at the cost of weight & encumbrance. Insert your desired parts, & create a nice bomber, perfectly fit for a beautiful critter like yourself.",
+    "material": [ "kevlar" ]
+  }
+]

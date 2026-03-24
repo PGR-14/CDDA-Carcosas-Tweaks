@@ -1,0 +1,312 @@
+[
+    {
+        "id": "cp33_recreated",
+        "copy-from": "gun_base_22_semi_pistol",
+        "looks_like": "glock_17",
+        "type": "ITEM",
+        "subtypes": [ "GUN" ],
+        "name": { "str": "high capacity handgun" },
+        "description": "A large capacity handgun, chambered in .22 and feeding from quad stack magazines.  Used both recreationally and in competition.",
+        "variant_type": "gun",
+        "variants": [
+            {
+                "id": "cp33_recreated",
+                "name": { "str": "CP33" },
+                "description": "The Kel-Tec CP33, standing for Competition Pistol 33, is a .22 semi automatic pistol targeted towards competition shooters and recreational shooters alike, with the ability to feed from 33 round quad stack magazines, or even 50 with an extension.  While in a fairly weak cartridge, the capacity makes it quite a formidable weapon in the right hands."
+            }
+        ],
+        "weight": "669 g",
+        "volume": "525 ml",
+        "price": "495 USD",
+        "longest_side": "273 mm",
+        "barrel_length": "140 mm",
+        "material": [ "steel", "plastic", "aluminum" ],
+        "dispersion": 480,
+        "valid_mod_locations": [
+            [ "barrel", 1 ],
+            [ "brass catcher", 1 ],
+            [ "mechanism", 2 ],
+            [ "muzzle", 1 ],
+            [ "rail", 1 ],
+            [ "sights", 1 ],
+            [ "stock mount", 1 ]
+        ],
+        "durability": 6,
+        "pocket_data": [
+            {
+                "rigid": false,
+                "magazine_well": "123 ml",
+                "pocket_type": "MAGAZINE_WELL",
+                "item_restriction": [ 
+                    "cp33_mag_recreated", 
+                    "cp33_mag_50_recreated" 
+                ]
+            }
+        ]
+    },
+
+    {
+        "id": "ruger_charger_recreated",
+        "looks_like": "modular_ar_pistol",
+        "type": "ITEM",
+        "subtypes": [ "GUN" ],
+        "//2": "Stats are from https://ruger.com/products/22Charger/specSheets/4923.html",
+        "copy-from": "gun_base_22_semi_pistol",
+        "name": { "str": "varmint pistol" },
+        "description": "Essentially a varmint rifle with no stock and a shorter barrel, this gun loses out on a bit of energy with its shorter barrel and is a bit more uncomfortable to hold, but a fair bit lighter.  Includes a bipod.",
+        "variant_type": "gun",
+        "variants": [
+            {
+                "id": "ruger_charger_recreated",
+                "name": { "str": "Ruger 22 Charger" },
+                "description": "This gun is essentially a shortened 10/22, feeding from the same magazines.  While it does feature a shorter barrel and a lack of a stock, it is a fair bit lighter, and comes included with a bipod to more steadily plink away at the undead."
+            }
+        ],
+        "ascii_picture": "ruger1022",
+        "weight": "1418 g",
+        "volume": "1358 ml",
+        "longest_side": "509 mm",
+        "barrel_length": "254 mm",
+        "price": "399 USD",
+        "material": [ "steel", "plastic" ],
+        "range": 3,
+        "ranged_damage": { "damage_type": "bullet", "amount": 1 },
+        "dispersion": 140,
+        "valid_mod_locations": [
+            [ "barrel", 1 ],
+            [ "brass catcher", 1 ],
+            [ "mechanism", 2 ],
+            [ "muzzle", 1 ],
+            [ "rail mount", 1 ],
+            [ "sights", 1 ],
+            [ "stock mount", 1 ],
+            [ "underbarrel mount", 1 ]
+        ],
+        "default_mods": [ "bipod" ],
+        "pocket_data": [
+            {
+                "magazine_well": "34 ml",
+                "pocket_type": "MAGAZINE_WELL",
+                "item_restriction": [
+                    "ruger1022mag",
+                    "ruger1022mag_15",
+                    "ruger1022bigmag",
+                    "ruger1022mag_30",
+                    "ruger1022mag_32",
+                    "ruger1022mag_55",
+                    "ruger1022mag_70",
+                    "ruger1022mag_110"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ruger_charger_auto_recreated",
+        "copy-from": "ruger_charger_recreated",
+        "type": "ITEM",
+        "subtypes": [ "GUN" ],
+        "name": "full-auto varmint pistol",
+        "description": "A lightweight varmint pistol, modified to fire both semi, and full auto.",
+        "variant_type": "gun",
+        "variants": [
+            {
+                "id": "ruger_charger_auto_recreated",
+                "name": { "str": "full-auto Ruger 22 Charger" },
+                "description": "A Ruger 22 Charger modified post-Cataclysm to selective fire.  While the .22 round isn't very powerful, full auto makes it a lot more effective, and still easily controllable in full auto even with the lack of a stock."
+            }
+        ],
+        "price_postapoc": "15 USD",
+        "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ]
+    },
+  {
+    "id": "sw_22_recreated",
+    "copy-from": "gun_base_22_semi_pistol",
+    "looks_like": "glock_17",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "name": { "str": "S&W target pistol" },
+    "description": "A modest offering from the Smith and Wesson (S&W) gun company, this is a medium sized pistol that fires the .22 LR cartridge.  Featuring an integrated rail for optics mounting, it was a popular .22 handgun amongst shooters of the low-power cartridge.",
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "sw_22_recreated",
+        "name": { "str": "S&W 22A pistol" },
+        "description": "A modest offering from the Smith and Wesson (S&W) gun company, this is a medium sized pistol that fires the .22 LR cartridge.  Featuring an integrated rail for optics mounting, it was a popular .22 handgun amongst target shooters."
+      }
+    ],
+    "ascii_picture": "sw_22a",
+    "weight": "975 g",
+    "volume": "560 ml",
+    "longest_side": "259 mm",
+    "barrel_length": "139 mm",
+    "price": "350 USD",
+    "price_postapoc": "7 USD 50 cent",
+    "to_hit": -2,
+    "material": [ "aluminum", "steel", "plastic" ],
+    "color": "dark_gray",
+    "ammo": [ "22" ],
+    "dispersion": 480,
+    "durability": 7,
+    "min_cycle_recoil": 39,
+    "flags": [ "ALLOWS_BODY_BLOCK" ],
+    "weapon_category": [ "AUTOMATIC_PISTOLS" ],
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "muzzle", 1 ],
+      [ "rail mount", 1 ],
+      [ "sights", 1 ],
+      [ "stock", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "pocket_data": [ { "magazine_well": "250 ml", "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "sw22mag_recreated" ] } ],
+    "melee_damage": { "bash": 9 }
+  },
+  {
+    "id": "j22_recreated",
+    "looks_like": "glock_17",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "gun_base_22_semi_pistol",
+    "name": { "str": "cheap .22 caliber pistol" },
+    "description": "Made from only the cheapest of budget metals, firing one of the weakest cartridges, and having a hearty laugh at the concept of user safety, this .22 caliber pocket pistol is of questionable utility at best.  Affordably priced before the Cataclysm, the pistol's price point was arguably its only positive element, an element which pertains zero bearing on your current situation.",
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "j22_recreated",
+        "name": { "str": "Jennings J-22 pistol" },
+        "description": "One of the quintessential 'Saturday night specials', the Jennings J-22 was very affordably priced with its injection-molded zinc slide and frame.  Intended to fill the void left after small pocket pistols were banned from import, these were more commonly used by criminals unfazed by their glaring safety issues."
+      }
+    ],
+    "weight": "340 g",
+    "volume": "80 ml",
+    "longest_side": "141 mm",
+    "barrel_length": "64 mm",
+    "price": "70 USD",
+    "price_postapoc": "7 USD 50 cent",
+    "to_hit": -3,
+    "material": [ "budget_steel", "zinc" ],
+    "color": "dark_gray",
+    "ammo": [ "22" ],
+    "dispersion": 600,
+    "durability": 5,
+    "min_cycle_recoil": 39,
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "belt clip", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "muzzle", 1 ],
+      [ "rail mount", 1 ],
+      [ "sights mount", 1 ],
+      [ "stock mount", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "weapon_category": [ "AUTOMATIC_PISTOLS" ],
+    "faults": [ { "fault": "fault_gun_blackpowder" }, { "fault":"fault_gun_dirt" }, { "fault": "fault_gun_chamber_spent" } ],
+    "pocket_data": [ { "magazine_well": "27 ml", "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "j22mag_recreated" ] } ],
+    "melee_damage": { "bash": 1 }
+  },
+  {
+    "id": "american_180_recreated",
+    "looks_like": "hk_mp5",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "reload_noise_volume": 10,
+    "name": { "str": ".22 caliber submachine gun" },
+    "description": "A dramatically uncommon automatic weapon, making use of high-capacity pan magazines and firing the low power .22 caliber cartridge: an unusual ammunition choice for a submachine gun.  With negligible recoil on account of its modest cartridge and a suppressively high rate of fire, a burst of .22 LR rounds from this little machine gun can be best likened with a swarm of hornets… an incredibly angry swarm of hornets.",
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "american_180_recreated",
+        "name": { "str": "American-180 submachine gun" },
+        "description": "The American-180 is a submachine gun developed in the 1960s that fires .22 LR, unusual for an SMG.  Though the round is low-powered, the high rate of fire and large magazine makes the 180 a formidable weapon."
+      }
+    ],
+    "weight": "2585 g",
+    "volume": "2200 ml",
+    "longest_side": "905 mm",
+    "barrel_length": "470 mm",
+    "price": "1 kUSD 630 USD",
+    "price_postapoc": "25 USD",
+    "to_hit": -2,
+    "material": [ "steel" ],
+    "symbol": "(",
+    "color": "light_gray",
+    "range": 6,
+    "ammo": [ "22" ],
+    "skill": "smg",
+    "ranged_damage": { "damage_type": "bullet", "amount": 4 },
+    "dispersion": 280,
+    "durability": 6,
+    "min_cycle_recoil": 39,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 6 ] ],
+    "barrel_volume": "250 ml",
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "brass catcher", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "muzzle", 1 ],
+      [ "rail", 1 ],
+      [ "sights", 1 ],
+      [ "sling", 1 ],
+      [ "stock", 1 ],
+      [ "stock accessory", 2 ],
+      [ "underbarrel", 1 ]
+    ],
+    "faults": [ { "fault": "fault_gun_blackpowder" }, { "fault": "fault_gun_dirt" }, { "fault": "fault_gun_chamber_spent" } ],
+    "pocket_data": [
+      { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "a180mag_recreated", "a180mag1_recreated", "a180mag2_recreated", "a180mag3_recreated", "a180mag4_recreated" ] }
+    ],
+    "melee_damage": { "bash": 11 }
+  },
+    {
+    "id": "moss_brownie_recreated",
+    "looks_like": "glock_17",
+    "copy-from": "gun_base_22_semi_pistol",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "name": { "str": ".22 derringer pistol" },
+    "description": "A four barreled, adorably tiny pocket pistol, firing the equally minuscule .22 LR cartridge.  Produced in the early 20th century for trappers, its combat effectiveness is questionable to say the least.",
+    "variant_type": "gun",
+    "variants": [
+      {
+        "id": "moss_brownie_recreated",
+        "name": { "str": "Mossberg Brownie pistol" },
+        "description": "The first gun produced by O.F. Mossberg & Sons, the Brownie is a small pocket pistol marketed to trappers during the early 20th century.  Its four barrels can accept .22 Short and .22 LR cartridges."
+      }
+    ],
+    "weight": "286 g",
+    "volume": "100 ml",
+    "longest_side": "129 mm",
+    "barrel_length": "64 mm",
+    "price": "1 kUSD 100 USD",
+    "price_postapoc": "5 USD",
+    "to_hit": -1,
+    "material": [ "steel", "wood" ],
+    "color": "dark_gray",
+    "ammo": [ "22" ],
+    "ranged_damage": { "damage_type": "bullet", "amount": -2 },
+    "dispersion": 520,
+    "durability": 6,
+    "blackpowder_tolerance": 96,
+    "clip_size": 7,
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "belt clip", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "sights mount", 1 ],
+      [ "stock mount", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "faults": [ { "fault":"fault_gun_blackpowder" }, { "fault": "fault_gun_dirt" } ],
+    "flags": [ "RELOAD_ONE", "NEVER_JAMS", "RELOAD_EJECT", "EASY_CLEAN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "22": 7 } } ],
+    "melee_damage": { "bash": 1 }
+  }
+]
