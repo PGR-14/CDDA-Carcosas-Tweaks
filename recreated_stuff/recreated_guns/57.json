@@ -4,7 +4,7 @@
         "//":"83780",
         "id": "p50_recreated",
         "copy-from": "gun_base_57_semi_pistol",
-        "looks_like": "glock_17",
+        "looks_like": "overlay_wielded_l_base_223",
         "type": "ITEM",
         "subtypes": [ "GUN" ],
         "name": { "str": "high-capacity P90 handgun" },

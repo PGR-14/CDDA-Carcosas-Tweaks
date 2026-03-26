@@ -125,7 +125,7 @@
     "id": "MODULAR_STOCK",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ 
+    "items": [
       { "group": "MODULAR_BACK", "prob": 75 },
       { "group": "MODULAR_LINER_JACK", "prob": 75 },
       { "group": "MODULAR_LINER_PANT", "prob": 75 },
@@ -137,10 +137,10 @@
     ]
   },
   {
-    "id": "GUNSGUNSGUNS",
+    "id": "renewed_stuff",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ 
+    "items": [
       { "group": "nested_cp33", "prob": 75 },
       { "group": "nested_sw_610", "prob": 75 },
       { "group": "nested_TDI_10", "prob": 75 },
@@ -178,64 +178,105 @@
       { "group": "nested_famas", "prob": 75 },
       { "group": "nested_skorpion_61", "prob": 75 },
       { "group": "nested_skorpion_82", "prob": 75 },
-      { "group": "pellet_gun", "prob": 75 },
       { "group": "RPG_IGROUP", "prob": 25 },
+      { "item": "mp18_recreated", "prob": 75, "charges": [ 0, 32 ] },
+      { "item": "hk_mp5_10_semi_recreated", "prob": 75, "charges": [ 0, 30 ] },
+      { "item": "surv_six_shooter_recreated", "prob": 75, "charges": [ 0, 6 ] },
+      { "item": "surv_hand_cannon_recreated", "prob": 75, "charges": [ 0, 6 ] },
+      { "item": "m231pfw_recreated", "prob": 75, "charges": [ 0, 30 ] },
+      { "item": "ppsh_recreated", "prob": 75, "charges": [ 0, 35 ] },
+      { "item": "ppshdrum_recreated", "prob": 75, "charges": [ 0, 71 ] },
+      { "item": "ppshmag_recreated", "prob": 75, "charges": [ 0, 35 ] },
+      { "item": "winchester_1887_recreated", "prob": 75, "charges": [ 0, 6 ] },
+      { "item": "gun_crossbow_recreated", "prob": 75, "charges": [ 0, 1 ] },
+      { "item": "gun_crossbow_recreated", "prob": 75, "charges": [ 0, 1 ] },
+      { "item": "stabilizer_recreated", "prob": 75 },
+      { "item": "stabilizer_recreated", "prob": 75 },
+      { "item": "arredondo_chute_breacher_recreated", "prob": 75 },
+      { "item": "arredondo_chute_breacher_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "light_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "pistol_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 },
+      { "item": "breacher_grip_recreated", "prob": 75 }
+    ]
+  },
+  {
+    "id": "base_stuff",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
       { "group": "gunmod_common", "prob": 75 },
-      { "group": "gunmod_rare", "prob": 75 },
-      { "item": "mp18_recreated", "prob": 75 },
-      { "item": "hk_mp5_10_semi_recreated", "prob": 75 },
-      { "item": "fn1910_recreated", "prob": 75 },
-      { "item": "surv_six_shooter_recreated", "prob": 75 },
-      { "item": "surv_hand_cannon_recreated", "prob": 75 },
-      { "item": "m231pfw_recreated", "prob": 75 },
-      { "item": "ppsh_recreated", "prob": 75 },
-      { "item": "ppshdrum_recreated", "prob": 75 },
-      { "item": "ppshmag_recreated", "prob": 75 },
-      { "item": "winchester_1887_recreated", "prob": 75 },
+      { "group": "gunmod_rare", "prob": 75 }
+    ]
+  },
+  {
+    "id": "new_stuff",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "barrel_extension", "prob": 100 },
       { "item": "barrel_extension", "prob": 75 },
       { "item": "barrel_extension", "prob": 75 },
-      { "item": "barrel_extension", "prob": 75 },
-      { "item": "gun_crossbow_recreated", "prob": 75 },
-      { "item": "gun_crossbow_recreated", "prob": 75 },
-      { "item": "stabilizer_recreated", "prob": 75 },
-      { "item": "stabilizer_recreated", "prob": 75 },
-      { "item": "arredondo_chute_breacher_recreated", "prob": 75 },
-      { "item": "arredondo_chute_breacher_recreated", "prob": 75 },
-      { "item": "light_grip_recreated", "prob": 75 },
-      { "item": "light_grip_recreated", "prob": 75 },
-      { "item": "light_grip_recreated", "prob": 75 },
-      { "item": "light_grip_recreated", "prob": 75 },
-      { "item": "pistol_grip_recreated", "prob": 75 },
-      { "item": "pistol_grip_recreated", "prob": 75 },
-      { "item": "pistol_grip_recreated", "prob": 75 },
-      { "item": "pistol_grip_recreated", "prob": 75 },
-      { "item": "breacher_grip_recreated", "prob": 75 },
-      { "item": "breacher_grip_recreated", "prob": 75 },
-      { "item": "breacher_grip_recreated", "prob": 75 },
-      { "item": "breacher_grip_recreated", "prob": 75 },
-      { "item": "m1903_air", "prob": 75 }
+      { "group": "pellet_gun", "prob": 75 }
+    ]
+  },
+  {
+    "id": "WW1_stuff",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "item": "m1903_air", "prob": 75 },
+      { "item": "fn1910_recreated", "prob": 75, "charges": [ 0, 7 ] },
+      { "item": "colt_saa", "prob": 75, "charges": [ 0, 6 ] },
+      { "item": "colt_saa_dual", "prob": 75, "charges": [ 0, 12 ] },
+      { "item": "8g_shotgun_d", "prob": 75, "charges": [ 0, 2 ] },
+      { "item": "8g_equine", "prob": 10, "charges": [ 0, 2 ] },
+      { "group": "boxed_8g_25", "prob": 100 },
+      { "group": "boxed_8g_25", "prob": 50 },
+      { "group": "boxed_8g_25", "prob": 25 }
+    ]
+  },
+  {
+    "id": "GUNSGUNSGUNS",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "group": "renewed_stuff", "prob": 100 },
+      { "group": "base_stuff", "prob": 100 },
+      { "group": "new_stuff", "prob": 100 }
     ]
   },
   {
     "id": "JENNY_STOCK",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ 
+    "items": [
       { "group": "MODULAR_STOCK", "prob": 100 },
-      { "group": "GUNSGUNSGUNS", "prob": 100 }
+      { "group": "GUNSGUNSGUNS", "prob": 100 },
+      { "group": "ammo_common_boxed", "prob": 100 },
+      { "group": "ammo_common_boxed", "prob": 50 },
+      { "group": "ammo_common_boxed", "prob": 25 },
+      { "group": "ammo_rifle_milspec", "prob": 100 },
+      { "group": "ammo_rifle_milspec", "prob": 50 },
+      { "group": "ammo_rifle_milspec", "prob": 25 },
+      { "group": "ammo_shotgun_rare_collection", "prob": 100 },
+      { "group": "ammo_shotgun_rare_collection", "prob": 50 },
+      { "group": "ammo_shotgun_rare_collection", "prob": 25 }
     ]
   },
   {
     "id": "NC_JENNY_worn",
     "type": "item_group",
     "subtype": "collection",
-    "items": [
-      { "item": "bra" },
-      { "item": "panties" },
-      { "item": "jeans" },
-      { "item": "dress_shirt" },
-      { "item": "leather_belt" }
-    ]
+    "items": [ { "item": "bra" }, { "item": "panties" }, { "item": "jeans" }, { "item": "dress_shirt" }, { "item": "leather_belt" } ]
   },
   {
     "id": "NC_JENNY_weapon",
@@ -258,7 +299,12 @@
     "weapon_override": "NC_JENNY_weapon",
     "bye_message_override": "<jenny_bye>",
     "sells_belongings": true,
-    "shopkeeper_item_group": [ { "group": "JENNY_STOCK" } ],
+    "shopkeeper_item_group": [
+      { "group": "JENNY_STOCK", "rigid": true },
+      { "group": "hardware", "rigid": true },
+      { "group": "hardware_bulk", "rigid": true },
+      { "group": "WW1_stuff", "rigid": true }
+    ],
     "shopkeeper_consumption_rates": "basic_shop_rates",
     "restock_interval": "7 days",
     "proficiencies": [ "prof_gunsmithing_basic", "prof_spotting" ],
@@ -298,7 +344,7 @@
     "id": "NPC_JENNY",
     "//": "Jenny.",
     "name_unique": "Jenny Walker",
-    "name_suffix": "Hub handler", 
+    "name_suffix": "Hub handler",
     "class": "NC_JENNY",
     "attitude": 0,
     "mission": 0,
@@ -317,8 +363,8 @@
     "id": "TALK_JENNY",
     "dynamic_line": "Hey there! The name's Jenny, I'm the owner of this here tradin' hub. Now, could I interest you in some of my firearms?\n\n Dev note: This dialogue is VERY unfinished, please tell me how I could improve it.",
     "responses": [
-      { "text": "No thanks ma'am.", "topic": "TALK_DONE" },
-      { "text": "Yes ma'am.", "effect": "start_trade", "topic": "TALK_JENNY" }
+      { "text": "Yes ma'am.", "effect": "start_trade", "topic": "TALK_JENNY" },
+      { "text": "No thanks ma'am.", "topic": "TALK_DONE" }
     ],
     "replace_built_in_responses": true
   }

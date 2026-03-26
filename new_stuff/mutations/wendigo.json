@@ -217,11 +217,11 @@
     "type": "mutation",
     "id": "VISCOUS",
     "copy-from": "VISCOUS",
-    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ], "changes_to": [ "AMORPHOUS_WENDI" ] }
   },
   {
     "type": "mutation",
-    "id": "AMORPHOUS",
+    "id": "AMORPHOUS_WENDI",
     "copy-from": "AMORPHOUS",
     "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
   },

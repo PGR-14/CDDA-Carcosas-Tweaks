@@ -37,7 +37,7 @@
     "id": "draco_recreated",
     "//2": "Based off of https://www.centuryarms.com/draco-pistol.html",
     "copy-from": "gun_base_handgun_semi",
-    "looks_like": "modular_ar15",
+    "looks_like": "draco",
     "type": "ITEM",
     "subtypes": [ "GUN" ],
     "name": { "str": "AK pistol" },

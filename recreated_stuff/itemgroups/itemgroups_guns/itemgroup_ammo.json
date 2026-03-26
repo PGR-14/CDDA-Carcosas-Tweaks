@@ -35,10 +35,13 @@
     "id": "ammo_shotgun_milspec",
     "copy-from": "ammo_shotgun_milspec",
     "type": "item_group",
-    "extend": { 
-        "items": [ 
-          { "item": "shot_he", "prob": 10 } 
-        ]
-      }
+    "extend": { "items": [ { "item": "shot_he", "prob": 10 } ] }
+  },
+  {
+    "id": "ammo_shotgun_rare_collection",
+    "copy-from": "ammo_shotgun_rare_collection",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": { "entries": [ { "item": "shot_he", "prob": 20 } ] }
   }
 ]

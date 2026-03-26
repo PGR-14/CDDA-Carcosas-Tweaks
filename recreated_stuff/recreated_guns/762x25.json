@@ -1,7 +1,7 @@
 [
   {
     "id": "ppsh_recreated",
-    "looks_like": "hk_mp5",
+    "looks_like": "ppsh",
     "type": "ITEM",
     "subtypes": [ "GUN" ],
     "reload_noise_volume": 10,

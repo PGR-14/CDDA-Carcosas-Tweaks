@@ -2,7 +2,7 @@
   {
     "id": "skorpion_82_recreated",
     "copy-from": "skorpion_61_recreated",
-    "looks_like": "hk_mp5",
+    "looks_like": "skorpion_61",
     "type": "ITEM",
     "subtypes": [ "GUN" ],
     "name": { "str": "vz. 82 submachine gun" },

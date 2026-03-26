@@ -4,18 +4,18 @@
     "copy-from": "gun_base_shotgun_manual",
     "type": "ITEM",
     "subtypes": [ "GUN" ],
-    "name": { "str": "6-round trenchie" },
-    "description": "Whether or not you ever wondered what would happen if one was to attach a shotgun atop a sword, the result of such an inquiry now rests before you in all its metallic glory.  Coming outfitted with a large 17 inch sword bayonet and a wooden heat shield to protect the user's hands from the barrel when it heats up during firing, this pump-action shotgun practically drips menace and looks like it's straight out of the trenches of World War I.  There aren't any more trenches to clear, so the next zombie-infested town will have to suffice.",
+    "name": { "str": "9-round trenchie" },
+    "description": "Whether or not you ever wondered what would happen if one was to attach a sword atop a shotgun, the result of such an inquiry now rests before you in all its metallic glory.  Coming outfitted with a large 17 inch sword bayonet, an incredibly long barrel, and a wooden heat shield to protect the user's hands from the barrel when it heats up during firing, this pump-action shotgun practically drips menace and looks like it's straight out of the trenches of World War I.  There aren't any more trenches to clear, so the next zombie-infested town will have to suffice. This one is incredibly long, & can easily serve as a spear.",
     "weight": "3500 g",
     "volume": "2564 ml",
-    "longest_side": "989 mm",
-    "barrel_length": "510 mm",
+    "longest_side": "1990 mm",
+    "barrel_length": "1521 mm",
     "looks_like": "remington_870",
     "price": "8 kUSD 500 USD",
     "material": [ "steel", "wood" ],
     "dispersion": 360,
     "durability": 8,
-    "clip_size": 6,
+    "clip_size": 9,
     "valid_mod_locations": [
       [ "barrel", 1 ],
       [ "mechanism", 2 ],
@@ -30,6 +30,20 @@
     ],
     "default_mods": [ "sword_bayonet" ],
     "melee_damage": { "bash": 12 },
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 6 } } ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "shot": 9 } } ],
+    "extend": {
+      "flags": [ "SPEAR", "REACH_ATTACK", "NONCONDUCTIVE", "SHEATH_SPEAR" ]
+    }
+  },
+  {
+    "id": "8g_equine",
+    "copy-from": "8g_shotgun_d",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "name": { "str": "Equine coachgun" },
+    "description": "Named so after the notorious horse riders of the Glorious Empire that executed Republic soldiers with this very shotgun. This thing is heavier than your usual shotgun, and it can bore a huge hole into anyone or anything.",
+    "ranged_damage": { "damage_type": "bullet", "amount": 10, "armor_penetration": 15 },
+    "longest_side": "159 cm",
+    "barrel_length": "1200 mm"
   }
 ]

@@ -1,5 +1,36 @@
 [
   {
+    "id": "henry_big_boy",
+    "copy-from": "gun_base_rifle_manual",
+    "looks_like": "modular_ar15",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "name": { "str": "Henry Big Boy .44 rifle" },
+    "description": "This fine lever-action rifle is chambered in the powerful .44 Magnum cartridge and features a sleek octagonal barrel with a tube fed magazine.  Go get 'em cowboy!",
+    "weight": "3937 g",
+    "volume": "2310 ml",
+    "longest_side": "98 cm",
+    "barrel_length": "508 mm",
+    "price": "899 USD 95 cent",
+    "price_postapoc": "16 USD",
+    "material": [ "steel", "wood" ],
+    "range": 7,
+    "ammo": [ "44" ],
+    "dispersion": 180,
+    "clip_size": 10,
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "mechanism", 2 ],
+      [ "rail mount", 1 ],
+      [ "sights mount", 1 ],
+      [ "sling", 1 ],
+      [ "stock accessory", 1 ],
+      [ "stock mount", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "44": 10 } } ]
+  },
+  {
     "id": "yellowboy_carcosa",
     "copy-from": "gun_base_rifle_manual",
     "looks_like": "marlin_9a",

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "8g_ammo_box_25",
+    "copy-from": "9mm_ammo_box_20",
+    "type": "ITEM",
+    "name": { "str": "12 gauge ammo box", "str_pl": "12 gauge ammo boxes" },
+    "description": "This box holds 25 rounds of 8 gauge ammo.  It's made of a thin cardboard plastered with text about the ammo, and the manufacturer's logo.",
+    "weight": "70 g",
+    "volume": "578 ml",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "472 ml",
+        "max_contains_weight": "1175 g",
+        "max_item_length": "14 cm",
+        "rigid": true
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "boxed_8g_25",
+    "container-item": "8g_ammo_box_25",
+    "items": [
+      { "item": "8g_slug", "charges": 25, "prob": 4 },
+      { "item": "8g_00", "charges": 25, "prob": 5 },
+      { "item": "8g_flechette", "charges": 25, "prob": 1 },
+      { "item": "8g_bird", "charges": 25, "prob": 40 }
+    ]
+  }
+]

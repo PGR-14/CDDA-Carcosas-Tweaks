@@ -1,4 +1,9 @@
-[
+{ "id": "overlay_[male/female]_mutation_[trait_id]", "fg": # },
+          { "id": "overlay_wielded_[item_id]", "fg": # },
+          { "id": "overlay_worn_[item_id]", "fg": # },
+
+
+
 
 { "point": [ 0, 0, 0 ], "overmap": "" }
 
@@ -37,5 +42,3 @@
         "ammo_type": [ "40", "357sig" ],
         "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "40": 22, "357sig": 22 } } ]
     }
-
-]

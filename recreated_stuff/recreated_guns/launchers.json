@@ -1,7 +1,7 @@
 [
   {
     "id": "RPG_recreated",
-    "looks_like": "m79",
+    "looks_like": "RPG",
     "type": "ITEM",
     "subtypes": [ "GUN" ],
     "reload_noise_volume": 10,

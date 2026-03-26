@@ -128,7 +128,6 @@
   {
     "id": "lever_shotgun_recreated",
     "copy-from": "gun_base_shotgun_manual",
-    "looks_like": "browning_blr",
     "type": "ITEM",
     "subtypes": [ "GUN" ],
     "name": { "str": "handmade lever shotgun" },
