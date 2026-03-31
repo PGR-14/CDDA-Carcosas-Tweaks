@@ -287,7 +287,7 @@
   {
     "type": "snippet",
     "category": "<jenny_bye>",
-    "text": [ "Come again!", "See'ye later buddy!", "Don't get eaten' by them ghouls, ye'hear?", "Treat my guns nicely, would'ye?" ]
+    "text": [ "Come again!", "See'ye later buddy!", "Don't get eaten' by them ghouls, ye snack.", "Treat my guns nicely, would'ye?" ]
   },
   {
     "type": "npc_class",
@@ -361,7 +361,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_JENNY",
-    "dynamic_line": "Hey there! The name's Jenny, I'm the owner of this here tradin' hub. Now, could I interest you in some of my firearms?\n\n Dev note: This dialogue is VERY unfinished, please tell me how I could improve it.",
+    "dynamic_line": "Hey there! The name's Jenny, I'm the owner of this here trading hub. Now, could I interest you in some of my firearms?\n\n Dev note: This dialogue is VERY unfinished, please tell me how I could improve it.",
     "responses": [
       { "text": "Yes ma'am.", "effect": "start_trade", "topic": "TALK_JENNY" },
       { "text": "No thanks ma'am.", "topic": "TALK_DONE" }

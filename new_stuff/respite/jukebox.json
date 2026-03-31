@@ -1,0 +1,51 @@
+[
+  {
+    "type": "ITEM",
+    "id": "jukebox",
+    "name": { "str": "jukebox" },
+    "description": "A classic jukebox with speakers.  It even has a karaoke screen! It's currently disassembled for transport",
+    "weight": "22680 g",
+    "color": "red",
+    "symbol": "&",
+    "material": [ "lc_steel" ],
+    "volume": "566 L",
+    "category": "veh_parts",
+    "price": "50 USD",
+    "price_postapoc": "50 USD",
+    "faults": [ { "fault_group": "electronic_general" } ],
+    "flags": [ "WATER_BREAK", "ELECTRONIC" ]
+  },
+  {
+    "type": "construction",
+    "id": "place_jukebox",
+    "category": "FURN",
+    "required_skills": [ [ "electronics", 1 ] ],
+    "time": "55 m",
+    "components": [ [ [ "jukebox", 1 ] ] ],
+    "group": "place_stereo",
+    "pre_special": "check_empty",
+    "post_terrain": "f_jukebox"
+  },
+  {
+    "type": "furniture",
+    "id": "f_jukebox",
+    "name": "Jukebox",
+    "looks_like": "t_console",
+    "symbol": "{",
+    "description": "A powered jukebox, modified to take many forms of media, just begging to play some music.  There's even an attached screen for karaoke!",
+    "color": "red",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": 10,
+    "mass": "13 kg",
+    "flags": [ "TRANSPARENT", "NOITEM", "INDOORS", "SHORT", "PERMEABLE", "FREE_TO_EXAMINE", "EASY_DECONSTRUCT" ],
+    "examine_action": { "type": "effect_on_condition", "effect_on_conditions": [ "EOC_JUKE_EXAMINE" ] },
+    "deconstruct": { "items": [ { "item": "jukebox", "count": 1 } ] }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_JUKE_EXAMINE",
+    "eoc_type": "ACTIVATION",
+    "effect": [ { "open_dialogue": { "topic": "JUKEBOX_SONG_HUB" } } ]
+  }
+]

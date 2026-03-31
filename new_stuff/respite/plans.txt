@@ -32,22 +32,8 @@ Entrance:
         -Trading Hub (Originally said "Desmond's Hardware store")
         -Sheriff's Office (Originally a DMV office)
 
-    A pair of guards are there, Adamska & John.
-    Adamska:
-        Has a special Colt Single Action Army.
-        Will spin it if asked.
-        Yes this is Revolver Ocelot
-    
-    John Gear:
-        Stone cold
-        Upon first encounter, will tell you some of the rules of the place.
-            No fighting
-            No stealing
-            Don't be an asshole
-            Keep guns out of your hands
-        No! That is not solid snake!
-
-    These tow are literally nothin' more than a reference & notifyin' the player of some rules.
+    A pair of guards are there, Horse & Crow
+    These two are literally nothin' more than a reference & notifyin' the player of some rules.
 
 John's Gas station.
     John runs this place, Dora sleeps upstairs.
@@ -288,7 +274,7 @@ Gospel Church:
                 Preacher garbs idk.
     
     Quests:
-        Denice:
+        Dennis:
             Find syringes:
                 Dennis has ran out of syringes, & he can't really sterilize them.
                 Find x50 syringes, not much else.
@@ -342,7 +328,7 @@ Sheriff's Office:
 
     Prisoners:
         -Literally just a feral in a jail cell. Amos will ask you to put it down.
-        -A mad youth pastor, king in yellow kind of mad.
+        -A mad youth pastor, king in yellow kind of mad. Companion?
 
 Trading Hub:
     Originally Desmond's Hardware store.

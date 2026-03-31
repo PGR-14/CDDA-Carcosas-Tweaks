@@ -217,13 +217,26 @@
     "type": "mutation",
     "id": "VISCOUS",
     "copy-from": "VISCOUS",
-    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ], "changes_to": [ "AMORPHOUS_WENDI" ] }
+    "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
   },
   {
     "type": "mutation",
-    "id": "AMORPHOUS_WENDI",
+    "id": "AMORPHOUS",
     "copy-from": "AMORPHOUS",
     "extend": { "category": [ "WENDIGO" ], "threshreq": [ "THRESH_WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "WENDI_SLIME",
+    "name": { "str": "Tar Slime" },
+    "description": "Your slime has become black and thick, not too dissimilar to tar..",
+    "types": [ "SCENT" ],
+    "points": 2,
+    "vitamin_cost": 160,
+    "ugliness": -12,
+    "prereqs": [ "AMORPHOUS" ],
+    "category": [ "WENDIGO" ],
+    "threshreq": [ "THRESH_WENDIGO" ]
   },
   {
     "type": "mutation",

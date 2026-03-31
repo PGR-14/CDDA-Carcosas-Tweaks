@@ -1,0 +1,75 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "JUKEBOX_SONG_HUB",
+    "dynamic_line": [
+      "&You stand in front of a jukebox, w/ a few racks covered with CDs and vinyls.  One is labled \"Country/Western\" with plenty of old vinyls, another \"John's Tunes\" that looks positively rural, and the last is simply called \"Community Donations\" with a mish-mash of songs ordered in no rhyme nor reason."
+    ],
+    "responses": [
+      { "text": "Look at the \"Country/Western\" section", "topic": "JUKEBOX_WESTERN_HUB" },
+      { "text": "Look at \"John's Tunes\"", "topic": "JUKEBOX_JOHN_HUB" },
+      { "text": "Look at the \"Community Donations\" section", "topic": "JUKEBOX_COMMUNITY_HUB" },
+      { "text": "Leave it be.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "JUKEBOX_WESTERN_HUB",
+    "dynamic_line": [
+      "&Here, you can see several different albums and artists, stuff like Johnny Cash, Marty Robbins, Riders In The Sky, Tex Ritter, and others. Perfect for a cowboy, though a few songs seem to be out of place. Why? \nThere are two notes, one evidently written by John saying \"Don't put none of that pop shit in here! I'm tired of removin' the dammed stuff\". \nThe other, seemingly written by a particularly funny survivor claims \"Oh, we got both kinds... We got Country *and* Western!\""
+    ],
+    "responses": [
+      { "text": "Look at a different rack.", "topic": "JUKEBOX_SONG_HUB" },
+      { "text": "Play \"\".", "topic": "" },
+      { "text": "Leave it be.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "JUKEBOX_JOHN_HUB",
+    "dynamic_line": [
+      "&Plenty of CDs and vinyls line this shelf, some you know, like \"Lynerd Skynerd\", others not so much. Who the hell would listen to an album called \"Cock-A-Doodle-Doo\"? \nA note left by John says \"If any of you dumbasses break these I'll beat you sober! I know one of y'all has been stealin' some of my vinyls!\". \nIf you wanna go back to Dixie, this is probably the closest you're gonna get."
+    ],
+    "responses": [
+      { "text": "Look at a different rack.", "topic": "JUKEBOX_SONG_HUB" },
+      { "text": "Leave it be.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "JUKEBOX_COMMUNITY_HUB",
+    "dynamic_line": [
+      "&A mish-mash of different forms of media cover this shelf. CDs, Vinyls, USB sticks, even some floppy disks, all donated by survivors like you. Thankfully, Jenny modified it to take all of these and more. Looking at it, you feel proud, but why?"
+    ],
+    "responses": [
+      { "text": "Look at a different rack.", "topic": "JUKEBOX_SONG_HUB" },
+      { "text": "Play \"Your Brains\".", "topic": "JUKEBOX_SONG_YOUR_BRAINS" },
+      { "text": "Play \"The saints will never come\".", "topic": "JUKEBOX_SONG_SAINTS" },
+      { "text": "Leave it be.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "JUKEBOX_SONG_YOUR_BRAINS",
+    "dynamic_line": [
+      "&You pick a well worn CD labeled \"Jonathan Couldon's Re: Your Brains\". A fitting choice, considering the circumstances.\n\n\"Well, it's 8:00 and it's still light!\"\n\"Well, a lot of good the extra sunlight does us. You know we've still got a 3-hour drive back, we're not gonna be home until after midnight.\"\n\"Well if it really bugs you Johnny you wouldn't do it-\"[ Ah! ]\n\"You think I want to blow sunday on a scene like this? You know, I figure that we're either gonna have to move mother out here or move-\"\n\n[Song starts]\n\n \"Heya Tom, it's Bob from the office down the hall\"\n \"Good to see you buddy, how've you been?\"\n \"Thing have been OK for me, except that I'm a zombie now\"\n \"I really wish you'd let us in\"\n \"I think I speak for all of us when I say I understand\"\n \"Why you folks might hesitate to submit to our demand\"\n \"But here's an FYI: you're all gonna die screaming!\"\n\n  \"All we want to do is eat your brains\"\n  \"We're not unreasonable; I mean, no one's gonna eat your eyes\"\n  \"All we want to do is eat your brains\"\n  \"We're at an impasse here--maybe we should compromise:\"\n  \"If you open up the doors\n  \"We'll all come inside and eat your brains!\"\n\n \"I don't want to nitpick, Tom, but is this really your plan?\"\n \"To spend your whole life locked inside a mall?\"\n \"Maybe that's OK for now, but someday you'll be out of food and guns\"\n \"And then you'll have to make the call\"\n \"I'm not surprised to see you haven't thought it through enough\"\n \"You never had the head for all that bigger-picture stuff\"\n \"But Tom, that's what I do, and I plan on eating you slowly!\"\n\n  \"All we want to do is eat your brains\"\n  \"We're not unreasonable; I mean, no one's gonna eat your eyes\"\n  \"All we want to do is eat your brains\"\n  \"We're at an impasse here--maybe we should compromise:\"\n  \"If you open up the doors\"\n  \"We'll all come inside and eat your brains!\"\n\n   \"I'd like to help you, Tom, in any way I can\"\n   \"I sure appreciate the way you're working with me\"\n   \"I'm not a monster, Tom, well, technically I am\"\n   \"I guess I am...\"\n\n  [Sick guitar solo]\n\n \"I've got another meeting, Tom--maybe we could wrap it up?\"\n \"I know we'll get to common ground somehow\"\n \"Meanwhile, I'll report back to my colleagues, who were chewing on the doors\"\n \"I guess we'll table this for now\"\n \"I'm glad to see you take constructive criticism weII\"\n \"Thank you for your time, I know we're all busy as hell\"\n \"And we'll put this thing to bed, when I bash your head open!\"\n\n \"All we want to do is eat your brains\"\n \"We're not unreasonable; I mean, no one's gonna eat your eyes\"\n \"All we want to do is eat your brains\"\n \"We're at an impasse here--maybe we should compromise:\"\n \"If you open up the doors\"\n \"We'll all come inside and eat your brains!\""
+    ],
+    "responses": [
+      { "text": "Look at the \"Community Donations\" again.", "topic": "JUKEBOX_COMMUNITY_HUB" },
+      { "text": "Look at a different rack.", "topic": "JUKEBOX_SONG_HUB" },
+      { "text": "Leave it be.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "JUKEBOX_SONG_SAINTS",
+    "dynamic_line": [
+      "&[You hear a large amount of static before the song starts.]\n\n \"O, when the saints, when they came marching in,\"\n \"O, when the saints marched right on in.\"\n \"Lord, I wanted to be in that number,\"\n \"Back when the saints came marching in.\"\n\n \"O the sky, it was torn all apart,\"\n \"O when the sky tore everything apart,\"\n \"Lord, I ran to leave that good 'ol number\"\n \"when the sky, opened up to hell.\"\n\n \"So grab your guns and your boombox,\"\n \"We'll have one great, big 'ol brawl,\"\n \"when the time comes we won't be sad.\"\n \"Someday, I'll join in that number,\"\n \"'Cause the saints? Oh they'll never come.\"\n\n \"O when they gather, when they gather 'round the camp,\"\n \"O when they gather 'round everyone,\"\n \"Lord, I wish not be in that number,\"\n \"when they gather 'round us all.\"\n\n \"O when they all, come with that rage,\"\n \"or when that goo fills up my veins,\"\n \"Lord, I don't want to be in that number\"\n \"when they feast upon my friends.\"\n\n \"But 'till that day, I'll keep playing,\"\n \"We might as well have a ball,\"\n \"Every day is a blessing, when we're done.\"\n \"We'll need some trumpets for the rapture,\"\n \"'Cause the saints? Oh they'll never come.\"\n\n[The song ends with some more static, but also a scream at the very end.]"
+    ],
+    "responses": [
+      { "text": "Look at the \"Community Donations\" again.", "topic": "JUKEBOX_COMMUNITY_HUB" },
+      { "text": "Look at a different rack.", "topic": "JUKEBOX_SONG_HUB" },
+      { "text": "Leave it be.", "topic": "TALK_DONE" }
+    ]
+  }
+]

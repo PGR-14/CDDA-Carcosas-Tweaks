@@ -13,10 +13,8 @@
         "tiles": [
           { "id": "overlay_mutation_WENDIGO_ARMS", "fg": 98, "rotates": false },
           { "id": "overlay_mutation_WENDIGO_ARMS_OK", "fg": 98, "rotates": false },
-          { "id": "overlay_female_mutation_AMORPHOUS_WENDI", "fg": 134, "rotates": false },
-          { "id": "overlay_female_mutation_SAP_SMELL", "fg": 146, "rotates": false },
-          { "id": "overlay_male_mutation_AMORPHOUS_WENDI", "fg": 159, "rotates": false },
-          { "id": "overlay_male_mutation_SAP_SMELL", "fg": 171, "rotates": false },
+          { "id": "overlay_female_mutation_WENDI_SLIME", "fg": 134, "rotates": false },
+          { "id": "overlay_male_mutation_WENDI_SLIME", "fg": 159, "rotates": false },
           { "id": "overlay_wielded_calico_recreated", "fg": 622, "rotates": false },
           { "id": "overlay_wielded_tec9_recreated", "fg": 581, "rotates": false },
           { "id": "overlay_wielded_skorpion_61_recreated", "fg": 633, "rotates": false },
@@ -78,7 +76,6 @@
         "//": "Probably works? ADD 3791! 3791 - 3998",
         "tiles": [ { "id": "mon_headless_cryptid", "fg": [ 3937 ] } ]
       }
-      
     ]
   }
 ]
