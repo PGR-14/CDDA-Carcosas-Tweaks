@@ -2,7 +2,7 @@
   {
     "id": "EOC_RESPITE_COMP_MAT",
     "type": "effect_on_condition",
-    "effect": [ { "open_dialogue": { "topic": "RESPITE_COMP_START_MAT" } } ]
+    "effect": [ { "open_dialogue": { "topic": "RESPITE_COMP_START_MAT" } }, { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] } ]
   },
   {
     "type": "talk_topic",
@@ -11,73 +11,63 @@
     "responses": [ { "text": "[Order items.]", "topic": "RESPITE_COMP_ORDER_MAT" }, { "text": "[Shut down.]", "topic": "TALK_DONE" } ]
   },
   {
-    "id": "EOC_RESPITE_COMP_ORDER_MAT",
-    "type": "effect_on_condition",
-    "condition": { "expects_vars": [ "name", "max" ] },
-    "effect": [
-      {
-        "set_string_var": "n_number_fabricate_<context_val:name>",
-        "target_var": { "context_val": "item" },
-        "parse_tags": true
-      },
-      { "math": [ "v_item = clamp(num_input('', v_item), 0, _max)" ] },
-      { "math": [ "n_number_fabricate_price = 0" ] },
-      { "math": [ "n_number_fabricate_price += 1   * n_number_fabricate_colt_saa" ] },
-      { "math": [ "n_number_fabricate_wait = max(1, ceil(n_number_fabricate_price/150))" ] }
-    ]
-  },
-  {
     "id": "RESPITE_COMP_ORDER_MAT",
     "//": "This is all the dialogue related to buying bulk wood.",
     "type": "talk_topic",
     "dynamic_line": {
       "concatenate": [
         {
-          "math": [ "n_number_fabricate_price != 0" ],
-          "yes": "&Your current order.  Total: $<npc_val:number_fabricate_price>.",
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&Your current order.  Total: $<u_val:number_fabricate_price>.",
           "no": "Place orders here! -Jenny"
         },
         {
-          "math": [ "n_number_fabricate_colt_saa != 0" ],
-          "yes": "\n<item_name:colt_saa>: <npc_val:number_fabricate_colt_saa> pcs."
+          "math": [ "u_number_fabricate_colt_saa != 0" ],
+          "yes": "\n<item_name:colt_saa>: <u_val:number_fabricate_colt_saa> pcs."
         }
       ]
     },
     "responses": [
       {
-        "text": "[<item_name:colt_saa>, $1 a piece, max 200]",
+        "text": "[<item_name:colt_saa>, 5 FMCNotes a piece.]",
         "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "colt_saa", "max": 200 } },
         "topic": "RESPITE_COMP_ORDER_MAT"
       },
       {
-        "text": "<color_light_red>[Reset.]</color>",
-        "condition": { "math": [ "n_number_fabricate_price != 0" ] },
+        "text": "<color_light_red>[Shut off.]</color>",
         "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
-        "topic": "RESPITE_COMP_ORDER_MAT"
-      },
+        "topic": "RESPITE_COMP_START_MAT"
+      }
+    ]
+  },
+  {
+    "id": "EOC_RESPITE_COMP_ORDER_MAT",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "name" ] },
+    "effect": [
       {
-        "text": "<color_light_green>[$<npc_val:number_fabricate_price>] That's all.  I'm ready to pay.</color>",
-        "condition": { "math": [ "n_number_fabricate_price != 0" ] },
-        "effect": {
-          "u_buy_item": "file",
-          "count": 1,
-          "cost": { "math": [ "n_number_fabricate_price * 100" ] },
-          "true_eocs": [
+        "set_string_var": "u_number_fabricate_<context_val:name>",
+        "target_var": { "context_val": "item" },
+        "parse_tags": true
+      },
+      { "math": [ "v_item = clamp(num_input('', v_item), 0, 300)" ] },
+      { "math": [ "u_number_fabricate_price = 0" ] },
+      { "math": [ "u_number_fabricate_price += 5 * u_number_fabricate_colt_saa" ] },
+      {
+        "run_eocs": {
+          "id": "EOC_RESPITE_COMP_ORDERED_MAT",
+          "condition": { "and": [ { "u_has_items": { "item": "FMCNote", "count": { "math": [ "u_number_fabricate_price" ] } } } ] },
+          "effect": [
+            { "u_consume_items": [ { "item": "FMCNote", "amount": "u_number_fabricate_price * 2" } ] },
             {
-              "id": "EOC_RESPITE_COMP_ORDERED_MAT",
               "effect": [
-                { "math": [ "n_timer_fabricate_waiting = time('now')" ] },
-                {
-                  "u_message": "Your order will be ready in <npc_val:number_fabricate_wait> days.\nCome back in that time to pick up your lumber.",
-                  "popup": true
-                },
                 {
                   "foreach": "array",
                   "var": { "context_val": "name" },
                   "target": [ "colt_saa" ],
                   "effect": [
                     {
-                      "set_string_var": "n_number_fabricate_<context_val:name>",
+                      "set_string_var": "u_number_fabricate_<context_val:name>",
                       "target_var": { "context_val": "item" },
                       "parse_tags": true
                     },
@@ -86,33 +76,30 @@
                       "then": { "u_spawn_item": { "context_val": "name" }, "count": { "var_val": "item" } }
                     }
                   ]
-                },
-                { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] }
+                }
               ]
             }
           ]
-        },
-        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+        }
       }
     ]
   },
   {
     "id": "EOC_RESPITE_COMP_RESET_MAT",
     "type": "effect_on_condition",
-    "effect": [
-      { "npc_lose_var": "timer_fabricate_waiting" },
-      { "npc_lose_var": "number_fabricate_price" },
-      { "npc_lose_var": "number_fabricate_wait" },
-      { "npc_lose_var": "number_fabricate_colt_saa" }
-    ]
+    "effect": [ { "u_lose_var": "number_fabricate_price" }, { "u_lose_var": "number_fabricate_colt_saa" } ]
   },
   {
     "type": "talk_topic",
     "id": [ "RESPITE_COMP_AFTERTRADE_MAT" ],
-    "dynamic_line": "&************************************************\n\n[ERROR: INVALID CURRENCY: MERCH]\n[ERROR: ILLEGAL TAMPERING DETECTED]\nThe computer makes some weird noises, & the error messages dissapear.\n\nINVENTORY CHK : ███████████████ 100% (COMPLETE)\nITEM TRANSFER :  ███████████████ 100% (COMPLETE)\n\n************************************************\n*  Operation Successful! Enjoy the goods!                         *\n************************************************",
+    "dynamic_line": "&************************************************\n\n[ERROR: INVALID CURRENCY: Free Merchant Certified Note]\n[ERROR: ILLEGAL TAMPERING DETECTED]\nThe computer makes some weird noises, & the error messages dissapear.\n\nINVENTORY CHK : ███████████████ 100% (COMPLETE)\nITEM TRANSFER :  ███████████████ 100% (COMPLETE)\n\n************************************************\n*  Operation Successful! Enjoy the goods!                         *\n************************************************",
     "responses": [
-      { "text": "[Order something else.]", "topic": "RESPITE_COMP_ORDER_MAT" },
-      { "text": "[Shut down.]", "topic": "TALK_DONE" }
+      {
+        "text": "[Order something else.]",
+        "topic": "RESPITE_COMP_ORDER_MAT",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] }
+      },
+      { "text": "[Shut down.]", "topic": "TALK_DONE", "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] } }
     ]
   }
 ]
