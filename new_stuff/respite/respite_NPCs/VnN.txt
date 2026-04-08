@@ -1,0 +1,5 @@
+[
+    {
+        "//": "Niste: 5'4\" 3DStub, BlckLngMess, LightSkin, AccSleep, CanEar, Cannibal, Fang, FluffTail, Fur, RobGen Introv, Masoch, Outdoor, SweetT, Whisk, AddictPers, GenChaos, HateVeg, NearSight, Pyro, CanMuzzle."
+    }
+]

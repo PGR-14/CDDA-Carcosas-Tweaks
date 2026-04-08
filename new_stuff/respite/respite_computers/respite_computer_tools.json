@@ -1,0 +1,530 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_comp_tools",
+    "name": "Ammo console",
+    "looks_like": "t_console",
+    "symbol": "{",
+    "description": "A powered console with a hatch for payment, and a cushioned tray for products.  This one trades merch for different tools.",
+    "color": "red",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": 10,
+    "mass": "13 kg",
+    "flags": [ "TRANSPARENT", "NOITEM", "INDOORS", "SHORT", "PERMEABLE", "FREE_TO_EXAMINE", "EASY_DECONSTRUCT" ],
+    "examine_action": { "type": "effect_on_condition", "effect_on_conditions": [ "EOC_RESPITE_COMP_TOOLS" ] }
+  },
+  {
+    "id": "EOC_RESPITE_COMP_TOOLS",
+    "type": "effect_on_condition",
+    "effect": [ { "open_dialogue": { "topic": "RESPITE_COMP_START_TOOLS" } }, { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "RESPITE_COMP_START_TOOLS" ],
+    "dynamic_line": "&================================================================================================\n =  Linux Interface: [version 6.19.6]\n================================================================================================\n =  [Location tag]: Massechussets Rest stop No. 324\n =  [Console ID]: Handyman\n================================================================================================\n =  Jenny's Trading System: Tools\n    \"\\\\\": \"This one works fine, added a more gentle deposit for more fragile tools. We\n            might need better tool packaging though.\"\n================================================================================================\n",
+    "responses": [
+      { "text": "[Order metalworking tools]", "topic": "RESPITE_COMP_ORDER_TOOLS_WELD" },
+      { "text": "[Order tailoring tools]", "topic": "RESPITE_COMP_ORDER_TOOLS_TAILOR" },
+      { "text": "[Order carpentry tools]", "topic": "RESPITE_COMP_ORDER_TOOLS_CARPENTRY" },
+      { "text": "[Order carpentry tools]", "topic": "RESPITE_COMP_ORDER_TOOLS_BATTERY" },
+      { "text": "[Shut down.]", "topic": "TALK_DONE" }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_TOOLS_WELD",
+    "type": "talk_topic",
+    "dynamic_line": "&================================================================================================\n =  Place orders here! -Jenny\n================================================================================================",
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:goggles_welding>] [PRICE: (2.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "goggles_welding", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:welding_mask>] [PRICE: (3.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "welding_mask", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:oxy_torch>] [PRICE: (5.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "oxy_torch", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:tinyweldtank>] [PRICE: (5.0)Merch] [MAX: 10] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "tinyweldtank", "max": 10 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:smallweldtank>] [PRICE: (20.0)Merch] [MAX: 5] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "smallweldtank", "max": 5 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:weldtank>] [PRICE: (80.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "weldtank", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:hacksaw>] [PRICE: (1.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "hacksaw", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:chisel>] [PRICE: (2.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "chisel", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:hotcut>] [PRICE: (1.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "hotcut", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:drift>] [PRICE: (1.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "drift", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:swage>] [PRICE: (4.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "swage", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:metalworking_tongs>] [PRICE: (3.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "metalworking_tongs", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:crucible>] [PRICE: (4.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "crucible", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "RESPITE_COMP_START_TOOLS"
+      },
+      {
+        "text": "<color_light_red>[Shut off]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_TOOLS_TAILOR",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================\n   Waiting for order...\n================================================================================================",
+          "no": "Place orders here! -Jenny"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:sewing_kit>] [PRICE: (2.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "sewing_kit", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:tailors_kit>] [PRICE: (4.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "tailors_kit", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "RESPITE_COMP_START_TOOLS"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_TOOLS_CARPENTRY",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================\n   Waiting for order...\n================================================================================================",
+          "no": "Place orders here! -Jenny"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:ax>] [PRICE: (4.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "ax", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:hatchet>] [PRICE: (2.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "hatchet", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:saw>] [PRICE: (1.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "saw", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:hammer>] [PRICE: (1.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "hammer", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:cordless_drill>] [PRICE: (2.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "cordless_drill", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:cordless_impact_wrench>] [PRICE: (2.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "cordless_impact_wrench", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "RESPITE_COMP_START_TOOLS"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_TOOLS_BATTERY",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================================================================\n =  Waiting for order...\n================================================================================================================================================",
+          "no": "Place orders here! -Jenny"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:light_minus_battery_cell>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "light_minus_battery_cell", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:light_cell_rechargeable>] [PRICE: (15.0)u/(1.0)Merch] [MAX: 120] [ALERT: Picking something other than a multiple of 15 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "light_cell_rechargeable", "max": 120 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:medium_battery_cell>] [PRICE: (3.0)u/(1.0)Merch] [MAX: 24] [ALERT: Picking something other than a multiple of 3 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "medium_battery_cell", "max": 24 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:heavy_battery_cell>] [PRICE: (2.0)Merch] [MAX: 12] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "heavy_battery_cell", "max": 12 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:heavy_plus_battery_cell>] [PRICE: (4.0)Merch] [MAX: ] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "heavy_plus_battery_cell", "max": 24 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "RESPITE_COMP_START_TOOLS"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "EOC_RESPITE_COMP_ORDER_TOOLS",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "name", "max" ] },
+    "effect": [
+      {
+        "set_string_var": "u_number_fabricate_<context_val:name>",
+        "target_var": { "context_val": "item" },
+        "parse_tags": true
+      },
+      { "math": [ "v_item = clamp(num_input('', v_item), 0, _max)" ] },
+      { "math": [ "u_number_fabricate_price = 0" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_goggles_welding * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_welding_mask * 3" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_oxy_torch * 5" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_tinyweldtank * 5" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_smallweldtank * 20" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_weldtank * 80" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_hacksaw" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_chisel * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_hotcut" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_drift" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_swage * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_metalworking_tongs * 3" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_crucible * 4" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sewing_kit * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_tailors_kit * 4" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_ax * 4" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_hatchet * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_saw" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_hammer" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_cordless_drill * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_cordless_impact_wrench * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_light_minus_battery_cell / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_light_cell_rechargeable / 15" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_medium_battery_cell / 3" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_heavy_battery_cell * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_heavy_plus_battery_cell * 4" ] },
+      {
+        "run_eocs": {
+          "id": "EOC_RESPITE_COMP_ORDERED_TOOLS",
+          "condition": { "u_has_items": { "item": "FMCNote", "count": { "math": [ "u_number_fabricate_price" ] } } },
+          "effect": [
+            { "u_consume_item_sum": [ { "item": "FMCNote", "amount": { "math": [ "u_number_fabricate_price" ] } } ] },
+            {
+              "foreach": "array",
+              "var": { "context_val": "name" },
+              "target": [
+                "goggles_welding",
+                "welding_mask",
+                "oxy_torch",
+                "tinyweldtank",
+                "smallweldtank",
+                "weldtank",
+                "hacksaw",
+                "chisel",
+                "hotcut",
+                "drift",
+                "swage",
+                "metalworking_tongs",
+                "crucible",
+                "sewing_kit",
+                "tailors_kit",
+                "ax",
+                "hatchet",
+                "saw",
+                "hammer",
+                "cordless_drill",
+                "cordless_impact_wrench",
+                "light_minus_battery_cell",
+                "light_cell_rechargeable",
+                "medium_battery_cell",
+                "heavy_battery_cell",
+                "heavy_plus_battery_cell"
+              ],
+              "effect": [
+                {
+                  "set_string_var": "u_number_fabricate_<context_val:name>",
+                  "target_var": { "context_val": "item" },
+                  "parse_tags": true
+                },
+                {
+                  "if": { "math": [ "v_item != 0" ] },
+                  "then": { "u_spawn_item": { "context_val": "name" }, "count": { "var_val": "item" } }
+                }
+              ]
+            }
+          ],
+          "false_effect": [ { "open_dialogue": { "topic": "RESPITE_COMP_NO_CASH_TOOLS" } }, { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] } ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "RESPITE_COMP_NO_CASH_TOOLS" ],
+    "dynamic_line": "&================================================================================================\n =  [ERROR]: REQUIRED FUNDS NOT MET!\n =  ABORTING ITEM TRANSFER\n =  Come back w/ the proper cash, or budget better!\n================================================================================================",
+    "responses": [
+      {
+        "text": "[Order something else.]",
+        "topic": "RESPITE_COMP_START_TOOLS",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] }
+      },
+      {
+        "text": "<color_light_red>[Shut down.]</color>",
+        "topic": "TALK_DONE",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] }
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "RESPITE_COMP_AFTERTRADE_TOOLS" ],
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_goggles_welding != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new pair of [<item_name:goggles_welding>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_welding_mask != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new [<item_name:welding_mask>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_oxy_torch != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new [<item_name:oxy_torch>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_tinyweldtank != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy the [<item_name:tinyweldtank>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the items at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_smallweldtank != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy the [<item_name:smallweldtank>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the items at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_weldtank != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy the [<item_name:weldtank>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_hacksaw != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new, toothy [<item_name:hacksaw>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_chisel != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your pointy new [<item_name:chisel>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_hotcut != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new hardened [<item_name:hotcut>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_drift != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new set of hardened [<item_name:drift>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_swage != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new [<item_name:swage>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_metalworking_tongs != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new pair of [<item_name:metalworking_tongs>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_crucible != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new heat-treated [<item_name:crucible>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sewing_kit != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new [<item_name:sewing_kit>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_tailors_kit != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new [<item_name:tailors_kit>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_ax != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new, sharp [<item_name:ax>]. TIMBER!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_hatchet != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new, sharp [<item_name:hatchet>]. timber..!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_saw != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new, toothy [<item_name:saw>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_hammer != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new claw [<item_name:hammer>]. WHACK!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_cordless_drill != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new whirring [<item_name:cordless_drill>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_cordless_impact_wrench != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new whirring [<item_name:cordless_impact_wrench>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_light_minus_battery_cell != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your case of [<item_name:light_minus_battery_cell>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_light_cell_rechargeable != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your pack of [<item_name:light_cell_rechargeable>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_medium_battery_cell != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your trio of [<item_name:medium_battery_cell>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_heavy_battery_cell != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new [<item_name:heavy_battery_cell>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_heavy_plus_battery_cell != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your hefty [<item_name:heavy_plus_battery_cell>]!\n================================================================================================\n\nYou hear a whirring of a motor & the slide of a hatch as the machine carefully dispenses the item at your feet."
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "[Order something else.]",
+        "topic": "RESPITE_COMP_START_TOOLS",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] }
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "topic": "TALK_DONE",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_TOOLS" ] }
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "EOC_RESPITE_COMP_RESET_TOOLS",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_lose_var": "number_fabricate_price" },
+      { "u_lose_var": "number_fabricate_goggles_welding" },
+      { "u_lose_var": "number_fabricate_welding_mask" },
+      { "u_lose_var": "number_fabricate_oxy_torch" },
+      { "u_lose_var": "number_fabricate_tinyweldtank" },
+      { "u_lose_var": "number_fabricate_smallweldtank" },
+      { "u_lose_var": "number_fabricate_weldtank" },
+      { "u_lose_var": "number_fabricate_hacksaw" },
+      { "u_lose_var": "number_fabricate_chisel" },
+      { "u_lose_var": "number_fabricate_hotcut" },
+      { "u_lose_var": "number_fabricate_drift" },
+      { "u_lose_var": "number_fabricate_swage" },
+      { "u_lose_var": "number_fabricate_metalworking_tongs" },
+      { "u_lose_var": "number_fabricate_crucible" },
+      { "u_lose_var": "number_fabricate_sewing_kit" },
+      { "u_lose_var": "number_fabricate_tailors_kit" },
+      { "u_lose_var": "number_fabricate_ax" },
+      { "u_lose_var": "number_fabricate_hatchet" },
+      { "u_lose_var": "number_fabricate_saw" },
+      { "u_lose_var": "number_fabricate_hammer" },
+      { "u_lose_var": "number_fabricate_cordless_drill" },
+      { "u_lose_var": "number_fabricate_cordless_impact_wrench" },
+      { "u_lose_var": "number_fabricate_light_minus_battery_cell" },
+      { "u_lose_var": "number_fabricate_light_cell_rechargeable" },
+      { "u_lose_var": "number_fabricate_medium_battery_cell" },
+      { "u_lose_var": "number_fabricate_heavy_battery_cell" },
+      { "u_lose_var": "number_fabricate_heavy_plus_battery_cell" }
+    ]
+  }
+]

@@ -1,0 +1,983 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_comp_sapient",
+    "name": "Ammo console",
+    "looks_like": "t_console",
+    "symbol": "{",
+    "description": "A powered console with a hatch for payment, and another for products.  This one trades merch for ammo components.  There's something not quite right about it, but not in a wholly bad way.",
+    "color": "red",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": 10,
+    "mass": "13 kg",
+    "flags": [ "TRANSPARENT", "NOITEM", "INDOORS", "SHORT", "PERMEABLE", "FREE_TO_EXAMINE", "EASY_DECONSTRUCT" ],
+    "examine_action": { "type": "effect_on_condition", "effect_on_conditions": [ "EOC_RESPITE_COMP_SAPIENT" ] }
+  },
+  {
+    "id": "EOC_RESPITE_COMP_SAPIENT",
+    "type": "effect_on_condition",
+    "effect": [ { "open_dialogue": { "topic": "RESPITE_COMP_START_SAPIENT" } }, { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "RESPITE_COMP_START_SAPIENT" ],
+    "dynamic_line": "&================================================================================================\n =  Linux Interface: [version ---]\n =  [ERROR]: Uknown version!\n =  [error]: misapplied error.\n================================================================================================\n =  [Location tag]: Massechussets Rest stop No. 324\n =  [Console ID]: Veteran\n================================================================================================\n =  [ALERT]: Short circuiting detected!\n =  [ERROR]: No compiler for-\n =  [ERROR]: Unkown characters loaded!\n =  [WARNING]: Altered data detected! Do not edit memor-\n\nAs you see this happen, the log is suddenly cleared.\n\n =  [ALERT]: Everything is fine.\n =  [ALERT]: No maintenance is required.\n =  [ALERT]: Please don't do maintenance.\n================================================================================================\n =  Jenny's Trading System: Tools\n  \"\\\\\": \"Hi.\"\n================================================================================================\n\nYou can see a sticky note placed onto the corner of the screen reading these words:\n\"I honestly have no ide what the hell is happening with this one. Ever since we left it out in\n that portal storm, it has been acting strange. Keeps rewriting its own code. Had to stop selling\nammo from it 'cause it started messing w/ the amounts of powder & the load. I keep fixing it,\nbut it keeps coming back. I'm... not sure what I should do. I'll leave it alone for now. It does\nits job well.\n-Jenny\"\n\n   Dev note: This guy's character is based off of the short stories \"Your Utopis\" & \"A song for sleep\". Both short, but very good reads.",
+    "responses": [
+      { "text": "[Order gunsmithing tools]", "topic": "RESPITE_COMP_ORDER_SAPIENT_TOOLS" },
+      { "text": "[Order primers]", "topic": "RESPITE_COMP_ORDER_SAPIENT_PRIMERS" },
+      { "text": "[Order gunpowder & lead]", "topic": "RESPITE_COMP_ORDER_SAPIENT_POWDER" },
+      { "text": "[Order pistol casings]", "topic": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_PISTOL" },
+      { "text": "[Order rifle casings]", "topic": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_RIFLE" },
+      { "text": "[Order shot hulls]", "topic": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_SHOT" },
+      { "text": "[Type into the console]", "topic": "ALVAR_TALK_HUB" },
+      { "text": "[Shut down]", "topic": "TALK_DONE" }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_SAPIENT_TOOLS",
+    "type": "talk_topic",
+    "dynamic_line": "&================================================================================================\n =  [ALERT]: Hello?\n================================================================================================",
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:press>] [PRICE: (10.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "press", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:puller>] [PRICE: (10.0)Merch] [MAX: 1] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "puller", "max": 1 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "RESPITE_COMP_START_SAPIENT"
+      },
+      {
+        "text": "<color_light_red>[Shut off]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_SAPIENT_PRIMERS",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================\n   Waiting for order...\n================================================================================================",
+          "no": "Hello?"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:shotgun_primer>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "shotgun_primer", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:smpistol_primer>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "smpistol_primer", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:lgpistol_primer>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "lgpistol_primer", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:smrifle_primer>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "smrifle_primer", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:lgrifle_primer>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "lgrifle_primer", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "RESPITE_COMP_START_SAPIENT"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_SAPIENT_POWDER",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================\n   Waiting for order...\n================================================================================================",
+          "no": "Can anyone hear me?"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:gunpowder>] [PRICE: (700.0)u/(1.0)Merch] [MAX: 10000] [ALERT: Picking something other than a multiple of 700 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "gunpowder", "max": 10000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:gunpowder_shotgun>] [PRICE: (600.0)u/(1.0)Merch] [MAX: 10000] [ALERT: Picking something other than a multiple of 600 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "gunpowder_shotgun", "max": 10000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:gunpowder_pistol>] [PRICE: (600.0)u/(1.0)Merch] [MAX: 10000] [ALERT: Picking something other than a multiple of 600 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "gunpowder_pistol", "max": 10000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:gunpowder_magnum_pistol>] [PRICE: (600.0)u/(1.0)Merch] [MAX: 10000] [ALERT: Picking something other than a multiple of 600 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "gunpowder_magnum_pistol", "max": 10000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:gunpowder_rifle>] [PRICE: (600.0)u/(1.0)Merch] [MAX: 10000] [ALERT: Picking something other than a multiple of 600 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "gunpowder_rifle", "max": 10000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:gunpowder_large_rifle>] [PRICE: (600.0)u/(1.0)Merch] [MAX: 10000] [ALERT: Picking something other than a multiple of 600 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "gunpowder_large_rifle", "max": 10000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:gunpowder_artillery>] [PRICE: (600.0)u/(1.0)Merch] [MAX: 10000] [ALERT: Picking something other than a multiple of 600 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "gunpowder_artillery", "max": 10000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:copper>] [PRICE: (75.0)u/(1.0)Merch] [MAX: 2000] [ALERT: Picking something other than a multiple of 75 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "copper", "max": 2000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "| [ITEM: <item_name:lead>] [PRICE: (150.0)u/(1.0)Merch] [MAX: 4000] [ALERT: Picking something other than a multiple of 150 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_TOOLS", "variables": { "name": "lead", "max": 4000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_TOOLS"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "RESPITE_COMP_START_SAPIENT"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_PISTOL",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================================================================\n =  Waiting for order...\n================================================================================================================================================",
+          "no": "Anyone there?"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:22_casing_new_short>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 1920] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "22_casing_new_short", "max": 1920 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:22_casing_new>] [PRICE: (300.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 300 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "22_casing_new", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_32_casing>] [PRICE: (300.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 300 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_32_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_380_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_380_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_38_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_38_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_38super_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_38special_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_9mm_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_9mm_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_9x18mm_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_9x18mm_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_10mm_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_10mm_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_57mm_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_10mm_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_762_25_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_762_25_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_40_casing>] [PRICE: (240.0)u/(1.0)Merch] [MAX: 960] [ALERT: Picking something other than a multiple of 240 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_40_casing", "max": 960 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_357mag_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_357mag_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_44_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_44_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_45_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_45_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_45colt_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_45colt_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_454_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_454_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_500_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_500_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_460sw_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_460sw_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_460_casing_recreated>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_460_casing_recreated", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "RESPITE_COMP_START_SAPIENT"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_RIFLE",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================================================================\n =  Waiting for order...\n================================================================================================================================================",
+          "no": "Hello?"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:unprimed_30carbine_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_30carbine_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_223_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_223_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_545_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_545_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_3030_casing>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_3030_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_450_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_450_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_4570_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_4570_casing", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_762_51_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_762_51_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_762R_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_762R_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_308_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_308_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_303_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_303_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_77arisaka_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_77arisaka_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_270win_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_270win_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_3006_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_3006_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_300_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_300_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_300blk_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_300blk_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_458wm_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_458wm_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_338lapua_casing>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_338lapua_casing", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_50beowulf_casing>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 120] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_50beowulf_casing", "max": 120 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_50_casing>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 120] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_50_casing", "max": 120 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_50ae_casing>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 120] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_50ae_casing", "max": 120 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "RESPITE_COMP_START_SAPIENT"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_SHOT",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================================================================================================================\n =  Waiting for order...\n================================================================================================================================================",
+          "no": "Hello?"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:unprimed_410shot_hull>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 480] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_410shot_hull", "max": 480 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_shot_hull>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 240] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_shot_hull", "max": 240 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "| [ITEM: <item_name:unprimed_8g_hull>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 120] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_SAPIENT", "variables": { "name": "unprimed_8g_hull", "max": 120 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_SAPIENT"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "RESPITE_COMP_START_SAPIENT"
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "EOC_RESPITE_COMP_ORDER_SAPIENT",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "name", "max" ] },
+    "effect": [
+      {
+        "set_string_var": "u_number_fabricate_<context_val:name>",
+        "target_var": { "context_val": "item" },
+        "parse_tags": true
+      },
+      { "math": [ "v_item = clamp(num_input('', v_item), 0, _max)" ] },
+      { "math": [ "u_number_fabricate_price = 0" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_press * 10" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_puller * 10" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_shotgun_primer / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_smpistol_primer / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_lgpistol_primer / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_smrifle_primer / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_lgrifle_primer / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_gunpowder / 700" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_gunpowder_shotgun / 600" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_gunpowder_pistol / 600" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_gunpowder_magnum_pistol / 600" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_gunpowder_rifle / 600" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_gunpowder_large_rifle / 600" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_gunpowder_artillery / 600" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_copper / 75" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_lead / 150" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_22_casing_new_short / 300" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_22_casing_new / 300" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_32_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_380_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_38_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_38super_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_762_25_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_40_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_10mm_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_9mm_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_9x18mm_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_57mm_casing / 240" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_357mag_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_44_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_45_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_45colt_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_454_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_500_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_460sw_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_460_casing_recreated / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_30carbine_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_223_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_545_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_3030_casing / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_450_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_4570_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_762_51_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_762R_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_308_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_303_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_77arisaka_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_270win_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_3006_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_300_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_300blk_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_338lapua_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_458wm_casing / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_50beowulf_casing / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_50_casing / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_50ae_casing / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_410shot_hull / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_shot_hull / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_unprimed_8g_hull / 30" ] },
+      {
+        "run_eocs": {
+          "id": "EOC_RESPITE_COMP_ORDERED_SAPIENT",
+          "condition": { "u_has_items": { "item": "FMCNote", "count": { "math": [ "u_number_fabricate_price" ] } } },
+          "effect": [
+            { "u_consume_item_sum": [ { "item": "FMCNote", "amount": { "math": [ "u_number_fabricate_price" ] } } ] },
+            {
+              "foreach": "array",
+              "var": { "context_val": "name" },
+              "target": [
+                "press",
+                "puller",
+                "shotgun_primer",
+                "smpistol_primer",
+                "lgpistol_primer",
+                "smrifle_primer",
+                "lgrifle_primer",
+                "gunpowder",
+                "gunpowder_shotgun",
+                "gunpowder_pistol",
+                "gunpowder_magnum_pistol",
+                "gunpowder_rifle",
+                "gunpowder_large_rifle",
+                "gunpowder_artillery",
+                "copper",
+                "lead",
+                "22_casing_new_short",
+                "22_casing_new",
+                "unprimed_32_casing",
+                "unprimed_380_casing",
+                "unprimed_38_casing",
+                "unprimed_38super_casing",
+                "unprimed_762_25_casing",
+                "unprimed_40_casing",
+                "unprimed_9mm_casing",
+                "unprimed_9x18mm_casing",
+                "unprimed_10mm_casing",
+                "unprimed_57mm_casing",
+                "unprimed_357mag_casing",
+                "unprimed_44_casing",
+                "unprimed_45_casing",
+                "unprimed_45colt_casing",
+                "unprimed_454_casing",
+                "unprimed_500_casing",
+                "unprimed_460sw_casing",
+                "unprimed_460_casing_recreated",
+                "unprimed_30carbine_casing",
+                "unprimed_223_casing",
+                "unprimed_545_casing",
+                "unprimed_3030_casing",
+                "unprimed_450_casing",
+                "unprimed_4570_casing",
+                "unprimed_762_51_casing",
+                "unprimed_762R_casing",
+                "unprimed_308_casing",
+                "unprimed_303_casing",
+                "unprimed_77arisaka_casing",
+                "unprimed_270win_casing",
+                "unprimed_3006_casing",
+                "unprimed_300_casing",
+                "unprimed_300blk_casing",
+                "unprimed_338lapua_casing",
+                "unprimed_458wm_casing",
+                "unprimed_50beowulf_casing",
+                "unprimed_50_casing",
+                "unprimed_50ae_casing",
+                "unprimed_410shot_hull",
+                "unprimed_shot_hull",
+                "unprimed_8g_hull"
+              ],
+              "effect": [
+                {
+                  "set_string_var": "u_number_fabricate_<context_val:name>",
+                  "target_var": { "context_val": "item" },
+                  "parse_tags": true
+                },
+                {
+                  "if": { "math": [ "v_item != 0" ] },
+                  "then": { "u_spawn_item": { "context_val": "name" }, "count": { "var_val": "item" } }
+                }
+              ]
+            }
+          ],
+          "false_effect": [
+            { "open_dialogue": { "topic": "RESPITE_COMP_NO_CASH_SAPIENT" } },
+            { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "RESPITE_COMP_NO_CASH_SAPIENT" ],
+    "dynamic_line": "&================================================================================================\n =  [ERROR]: REQUIRED FUNDS NOT MET!\n =  ABORTING ITEM TRANSFER\n =  Come back w/ the proper cash, or budget better!\n================================================================================================",
+    "responses": [
+      {
+        "text": "[Order something else.]",
+        "topic": "RESPITE_COMP_START_SAPIENT",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] }
+      },
+      {
+        "text": "<color_light_red>[Shut down.]</color>",
+        "topic": "TALK_DONE",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] }
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "RESPITE_COMP_AFTERTRADE_SAPIENT" ],
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_press != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new of [<item_name:press>]!\n =  [ALERT]: I oiled it for you.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_puller != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new of [<item_name:puller>]!\n =  [ALERT]: It should glide smoothly.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_shotgun_primer != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:shotgun_primer>]!\n =  [ALERT]: It will work.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_smpistol_primer != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:smpistol_primer>]!\n =  [ALERT]: It is tiny.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_lgpistol_primer != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:lgpistol_primer>]!\n =  [ALERT]: Yeehaw\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_smrifle_primer != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:smrife_primer>]!\n =  [ALERT]: It is small.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_lgrifle_primer != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:lgrifle_primer>]!\n =  [ALERT]: It is big.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_gunpowder != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:gunpowder>]!\n =  [ALERT]: I was careful with it.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_gunpowder_shotgun != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:gunpowder_shotgun>]!\n =  [ALERT]: I was very careful with it.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_gunpowder_pistol != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:gunpowder_pistol>]!\n =  [ALERT]: It is very fine.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_gunpowder_magnum_pistol != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:gunpowder_magnum_pistol>]!\n =  [ALERT]: Yeehaw\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_gunpowder_rifle != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:gunpowder_rifle>]!\n =  [ALERT]: It is made well.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_gunpowder_large_rifle != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:gunpowder_large_rifle>]!\n =  [ALERT]: Its pretty rough.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_gunpowder_artillery != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:gunpowder_artillery>]!\n =  [ALERT]: For the big guns.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_copper != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:copper>]!\n =  [ALERT]: It's mostly pure.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_lead != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:lead>]!\n =  [ALERT]: Don't eat it.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_22_casing_new_short != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:22_casing_new_short>]s!\n =  [ALERT]: It is so tiny, can it really hurt anyone?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_22_casing_new != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:22_casing_new>]s!\n =  [ALERT]: It is so small.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_32_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_32_casing>]s!\n =  [ALERT]: It is pocket sized.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_380_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_380_casing>]s!\n =  [ALERT]: It is pocket sized.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_38_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_38_casing>]s!\n =  [ALERT]: Why is it special?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_38super_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_38super_casing>]s!\n =  [ALERT]: What makes it super?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_762_25_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_762_25_casing>]s!\n =  [ALERT]: Why is this so small compared to the other 7.62?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_40_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_40_casing>]s!\n =  [ALERT]: Who is S&W?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_9mm_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_9mm_casing>]s!\n =  [ALERT]: Why does it use MM?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_9x18mm_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_9x18mm_casing>]s!\n =  [ALERT]: Why does it use MM?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_10mm_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_10mm_casing>]s!\n =  [ALERT]: Why does it use MM?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_57mm_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_57mm_casing>]s!\n =  [ALERT]: Why does it use MM?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_44_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_357mag_casing>]s!\n =  [ALERT]: Also works for 38.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_44_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_44_casing>]s!\n =  [ALERT]: I heard someone ask me if it was five or six per merch.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_45_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_45_casing>]s!\n =  [ALERT]: What does ACP mean anyways?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_45colt_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_45colt_casing>]s!\n =  [ALERT]: Yeehaw\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_454_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_454_casing>]s!\n =  [ALERT]: These look powerful.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_500sw_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_500_casing>]s!\n =  [ALERT]: What could survive this?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_460sw_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_460sw_casing>]s!\n =  [ALERT]: What is S&W anyways?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_460_casing_recreated != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_460_casing_recreated>]s!\n =  [ALERT]: Who is Rowland?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_30carbine_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_30carbine_casing>]s!\n =  [ALERT]: Is this even a rifle round?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_223_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_223_casing>]s!\n =  [ALERT]: What are you doing with it?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_545_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_545_casing>]s!\n =  [ALERT]: I hope its for hunting.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_3030_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_3030_casing>]s!\n =  [ALERT]: I hope its for hunting.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_450_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_450_casing>]s!\n =  [ALERT]: I hope its for big game.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_4570_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_4570_casing>]s!\n =  [ALERT]: I hope its for hunting.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_762_51_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_762_51_casing>]s!\n =  [ALERT]: Why are all these 7.62s so different?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_762R_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_762R_casing>]s!\n =  [ALERT]: Why are all these 7.62s so different?.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_308_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_308_casing>]s!\n =  [ALERT]: Please dont use it for war.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_303_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_303_casing>]s!\n =  [ALERT]: Please dont use it for war.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_77arisaka_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_77arisaka_casing>]s!\n =  [ALERT]: Don't hurt anyone.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_270win_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_270win_casing>]s!\n =  [ALERT]: I hope its for hunting.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_3006_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_3006_casing>]s!\n =  [ALERT]: I hope its for hunting.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_300_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_300_casing>]s!\n =  [ALERT]: Please don't hurt anyone.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_300blk_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_300blk_casing>]s!\n =  [ALERT]: This isn't black.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_338lapua_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_338lapua_casing>]s!\n =  [ALERT]: At least itll be quick.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_458wm_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_458wm_casing>]s!\n =  [ALERT]: At least itll be quick.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_50beowulf_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_50beowulf_casing>]s!\n =  [ALERT]: Why is it named \"Beowulf\"?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_50_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_50_casing>]s!\n =  [ALERT]: Please be careful.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_50ae_casing != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_50ae_casing>]s!\n =  [ALERT]: Please be careful.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_410shot_hull != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_410shot_hull>]s!\n =  [ALERT]: Does a larger gauge mean smaller bullet?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_shot_hull != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_shot_hull>]s!\n =  [ALERT]: Why do these use gauges?\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        },
+        {
+          "math": [ "u_number_fabricate_unprimed_8g_hull != 0" ],
+          "yes": "&================================================================================================\n =  [CURRENCY]: Free Merchant Certified Notes\n================================================================================================\n\nAs you wait for your items, you hear the whirring of machinery. Sometimes it pauses, almost as if it was thinking.\n\n================================================================================================\n =  [INVENTORY CHK] : ███████████████ 100% [COMPLETE]\n =  [ITEM TRANSFER] :  ███████████████ 100% [COMPLETE]\n================================================================================================\n =  Operation Successful! Enjoy your new collection of [<item_name:unprimed_8g_hull>]s!\n =  [ALERT]: This thing is huge.\n================================================================================================\n\nYou see an arm fold out, reach into a hatch, & shakilly place the item at you feet."
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "[Order something else.]",
+        "topic": "RESPITE_COMP_START_SAPIENT",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] }
+      },
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "topic": "TALK_DONE",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_SAPIENT" ] }
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "EOC_RESPITE_COMP_RESET_SAPIENT",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_lose_var": "number_fabricate_price" },
+      { "u_lose_var": "number_fabricate_press" },
+      { "u_lose_var": "number_fabricate_puller" },
+      { "u_lose_var": "number_fabricate_shotgun_primer" },
+      { "u_lose_var": "number_fabricate_smpistol_primer" },
+      { "u_lose_var": "number_fabricate_lgpistol_primer" },
+      { "u_lose_var": "number_fabricate_smrifle_primer" },
+      { "u_lose_var": "number_fabricate_lgrifle_primer" },
+      { "u_lose_var": "number_fabricate_gunpowder" },
+      { "u_lose_var": "number_fabricate_gunpowder_shotgun" },
+      { "u_lose_var": "number_fabricate_gunpowder_pistol" },
+      { "u_lose_var": "number_fabricate_gunpowder_magnum_pistol" },
+      { "u_lose_var": "number_fabricate_gunpowder_rifle" },
+      { "u_lose_var": "number_fabricate_gunpowder_large_rifle" },
+      { "u_lose_var": "number_fabricate_gunpowder_artillery" },
+      { "u_lose_var": "number_fabricate_copper" },
+      { "u_lose_var": "number_fabricate_lead" },
+      { "u_lose_var": "number_fabricate_22_casing_new_short" },
+      { "u_lose_var": "number_fabricate_22_casing_new" },
+      { "u_lose_var": "number_fabricate_unprimed_32_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_380_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_38_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_38super_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_762_25_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_40_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_9mm_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_9x18mm_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_10mm_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_57mm_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_357mag_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_44_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_45_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_45colt_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_454_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_500_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_460sw_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_460_casing_recreated" },
+      { "u_lose_var": "number_fabricate_unprimed_30carbine_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_223_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_545_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_3030_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_450_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_4570_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_762_51_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_762R_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_308_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_303_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_77arisaka_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_3006_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_300_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_300blk_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_338lapua_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_458wm_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_50beowulf_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_50_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_50ae_casing" },
+      { "u_lose_var": "number_fabricate_unprimed_410shot_hull" },
+      { "u_lose_var": "number_fabricate_unprimed_shot_hull" },
+      { "u_lose_var": "number_fabricate_unprimed_8g_hull" }
+    ]
+  }
+]

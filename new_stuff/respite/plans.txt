@@ -163,7 +163,7 @@ John's Gas station.
            -Some moonshine (3 jugs)
 
 Patricia's Diner:
-    Patricia runs this place w/ her 1 of her sons, Andrew.
+    Patricia runs this place w/ her 1 of her sons, Scott.
     Her other son, Dennis is in the church.
     Sells food to the player (Burgers, fries, chicken, etc.)
     Daily restock!!!
@@ -172,7 +172,7 @@ Patricia's Diner:
     Patricia Jenkinns:
         Been running the place for over 30 years, & no Cataclysm is gonna stop her.
         Sweet middle-aged black woman, the "Sure baby.", "You want grits w/ that?" kind.
-        Has 2 sons, Andrew & Dennis.
+        Has 2 sons, Scott & Dennis.
         Had a husband, but after Henry & Dennis was born, he skipped town & left.
         Still angry at him for it, says "I hope that bastard's a zombie now."
         High perception/social characters can see that she doesn't really mean that.
@@ -194,7 +194,7 @@ Patricia's Diner:
                 -Stockings
                 -Short heels
 
-    Andrew:
+    Scott:
         Works as the main chef at the diner, it's a home to him.
         Went to culinary school, graduated the ~3 years before the Cataclysm.
         Barely remembers his father, somewhat bitter about him leaving.

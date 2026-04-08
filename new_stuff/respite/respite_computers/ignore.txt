@@ -1,0 +1,70 @@
+│Console[A]-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n
+│Console<color_blue>[Alvar]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n
+
+
+"&
+┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
+├────────────────────────────────────────────────┤├─────────────────────────────────────────────┤\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>...........__......................__...........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>........../..\..................../..\..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........|....|..................|....|.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........\__/....................\__/..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........└____________________________┘.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........└──────────────────────────┘..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+└────────────────────────────────────────────────┘└─────────────────────────────────────────────┘
+",
+
+
+
+"&
+┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
+├────────────────────────────────────────────────┤├─────────────────────────────────────────────┤\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>...........__......................__...........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>........../..\..................../..\..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........|....|..................|....|.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........└────┘..................└────┘.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........\____________________________/.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........└──────────────────────────┘..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+└────────────────────────────────────────────────┘└─────────────────────────────────────────────┘
+",
+
+
+
+"&
+┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
+├────────────────────────────────────────────────┤├─────────────────────────────────────────────┤\n
+│<color_light_green>..........................................__....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>........────────........................./..\...</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>...........__...............................│...</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>........../..\..................────────.../....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........|....|..................┌────┐...│.....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│...@.....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........\__/....................\__/..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........____________________________..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........└──────────────────────────┘..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+└────────────────────────────────────────────────┘└─────────────────────────────────────────────┘
+",

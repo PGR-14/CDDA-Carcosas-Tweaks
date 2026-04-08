@@ -1,5 +1,20 @@
 [
   {
+    "type": "furniture",
+    "id": "f_comp_mat",
+    "name": "Ammo console",
+    "looks_like": "t_console",
+    "symbol": "{",
+    "description": "A powered console with a hatch for payment, and a large dispenser for products.  This one trades merch for different materials.",
+    "color": "red",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": 10,
+    "mass": "13 kg",
+    "flags": [ "TRANSPARENT", "NOITEM", "INDOORS", "SHORT", "PERMEABLE", "FREE_TO_EXAMINE", "EASY_DECONSTRUCT" ],
+    "examine_action": { "type": "effect_on_condition", "effect_on_conditions": [ "EOC_RESPITE_COMP_MAT" ] }
+  },
+  {
     "id": "EOC_RESPITE_COMP_MAT",
     "type": "effect_on_condition",
     "effect": [ { "open_dialogue": { "topic": "RESPITE_COMP_START_MAT" } }, { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] } ]
@@ -7,99 +22,662 @@
   {
     "type": "talk_topic",
     "id": [ "RESPITE_COMP_START_MAT" ],
-    "dynamic_line": "&Linux Interface [version 6.19.6]\n************************************************\n*  Copyright (c) [ERROR: Invalid copyright ID]  *\n************************************************\n\nJenny's Trading System: Materials",
-    "responses": [ { "text": "[Order items.]", "topic": "RESPITE_COMP_ORDER_MAT" }, { "text": "[Shut down.]", "topic": "TALK_DONE" } ]
+    "dynamic_line": "&================================================\n=  Linux Interface: [ERROR: [INVALID VERSION NUMBER]]  =\n================================================\n=  [ERROR]: Invalid copyright ID  =\n=  [REPORTING]: STOLEN SOFTWARE  =\n=  [ERROR]: NO SERVERS FOUND!  =\n=  [ABORTING]: STOLEN SOFTWARE REPORT  =\n================================================\n=  [Location tag]: Respite  =\n=  [ERROR]: INVALID LOCATION  =\n=  [Console ID]: @#$#@%@#%  =\n=  [ERROR]: CONSOLE IDS CANNOT USE SPECIAL CHARACTERS  =\n=  [ALERT]: MAINTENANCE REQUIRED  =\n================================================\n=  Jenny's Trading System: [Materials]  =\n=  \"\\\\\": \"Still uses old prototype parts & \n   legacy software. Might want to replace or\n   update it. Hell, some of the errors aren't\n   even formatted properly.\"  =\n================================================\n",
+    "responses": [
+      { "text": "[Order welding supplies]", "topic": "RESPITE_COMP_ORDER_MAT_WELD" },
+      { "text": "[Order tailoring supplies]", "topic": "RESPITE_COMP_ORDER_MAT_TAILOR" },
+      { "text": "[Order misc supplies]", "topic": "RESPITE_COMP_ORDER_MAT_MISC" },
+      { "text": "[Shut down]", "topic": "TALK_DONE" }
+    ],
+    "replace_built_in_responses": true
   },
   {
-    "id": "RESPITE_COMP_ORDER_MAT",
-    "//": "This is all the dialogue related to buying bulk wood.",
+    "id": "RESPITE_COMP_ORDER_MAT_WELD",
     "type": "talk_topic",
     "dynamic_line": {
       "concatenate": [
         {
           "math": [ "u_number_fabricate_price != 0" ],
-          "yes": "&Your current order.  Total: $<u_val:number_fabricate_price>.",
+          "yes": "&================================================\n   Processing...\n================================================",
           "no": "Place orders here! -Jenny"
-        },
-        {
-          "math": [ "u_number_fabricate_colt_saa != 0" ],
-          "yes": "\n<item_name:colt_saa>: <u_val:number_fabricate_colt_saa> pcs."
         }
       ]
     },
     "responses": [
       {
-        "text": "[<item_name:colt_saa>, 5 FMCNotes a piece.]",
-        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "colt_saa", "max": 200 } },
-        "topic": "RESPITE_COMP_ORDER_MAT"
+        "text": "| [ITEM: <item_name:welding_rod_steel>] [PRICE: (500.0)u/(1.0)Merch] [MAX: 6000] [ALERT: Picking something other than a multiple of 500 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "welding_rod_steel", "max": 6000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:welding_rod_alloy>] [PRICE: (625.0)u/(1.0)Merch] [MAX: 6000] [ALERT: Picking something other than a multiple of 625 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "welding_rod_alloy", "max": 6000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:welding_wire_steel>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 6000] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "welding_wire_steel", "max": 6000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:welding_wire_alloy>] [PRICE: (35.0)u/(1.0)Merch] MAX: 6000] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "welding_wire_alloy", "max": 6000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:brazing_rod_bronze>] [PRICE: (250.0)u/(1.0)Merch] [MAX: 6000] [ALERT: Picking something other than a multiple of 250 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "brazing_rod_bronze", "max": 6000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:brazing_rod_alloy>] [PRICE: (625.0)u/(1.0)Merch] [MAX: 6000] [ALERT: Picking something other than a multiple of 625 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "brazing_rod_alloy", "max": 6000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "[Switch to a different category.]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
+        "topic": "RESPITE_COMP_START_MAT"
       },
       {
         "text": "<color_light_red>[Shut off.]</color>",
         "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
-        "topic": "RESPITE_COMP_START_MAT"
+        "topic": "TALK_DONE"
       }
-    ]
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_MAT_TAILOR",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================\n   Waiting for order...\n================================================",
+          "no": "Place orders here! -Jenny"
+        }
+      ]
+    },
+    "responses": [
+      { "text": "[Order thread]", "topic": "RESPITE_COMP_ORDER_MAT_THREAD" },
+      {
+        "text": "| [ITEM: <item_name:cotton_patchwork>] [PRICE: (120.0)u/(1.0)Merch] [MAX: 1000] [ALERT: Picking something other than a multiple of 120 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "cotton_patchwork", "max": 1000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_cotton>] [PRICE: (12.0)u/(1.0)Merch] [MAX: 500] [ALERT: Picking something other than a multiple of 12 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_cotton", "max": 500 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:canvas_patch>] [PRICE: (25.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 25 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "canvas_patch", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_canvas>] [PRICE: (6.0)u/(1.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 8 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_canvas", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:denim_patch>] [PRICE: (25.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 25 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "denim_patch", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_denim>] [PRICE: (6.0)u/(1.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 8 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_denim", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:fur>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "fur", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:tanned_pelt>] [PRICE: (3.0)u/(5.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 3 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "tanned_pelt", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:faux_fur>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "faux_fur", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_faux_fur>] [PRICE: (15.0)u/(1.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 15 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_faux_fur", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:felt_patch>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "felt_patch", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_felt>] [PRICE: (15.0)u/(1.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 15 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_felt", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:kevlar_patch>] [PRICE: (60.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "kevlar_patch", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_kevlar>] [PRICE: (6.0)u/(1.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 6 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_kevlar", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_kevlar_layered>] [PRICE: (2.0)u/(1.0)Merch] [MAX: 200] [ALERT: Picking something other than a multiple of 2 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_kevlar_layered", "max": 100 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:rigid_kevlar_plate>] [PRICE: (6.0)u/(5.0)Merch] [MAX: 200] [ALERT: Picking something other than a multiple of 6 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "rigid_kevlar_plate", "max": 50 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:leather>] [PRICE: (12.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 12 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "leather", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_leather>] [PRICE: (6.0)u/(5.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 6 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_leather", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:lycra_patch>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "lycra_patch", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_lycra>] [PRICE: (12.0)u/(5.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 12 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_lycra", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:nomex>] [PRICE: (15.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 15 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "nomex", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_nomex>] [PRICE: (15.0)u/(2.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 15 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_nomex", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:nylon>] [PRICE: (30.0)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 30 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "nylon", "max": 750 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:sheet_nylon>] [PRICE: (15.0)u/(1.0)Merch] [MAX: 475] [ALERT: Picking something other than a multiple of 15 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "sheet_nylon", "max": 475 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "<color_light_red>[Shut off]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_MAT_THREAD",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================\n   Processing...\n================================================",
+          "no": "Place orders here! -Jenny"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:thread>] [PRICE: (600)u/(1.0)Merch] [MAX: 1000] [ALERT: Picking something other than a multiple of 600 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "thread", "max": 1000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:yarn>] [PRICE: (120)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 750 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "yarn", "max": 500 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:thread_canvas>] [PRICE: (60)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "thread_canvas", "max": 1000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:thread_kevlar>] [PRICE: (60)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 60 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "thread_kevlar", "max": 1000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:thread_nomex>] [PRICE: (150)u/(1.0)Merch] [MAX: 750] [ALERT: Picking something other than a multiple of 150 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "thread_nomex", "max": 1000 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "[Go back to tailoring supplies]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
+        "topic": "RESPITE_COMP_ORDER_MAT_TAILOR"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
+        "topic": "RESPITE_COMP_START_MAT"
+      },
+      {
+        "text": "<color_light_red>[Shut off]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "RESPITE_COMP_ORDER_MAT_MISC",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_price != 0" ],
+          "yes": "&================================================\n   Processing...\n================================================",
+          "no": "Place orders here! -Jenny"
+        }
+      ]
+    },
+    "responses": [
+      {
+        "text": "| [ITEM: <item_name:nail>] [PRICE: (150)u/(1.0)Merch] [MAX: 4800] [ALERT: Picking something other than a multiple of 150 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "nail", "max": 4800 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "| [ITEM: <item_name:nuts_bolts>] [PRICE: (150)u/(1.0)Merch] [MAX: 4800] [ALERT: Picking something other than a multiple of 150 may lose you money] |",
+        "effect": { "run_eocs": "EOC_RESPITE_COMP_ORDER_MAT", "variables": { "name": "nuts_bolts", "max": 4800 } },
+        "topic": "RESPITE_COMP_AFTERTRADE_MAT"
+      },
+      {
+        "text": "[Switch to a different category]",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
+        "topic": "RESPITE_COMP_START_MAT"
+      },
+      {
+        "text": "<color_light_red>[Shut off]</color>",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] },
+        "topic": "TALK_DONE"
+      }
+    ],
+    "replace_built_in_responses": true
   },
   {
     "id": "EOC_RESPITE_COMP_ORDER_MAT",
     "type": "effect_on_condition",
-    "condition": { "expects_vars": [ "name" ] },
+    "condition": { "expects_vars": [ "name", "max" ] },
     "effect": [
       {
         "set_string_var": "u_number_fabricate_<context_val:name>",
         "target_var": { "context_val": "item" },
         "parse_tags": true
       },
-      { "math": [ "v_item = clamp(num_input('', v_item), 0, 300)" ] },
+      { "math": [ "v_item = clamp(num_input('', v_item), 0, _max)" ] },
       { "math": [ "u_number_fabricate_price = 0" ] },
-      { "math": [ "u_number_fabricate_price += 5 * u_number_fabricate_colt_saa" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_welding_rod_steel / 500" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_welding_rod_alloy / 625" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_welding_wire_steel / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_welding_wire_alloy / 35" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_brazing_rod_bronze / 250" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_brazing_rod_alloy / 625" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_goggles_welding * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_oxy_torch * 3" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_tinyweldtank * 3" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_smallweldtank * 20" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_weldtank * 80" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_cotton_patchwork / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_cotton / 12" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_canvas_patch / 25" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_canvas / 6" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_denim_patch / 25" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_denim / 6" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_fur / 30" ] },
+      { "math": [ "u_number_fabricate_price += (u_number_fabricate_tanned_pelt * 3) / 5" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_faux_fur / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_faux_fur / 15" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_felt_patch / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_felt / 15" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_kevlar_patch / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_kevlar / 6" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_kevlar_layered / 2" ] },
+      { "math": [ "u_number_fabricate_price += (u_number_fabricate_rigid_kevlar_plate / 6) * 5" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_leather / 12" ] },
+      { "math": [ "u_number_fabricate_price += (u_number_fabricate_sheet_leather / 6) * 5" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_lycra_patch / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_lycra / 6" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_nomex / 15" ] },
+      { "math": [ "u_number_fabricate_price += (u_number_fabricate_sheet_nomex / 15) * 2" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_nylon / 30" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_sheet_nylon / 15" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_thread / 600" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_yarn / 120" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_thread_canvas / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_thread_kevlar / 60" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_thread_nomex / 150" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_nail / 150" ] },
+      { "math": [ "u_number_fabricate_price += u_number_fabricate_nuts_bolts / 150" ] },
       {
         "run_eocs": {
           "id": "EOC_RESPITE_COMP_ORDERED_MAT",
-          "condition": { "and": [ { "u_has_items": { "item": "FMCNote", "count": { "math": [ "u_number_fabricate_price" ] } } } ] },
+          "condition": { "u_has_items": { "item": "FMCNote", "count": { "math": [ "u_number_fabricate_price" ] } } },
           "effect": [
-            { "u_consume_items": [ { "item": "FMCNote", "amount": "u_number_fabricate_price * 2" } ] },
+            { "u_consume_item_sum": [ { "item": "FMCNote", "amount": { "math": [ "u_number_fabricate_price" ] } } ] },
             {
+              "foreach": "array",
+              "var": { "context_val": "name" },
+              "target": [
+                "welding_rod_steel",
+                "welding_rod_alloy",
+                "welding_wire_steel",
+                "welding_wire_alloy",
+                "brazing_rod_bronze",
+                "brazing_rod_alloy",
+                "goggles_welding",
+                "oxy_torch",
+                "tinyweldtank",
+                "smallweldtank",
+                "weldtank",
+                "cotton_patchwork",
+                "sheet_cotton",
+                "denim_patch",
+                "sheet_denim",
+                "fur",
+                "tanned_pelt",
+                "faux_fur",
+                "sheet_faux_fur",
+                "felt_patch",
+                "sheet_felt",
+                "kevlar_patch",
+                "sheet_kevlar",
+                "sheet_kevlar_layered",
+                "rigid_kevlar_plate",
+                "leather",
+                "sheet_leather",
+                "lycra_patch",
+                "sheet_lycra",
+                "nomex",
+                "sheet_nomex",
+                "nylon",
+                "sheet_nylon",
+                "thread",
+                "yarn",
+                "thread_canvas",
+                "thread_kevlar",
+                "threaad_nomex",
+                "nail",
+                "nuts_bolts"
+              ],
               "effect": [
                 {
-                  "foreach": "array",
-                  "var": { "context_val": "name" },
-                  "target": [ "colt_saa" ],
-                  "effect": [
-                    {
-                      "set_string_var": "u_number_fabricate_<context_val:name>",
-                      "target_var": { "context_val": "item" },
-                      "parse_tags": true
-                    },
-                    {
-                      "if": { "math": [ "v_item != 0" ] },
-                      "then": { "u_spawn_item": { "context_val": "name" }, "count": { "var_val": "item" } }
-                    }
-                  ]
+                  "set_string_var": "u_number_fabricate_<context_val:name>",
+                  "target_var": { "context_val": "item" },
+                  "parse_tags": true
+                },
+                {
+                  "if": { "math": [ "v_item != 0" ] },
+                  "then": { "u_spawn_item": { "context_val": "name" }, "count": { "var_val": "item" } }
                 }
               ]
             }
-          ]
+          ],
+          "false_effect": [ { "open_dialogue": { "topic": "RESPITE_COMP_NO_CASH_MAT" } }, { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] } ]
         }
       }
     ]
   },
   {
-    "id": "EOC_RESPITE_COMP_RESET_MAT",
-    "type": "effect_on_condition",
-    "effect": [ { "u_lose_var": "number_fabricate_price" }, { "u_lose_var": "number_fabricate_colt_saa" } ]
+    "type": "talk_topic",
+    "id": [ "RESPITE_COMP_NO_CASH_MAT" ],
+    "dynamic_line": "&================================================\n   [ERROR: REQUIRED FUNDS NOT MET!]\n================================================",
+    "responses": [
+      {
+        "text": "[Order something else.]",
+        "topic": "RESPITE_COMP_START_MAT",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] }
+      },
+      {
+        "text": "<color_light_red>[Shut down.]</color>",
+        "topic": "TALK_DONE",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] }
+      }
+    ],
+    "replace_built_in_responses": true
   },
   {
     "type": "talk_topic",
     "id": [ "RESPITE_COMP_AFTERTRADE_MAT" ],
-    "dynamic_line": "&************************************************\n\n[ERROR: INVALID CURRENCY: Free Merchant Certified Note]\n[ERROR: ILLEGAL TAMPERING DETECTED]\nThe computer makes some weird noises, & the error messages dissapear.\n\nINVENTORY CHK : ███████████████ 100% (COMPLETE)\nITEM TRANSFER :  ███████████████ 100% (COMPLETE)\n\n************************************************\n*  Operation Successful! Enjoy the goods!                         *\n************************************************",
+    "dynamic_line": {
+      "concatenate": [
+        {
+          "math": [ "u_number_fabricate_welding_rod_steel != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_welding_rod_steel>] [ERROR: NO PLURAL FORM OF <item_name:welding_rod_steel>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_welding_rod_alloy != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_welding_rod_alloy>] [ERROR: NO PLURAL FORM OF <item_name:welding_rod_alloy>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_welding_wire_steel != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_welding_wire_steel>] [ERROR: NO PLURAL FORM OF <item_name:welding_wire_steel>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_welding_wire_alloy != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_welding_wire_alloy>] [ERROR: NO PLURAL FORM OF <item_name:welding_wire_alloy>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_brazing_rod_bronze != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_brazing_rod_bronze>] [ERROR: NO PLURAL FORM OF <item_name:brazing_rod_bronze>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_brazing_rod_alloy != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_brazing_rod_alloy>] [ERROR: NO PLURAL FORM OF <item_name:brazing_rod_alloy>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_cotton_patchwork != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_cotton_patchwork>] [ERROR: NO PLURAL FORM OF <item_name:cotton_patchwork>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_cotton != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_cotton>] [ERROR: NO PLURAL FORM OF <item_name:sheet_cotton>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_fur != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_fur>] [ERROR: NO PLURAL FORM OF <item_name:fur>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_tanned_pelt != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_tanned_pelt>] [ERROR: NO PLURAL FORM OF <item_name:tanned_pelt>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_faux_fur != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_faux_fur>] [ERROR: NO PLURAL FORM OF <item_name:faux_fur>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_faux_fur != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_faux_fur>] [ERROR: NO PLURAL FORM OF <item_name:sheet_faux_fur>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_canvas_patch != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_canvas_patch>] [ERROR: NO PLURAL FORM OF <item_name:canvas_patch>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_canvas != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_canvas>] [ERROR: NO PLURAL FORM OF <item_name:sheet_canvas>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_denim_patch != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_denim_patch>] [ERROR: NO PLURAL FORM OF <item_name:denim_patch>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_denim != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_denim>] [ERROR: NO PLURAL FORM OF <item_name:sheet_denim>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_felt_patch != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_felt_patch>] [ERROR: NO PLURAL FORM OF <item_name:felt_patch>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_felt != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_felt>] [ERROR: NO PLURAL FORM OF <item_name:sheet_felt>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_kevlar_patch != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_kevlar_patch>] [ERROR: NO PLURAL FORM OF <item_name:kevlar_patch>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_kevlar != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_kevlar>] [ERROR: NO PLURAL FORM OF <item_name:sheet_kevlar>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_kevlar_layered != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_kevlar_layered>] [ERROR: NO PLURAL FORM OF <item_name:sheet_kevlar_layered>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_rigid_kevlar_plate != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_rigid_kevlar_plate>] [ERROR: NO PLURAL FORM OF <item_name:rigid_kevlar_plate>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_leather != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_leather>] [ERROR: NO PLURAL FORM OF <item_name:leather>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_leather != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_leather>] [ERROR: NO PLURAL FORM OF <item_name:sheet_leather>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_lycra_patch != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_lycra_patch>] [ERROR: NO PLURAL FORM OF <item_name:lycra_patch>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_lycra != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_lycra>] [ERROR: NO PLURAL FORM OF <item_name:sheet_lycra>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_nomex != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_nomex>] [ERROR: NO PLURAL FORM OF <item_name:nomex>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_nomex != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_nomex>] [ERROR: NO PLURAL FORM OF <item_name:sheet_nomex>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_nylon != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_nylon>] [ERROR: NO PLURAL FORM OF <item_name:nylon>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_sheet_nylon != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_sheet_nylon>] [ERROR: NO PLURAL FORM OF <item_name:sheet_nylon>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_thread != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_thread>] [ERROR: NO PLURAL FORM OF <item_name:thread>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_yarn != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_yarn>] [ERROR: NO PLURAL FORM OF <item_name:yarn>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_thread_canvas != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_thread_canvas>] [ERROR: NO PLURAL FORM OF <item_name:thread_canvas>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_thread_kevlar != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_thread_kevlar>] [ERROR: NO PLURAL FORM OF <item_name:thread_kevlar>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_thread_nomex != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_thread_nomex>] [ERROR: NO PLURAL FORM OF <item_name:thread_nomex>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_nail != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_nail>] [ERROR: NO PLURAL FORM OF <item_name:nail>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        },
+        {
+          "math": [ "u_number_fabricate_nuts_bolts != 0" ],
+          "yes": " &================================================\n=  [ERROR: INVALID CURRENCY: Free Merchant Certified Note]  =\n=  [ERROR: ILLEGAL TAMPERING DETECTED]  =\n\nAs you wait for your items, you hear a clunk. The computer proceeds to make some weird noises, but just as you think it's broken, the error messages dissapear and you hear the whirring of machinery.\n\n=  [INVENTORY CHK : ███████████████ 100% (COMPLETE)]  =\n=  [ITEM TRANSFER :  ███████████████ 100% (COMPLETE)]  =\n\n================================================\n=  Operation Successful! Enjoy the [<u_val:number_fabricate_nuts_bolts>] [ERROR: NO PLURAL FORM OF <item_name:nuts_bolts>]!  =\n================================================\n\nYou hear a rattle & clang as the machine dispenses the item at your feet."
+        }
+      ]
+    },
     "responses": [
       {
         "text": "[Order something else.]",
-        "topic": "RESPITE_COMP_ORDER_MAT",
+        "topic": "RESPITE_COMP_START_MAT",
         "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] }
       },
-      { "text": "[Shut down.]", "topic": "TALK_DONE", "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] } }
+      {
+        "text": "<color_light_red>[Shut off.]</color>",
+        "topic": "TALK_DONE",
+        "effect": { "run_eocs": [ "EOC_RESPITE_COMP_RESET_MAT" ] }
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "id": "EOC_RESPITE_COMP_RESET_MAT",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_lose_var": "number_fabricate_price" },
+      { "u_lose_var": "number_fabricate_welding_rod_steel" },
+      { "u_lose_var": "number_fabricate_welding_rod_alloy" },
+      { "u_lose_var": "number_fabricate_welding_wire_steel" },
+      { "u_lose_var": "number_fabricate_welding_wire_alloy" },
+      { "u_lose_var": "number_fabricate_brazing_rod_bronze" },
+      { "u_lose_var": "number_fabricate_brazing_rod_alloy" },
+      { "u_lose_var": "number_fabricate_goggles_welding" },
+      { "u_lose_var": "number_fabricate_oxy_torch" },
+      { "u_lose_var": "number_fabricate_tinyweldtank" },
+      { "u_lose_var": "number_fabricate_smallweldtank" },
+      { "u_lose_var": "number_fabricate_weldtank" },
+      { "u_lose_var": "number_fabricate_cotton_patchwork" },
+      { "u_lose_var": "number_fabricate_sheet_cotton" },
+      { "u_lose_var": "number_fabricate_canvas_patch" },
+      { "u_lose_var": "number_fabricate_sheet_canvas" },
+      { "u_lose_var": "number_fabricate_denim_patch" },
+      { "u_lose_var": "number_fabricate_sheet_denim" },
+      { "u_lose_var": "number_fabricate_fur" },
+      { "u_lose_var": "number_fabricate_tanned_pelt" },
+      { "u_lose_var": "number_fabricate_faux_fur" },
+      { "u_lose_var": "number_fabricate_sheet_faux_fur" },
+      { "u_lose_var": "number_fabricate_felt_patch" },
+      { "u_lose_var": "number_fabricate_sheet_felt" },
+      { "u_lose_var": "number_fabricate_kevlar_patch" },
+      { "u_lose_var": "number_fabricate_sheet_kevlar" },
+      { "u_lose_var": "number_fabricate_sheet_kevlar_layered" },
+      { "u_lose_var": "number_fabricate_rigid_kevlar_plate" },
+      { "u_lose_var": "number_fabricate_leather" },
+      { "u_lose_var": "number_fabricate_sheet_leather" },
+      { "u_lose_var": "number_fabricate_lycra_patch" },
+      { "u_lose_var": "number_fabricate_sheet_lycra" },
+      { "u_lose_var": "number_fabricate_nomex" },
+      { "u_lose_var": "number_fabricate_sheet_nomex" },
+      { "u_lose_var": "number_fabricate_nylon" },
+      { "u_lose_var": "number_fabricate_sheet_nylon" },
+      { "u_lose_var": "number_fabricate_thread" },
+      { "u_lose_var": "number_fabricate_yarn" },
+      { "u_lose_var": "number_fabricate_thread_canvas" },
+      { "u_lose_var": "number_fabricate_thread_kevlar" },
+      { "u_lose_var": "number_fabricate_thread_nomex" },
+      { "u_lose_var": "number_fabricate_nail" },
+      { "u_lose_var": "number_fabricate_nuts_bolts" }
     ]
   }
 ]
