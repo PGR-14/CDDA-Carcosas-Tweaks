@@ -1,0 +1,81 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "JENNY_TALK_INTRO",
+    "dynamic_line": {
+      "math": [ "u_met_Jenny == 1" ],
+      "yes": "&Jenny crouches at the counter shuffling around objects and waiting for customers. She spots you and toothlessly smiles, her ears perking up.\n\n \"Hey, Welcome back friend! How are you doin' today? Lookin' to use the consoles, buy some guns, or to just talk?\"",
+      "no": "&Entering the store, you see a very large lady. Large in the sense that she is almost 9 feet tall, with large, stomping hooves and antlers scraping the ceiling. She's stocking & organizing shelves, but as you walk up to the counter, one of her fuzzy ears twitches, hearing your footsteps, & she turns around with a toothless smile on her muzzle.\n\n \"Hello there! I haven't seen you 'round here yet, I'm Jenny, & welcome to my shop. To the right, you can see trading terminals to the right, for tools, materials, & ammo supplies respectively. For guns, you'll have to come to me to buy them. All freshly oiled, cleaned, and some hand made by me & Toby. We've always got somethin' to trade, if you're interested.\""
+    },
+    "responses": [
+      { "text": "I'd like to talk a bit.", "topic": "JENNY_TALK_HUB", "effect": { "math": [ "u_met_Jenny == 1" ] } },
+      { "text": "Let's trade.", "topic": "JENNY_TALK_DONE_TRADING", "effect": { "math": [ "u_met_Jenny == 1" ] } },
+      { "text": "Nothing, thanks.", "topic": "TALK_DONE", "effect": { "math": [ "u_met_Jenny == 1" ] } }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": "JENNY_TALK_DONE_TRADING",
+    "dynamic_line": [
+      "&She jots down some numbers, compares the values, and hands you your items.\n \"Will that be all for today? Or are you looking for somethin' else?\"",
+      "&She writes a small note, checks your offer, and takes your items.\n \"Another good trade. Thinkin' to run some other errands, or are you done?\""
+    ],
+    "responses": [
+      { "text": "I'd like to talk a bit, actually.", "topic": "TALK_JENNY_HUB" },
+      { "text": "Let me double check your inventory.", "topic": "TALK_JENNY_DONE_TRADING" },
+      { "text": "Nothing, thanks.", "topic": "TALK_DONE" }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_HUB" ],
+    "dynamic_line": "&She leans down onto the counter, her elbows bent & her chest pressing on the counter, always keeping that toothless grin on her snout.\n\n \"Now, what did you want to chat about?\"",
+    "responses": [
+      { "text": "Where do all these guns come from? There sure is a lot of them.", "topic": "TALK_JENNY_GUNS" },
+      { "text": "You sure are, uh... Big.", "topic": "TALK_JENNY_MUT" },
+      {
+        "text": "I want to talk about one of your consoles. The ammo one specifically.",
+        "topic": "TALK_JENNY_ALVAR",
+        "condition": { "math": [ "u_met_Alvar != 1" ] }
+      },
+      { "text": "Actually, I want to trade.", "topic": "TALK_JENNY_DONE_TRADING" },
+      { "text": "Nothing else, thanks.", "topic": "TALK_DONE" }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_GUNS" ],
+    "dynamic_line": "&She tilts her head and thinks for a bit.\n \"That's a very common question that we get. This place was originally a hardware store, as you can see, and the prior owner, Desmond was a huge gun collector. I got here a little bit after the start of the Cataclysm, and helped him out some. To be honest, he seemed pretty unstable. Kept mutterin' about how 'He should've known', or 'That wanted to warn us'. One night, he was starin' up at the sky. He suddenly got up, & just walked out of town. After that, I was considered the new owner, even though I barely knew him.\"\nYou can hear her sigh slightly at this. Evidently, the memory is still pretty raw.\n \"Most of the modern guns are from his collection. For some reason, he had insane amounts of pretty rare guns. We've got several copies that were supposed to be very limited releases, like 1 in 10. The older style guns however, are made by Toby and I. He had a huge amounts of schematics for the things, and, seeing the potential, we started makin' some. Turns out, these things are perfect for a zombie apocalypse, & surprisingly cheap to make.",
+    "responses": [
+      { "text": "Thanks for explaining that.", "topic": "TALK_JENNY_HUB" },
+      { "text": "Nothing else, thanks.", "topic": "TALK_DONE" }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_MUT" ],
+    "dynamic_line": "&She drops her smile, stares at you for a bit, and laughs. You can see a maw full of pearl-white fangs as she holds onto the counter to prevent herself from falling. After a minute or so she stands back up.\n \"I- I'm sorry, it's just...\"\nShe snickers a bit.\n \"It's just that noone else has said it so bluntly. It is true though, I am very large. Hell, I was the only one strong enough to even break into Desmond's collection.\"\nShe shifts her stance a bit, before continuing.\n \"Of course, you're probably wonderin' how this all happened to me, & your guess is as good as mine. Just started changin' one day, & after about a month, I looked like this. Some visitors toour town judge me for it, but we don't take kindly to people like that.\"",
+    "responses": [
+      { "text": "Don't worry, I don't judge.", "topic": "TALK_JENNY_HUB" },
+      {
+        "text": "They're missing out, anyone with a smile like yours can't be that bad.",
+        "topic": "TALK_JENNY_MUT_FLIRT",
+        "condition": { "math": [ " != 1" ] },
+        "effect": [ { "math": [ "u_flirt_jenny = 1" ] } ]
+      },
+      { "text": "Nothing else, thanks.", "topic": "TALK_DONE" }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_MUT_FLIRT" ],
+    "dynamic_line": "&Her face brightens, and beams a large, toothy smile.\n \"Oh, I like you. That's the sweetest thing anyone has said to me in quite a bit. I needed that, thanks.\"",
+    "responses": [ { "text": "You're welcome.", "topic": "TALK_DONE" } ],
+    "replace_built_in_responses": true
+  }
+]

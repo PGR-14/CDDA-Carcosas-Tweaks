@@ -130,10 +130,7 @@
       "w": "t_door_c",
       "v": "t_wall_glass",
       "x": "t_floor",
-      "y": "t_sidewalk",
-      "X": "t_floor",
-      "Y": "t_floor",
-      "Z": "t_floor"
+      "y": "t_sidewalk"
     },
     "furniture": {
       "i": "f_table",
@@ -148,10 +145,7 @@
       "r": "f_utility_shelf",
       "s": "f_utility_shelf",
       "x": "f_desk",
-      "y": "f_bench",
-      "X": "f_comp_tools",
-      "Y": "f_comp_mat",
-      "Z": "f_comp_sapient"
+      "y": "f_bench"
     }
   },
   {
@@ -171,7 +165,14 @@
       "Y": "t_floor",
       "Z": "t_floor"
     },
-    "furniture": { "e": "f_warehouse_shelf", "f": "f_counter", "g": "f_utility_shelf" }
+    "furniture": {
+      "e": "f_warehouse_shelf",
+      "f": "f_counter",
+      "g": "f_utility_shelf",
+      "X": "f_comp_tools",
+      "Y": "f_comp_mat",
+      "Z": "f_comp_sapient"
+    }
   },
   {
     "type": "palette",

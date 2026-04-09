@@ -2,7 +2,7 @@
   {
     "type": "furniture",
     "id": "f_comp_mat",
-    "name": "Ammo console",
+    "name": "Materials console",
     "looks_like": "t_console",
     "symbol": "{",
     "description": "A powered console with a hatch for payment, and a large dispenser for products.  This one trades merch for different materials.",

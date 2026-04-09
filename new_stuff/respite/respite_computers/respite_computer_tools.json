@@ -2,7 +2,7 @@
   {
     "type": "furniture",
     "id": "f_comp_tools",
-    "name": "Ammo console",
+    "name": "Tool console",
     "looks_like": "t_console",
     "symbol": "{",
     "description": "A powered console with a hatch for payment, and a cushioned tray for products.  This one trades merch for different tools.",

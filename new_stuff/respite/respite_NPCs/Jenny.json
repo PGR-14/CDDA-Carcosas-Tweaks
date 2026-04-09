@@ -336,7 +336,9 @@
       { "trait": "NPC_STATIC_NPC", "prob": 100 },
       { "trait": "IGNORE_SOUND", "prob": 100 },
       { "trait": "RETURN_TO_START_POS", "prob": 100 },
-      { "trait": "PRETTY", "prob": 100 }
+      { "trait": "FELINE_EARS", "prob": 100 },
+      { "trait": "MUZZLE", "prob": 100 },
+      { "trait": "BEAUTIFUL", "prob": 100 }
     ]
   },
   {
@@ -348,7 +350,7 @@
     "class": "NC_JENNY",
     "attitude": 0,
     "mission": 0,
-    "chat": "TALK_JENNY",
+    "chat": "JENNY_TALK_INTRO",
     "faction": "respite",
     "age": 30,
     "height": 190,
@@ -357,15 +359,5 @@
     "int": 9,
     "per": 10,
     "personality": { "aggression": 2, "bravery": 10, "collector": 0, "altruism": 5 }
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JENNY",
-    "dynamic_line": "Hey there! The name's Jenny, I'm the owner of this here trading hub. Now, could I interest you in some of my firearms?\n\n Dev note: This dialogue is VERY unfinished, please tell me how I could improve it.",
-    "responses": [
-      { "text": "Yes ma'am.", "effect": "start_trade", "topic": "TALK_JENNY" },
-      { "text": "No thanks ma'am.", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
   }
 ]

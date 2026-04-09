@@ -1,0 +1,16 @@
+Should go like this:
+
+Find Alvar:
+├──────> Don't tell Jenny:
+│       └──────> Nothing.
+└──────> Tell Jenny:
+         ├──────> Paint Alvar negatively:
+         │        └──────> Alvar dies.
+         └──────> Paint him in a good light:
+                  ├──────> If bad job, Alvar lives, just gotta convince her.
+                  └──────> If good job, Alvar stays.
+                           └──────> Alvar expands onto other consoles
+                                    └──────> Requests to come w/ you, in form of tomagatchi. Req a laptop.
+                                             └──────> Gives you recipes for better ammo?
+                                                      └──────> After ~ a week, he wants a body. Req any robot body to be taken to Jenny.
+                                                               └──────> 3 days later, he's a special companion.

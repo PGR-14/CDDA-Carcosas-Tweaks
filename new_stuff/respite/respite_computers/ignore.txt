@@ -1,6 +1,42 @@
-│Console[A]-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n
-│Console<color_blue>[Alvar]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n
+{
+    "type": "talk_topic",
+    "id": [ "" ],
+    "dynamic_line": {
+      "math": [ "g_Alvar_has_name == 1" ],
+      "yes":
+      "no":
+    },
+    "responses": [ 
+      { 
+        "text": "", 
+        "topic": "", 
+        "condition": { "math": [ " != 1" ]  },
+        "effect": [ { "math": [ " = 1" ] } ] 
+      },
+    ],
+    "replace_built_in_responses": true
+  }
 
+
+
+Vars I have:
+u_met_Alvar - Just gives a different dialogue upon first meeting, & makes it so different responses come up after his introduction.
+g_Alvar_has_name - Changes the console from a white [A] to a blue [Alvar]
+u_Alvar_told_english - Explained how he learned, also pathway into discovering pacifism. Could be good for convincing Jenny.
+u_Alvar_told_hack - Confessed his hacking into Dennis' computer. Also what he has read. Can get him into trouble.
+u_Alvar_told_hack_spread - Confessed his hacking into basically everything else. Can get him into a lot of trouble.
+u_Alvar_told_paci - Explained his aversion towards hurting others. Should be used for convincing Jenny.
+u_player_question_Alvar_understand - Pathway into telling him about the Cataclysm. Could be good for convincing Jenny.
+g_Alvar_understand_cata - Actually knows what the hell is happening now. Still works for convincing Jenny.
+u_Alvar_told_fear - Told how he's scared of Jenny. Could help convince her.
+
+
+
+│Console<color_blue>[Alvar]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n
+│Console[A]-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n
+
+
+Neutral/slightly happy
 
 "&
 ┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
@@ -9,7 +45,7 @@
 │<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>...........__......................__...........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>........../..\..................../..\..........</color>││<color_light_cyan>                                             </color>│\n
-│<color_light_green>.........|....|..................|....|.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>..........\__/....................\__/..........</color>││<color_light_cyan>                                             </color>│\n
@@ -24,6 +60,7 @@
 ",
 
 
+A bit confused, nervous, or surprised.
 
 "&
 ┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
@@ -32,7 +69,55 @@
 │<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>...........__......................__...........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>........../..\..................../..\..........</color>││<color_light_cyan>                                             </color>│\n
-│<color_light_green>.........|....|..................|....|.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........\__/....................\__/..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........____________________________..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........└──────────────────────────┘..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+└────────────────────────────────────────────────┘└─────────────────────────────────────────────┘
+",
+
+
+High feer, anxious
+
+"&
+┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
+├────────────────────────────────────────────────┤├─────────────────────────────────────────────┤\n
+│<color_light_green>.........__..........................__.........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>......../..............................\........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>......./...__......................__...\.......</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>....../.../..\..................../..\...\......</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.....│...│....│..................│....│...│.....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.....│...│....│..................│....│...│.....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.....│...│....│..................│....│...│.....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........\__/....................\__/..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........____________________________..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>..........\──────────────────────────/..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+└────────────────────────────────────────────────┘└─────────────────────────────────────────────┘
+",
+
+
+Happy
+
+"&
+┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
+├────────────────────────────────────────────────┤├─────────────────────────────────────────────┤\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>...........__......................__...........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>........../..\..................../..\..........</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>.........└────┘..................└────┘.........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>................................................</color>││<color_light_cyan>                                             </color>│\n
@@ -47,6 +132,7 @@
 ",
 
 
+Confused or quizzical
 
 "&
 ┌────────────────────────────────────────────────┐┌─────────────────────────────────────────────┐\n
@@ -55,7 +141,7 @@
 │<color_light_green>........────────........................./..\...</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>...........__...............................│...</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>........../..\..................────────.../....</color>││<color_light_cyan>                                             </color>│\n
-│<color_light_green>.........|....|..................┌────┐...│.....</color>││<color_light_cyan>                                             </color>│\n
+│<color_light_green>.........│....│..................┌────┐...│.....</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>.........│....│..................│....│.........</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>.........│....│..................│....│...@.....</color>││<color_light_cyan>                                             </color>│\n
 │<color_light_green>..........\__/....................\__/..........</color>││<color_light_cyan>                                             </color>│\n
