@@ -85,7 +85,7 @@
       { 
         "text": "Uh, nothing. Forget I said anything.", 
         "topic": "TALK_JENNY_HUB"
-      },
+      }
     ],
     "replace_built_in_responses": true
   }
