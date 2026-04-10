@@ -64,7 +64,6 @@
       {
         "text": "They're missing out, anyone with a smile like yours can't be that bad.",
         "topic": "TALK_JENNY_MUT_FLIRT",
-        "condition": { "math": [ " != 1" ] },
         "effect": [ { "math": [ "u_flirt_jenny = 1" ] } ]
       },
       { "text": "Nothing else, thanks.", "topic": "TALK_DONE" }
@@ -76,6 +75,18 @@
     "id": [ "TALK_JENNY_MUT_FLIRT" ],
     "dynamic_line": "&Her face brightens, and beams a large, toothy smile.\n \"Oh, I like you. That's the sweetest thing anyone has said to me in quite a bit. I needed that, thanks.\"",
     "responses": [ { "text": "You're welcome.", "topic": "TALK_DONE" } ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "" ],
+    "dynamic_line": "Yeah, what about it?",
+    "responses": [ 
+      { 
+        "text": "Uh, nothing. Forget I said anything.", 
+        "topic": "TALK_JENNY_HUB"
+      },
+    ],
     "replace_built_in_responses": true
   }
 ]
