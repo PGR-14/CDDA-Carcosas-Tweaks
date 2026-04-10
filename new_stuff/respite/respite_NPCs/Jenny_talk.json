@@ -8,9 +8,9 @@
       "no": "&Entering the store, you see a very large lady. Large in the sense that she is almost 9 feet tall, with large, stomping hooves and antlers scraping the ceiling. She's stocking & organizing shelves, but as you walk up to the counter, one of her fuzzy ears twitches, hearing your footsteps, & she turns around with a toothless smile on her muzzle.\n\n \"Hello there! I haven't seen you 'round here yet, I'm Jenny, & welcome to my shop. To the right, you can see trading terminals to the right, for tools, materials, & ammo supplies respectively. For guns, you'll have to come to me to buy them. All freshly oiled, cleaned, and some hand made by me & Toby. We've always got somethin' to trade, if you're interested.\""
     },
     "responses": [
-      { "text": "I'd like to talk a bit.", "topic": "JENNY_TALK_HUB", "effect": { "math": [ "u_met_Jenny == 1" ] } },
-      { "text": "Let's trade.", "topic": "JENNY_TALK_DONE_TRADING", "effect": { "math": [ "u_met_Jenny == 1" ] } },
-      { "text": "Nothing, thanks.", "topic": "TALK_DONE", "effect": { "math": [ "u_met_Jenny == 1" ] } }
+      { "text": "I'd like to talk a bit.", "topic": "JENNY_TALK_HUB", "effect": { "math": [ "u_met_Jenny = 1" ] } },
+      { "text": "Let's trade.", "topic": "JENNY_TALK_DONE_TRADING", "effect": { "math": [ "u_met_Jenny = 1" ] } },
+      { "text": "Nothing, thanks.", "topic": "TALK_DONE", "effect": { "math": [ "u_met_Jenny = 1" ] } }
     ],
     "replace_built_in_responses": true
   },
@@ -81,12 +81,7 @@
     "type": "talk_topic",
     "id": [ "" ],
     "dynamic_line": "Yeah, what about it?",
-    "responses": [ 
-      { 
-        "text": "Uh, nothing. Forget I said anything.", 
-        "topic": "TALK_JENNY_HUB"
-      }
-    ],
+    "responses": [ { "text": "Uh, nothing. Forget I said anything.", "topic": "TALK_JENNY_HUB" } ],
     "replace_built_in_responses": true
   }
 ]

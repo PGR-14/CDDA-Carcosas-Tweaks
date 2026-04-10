@@ -30,7 +30,7 @@
       { "text": "[Order pistol casings]", "topic": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_PISTOL" },
       { "text": "[Order rifle casings]", "topic": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_RIFLE" },
       { "text": "[Order shot hulls]", "topic": "RESPITE_COMP_ORDER_SAPIENT_CASINGS_SHOT" },
-      { "text": "[Type into the console]", "topic": "ALVAR_TALK_HUB", "condition": { "math": [ "g_Alvar_dead != 1" ] } },
+      { "text": "[Type into the console]", "topic": "ALVAR_TALK_HUB" },
       { "text": "[Shut down]", "topic": "TALK_DONE" }
     ],
     "replace_built_in_responses": true
