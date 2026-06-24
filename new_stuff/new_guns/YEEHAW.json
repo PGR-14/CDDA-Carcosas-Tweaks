@@ -1,49 +1,85 @@
 [
-    {
-        "id": "colt_saa",
-        "copy-from": "colt_saa",
-        "looks_like": "sw_619",
-        "type": "ITEM",
-        "subtypes": [ "GUN" ],
-        "valid_mod_locations": [ [ "barrel", 1 ], [ "mechanism", 2 ], [ "stock mount", 1 ], [ "grip", 1 ] ],
-        "use_action": [
-            {
-                "type": "effect_on_conditions",
-                "menu_text": "Spin your revolver",
-                "description": "Yeehaw!",
-                "need_wielding": true,
-                "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
-            }   
-        ],
-        "weight": "1048 g",
-        "volume": "324 ml",
-        "longest_side": "208 mm",
-        "barrel_length": "231 mm",
-        "//": "190.5mm + 40.6mm max OAL for 45LC. Revolvers just built different.",
-        "price": "479 USD",
-        "price_postapoc": "25 USD",
-        "material": [ "steel", "wood" ],
-        "ammo": [ "45colt" ],
-        "dispersion": 360
-    },
-    {
-        "id": "colt_saa_dual",
-        "type": "ITEM",
-        "subtypes": [ "GUN" ],
-        "copy-from": "gun_base_handgun_manual",
-        "valid_mod_locations": [ [ "barrel", 2 ], [ "mechanism", 4 ], [ "stock mount", 2 ], [ "grip", 2 ] ],
-        "name": "dual Colt Single Action Armies",
-        "description": "A pair of the ever-famous colt single action, chambered in .45 LC. If 6 shots are more than enough, 12 is overkill.",
-        "weight": "1048 g",
-        "volume": "324 ml",
-        "longest_side": "208 mm",
-        "barrel_length": "231 mm",
-        "price": "948 USD",
-        "price_postapoc": "50 USD",
-        "material": [ "steel", "wood" ],
-        "ammo": [ "45colt" ],
-        "dispersion": 400,
-        "clip_size": 12,
-        "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "45colt": 12 } } ]
-    }
+  {
+    "id": "colt_saa",
+    "copy-from": "colt_saa",
+    "looks_like": "sw_619",
+    "type": "ITEM",
+    "subtypes": [ "GUN", "ARTIFACT" ],
+    "use_action": [
+      {
+        "type": "effect_on_conditions",
+        "menu_text": "Spin your revolver",
+        "description": "Yeehaw!",
+        "need_wielding": true,
+        "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
+      },
+      { "type": "cast_spell", "spell_id": "QD_SPELL", "no_fail": true, "level": 1, "need_wielding": true }
+    ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "fan-fire 3", 3, "VOLLEY" ], [ "AUTO", "fan-fire 6", 6, "VOLLEY" ] ],
+    "passive_effects": [ { "id": "QUICKDRAW_ench" }, { "id": "YEEHAW_ench" } ],
+    "dispersion": 360,
+    "valid_mod_locations": [ [ "barrel", 1 ], [ "mechanism", 2 ], [ "stock mount", 1 ], [ "grip", 1 ] ],
+    "extend": { "flags": [ "RELOAD_ONE", "EASY_CLEAN", "NEVER_JAMS", "LEVER_ACTION" ] }
+  },
+  {
+    "id": "colt_saa_dual",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "gun_base_handgun_manual",
+    "valid_mod_locations": [ [ "barrel", 2 ], [ "mechanism", 4 ], [ "stock mount", 2 ], [ "grip", 2 ] ],
+    "name": "dual Colt Single Action Armies",
+    "description": "A pair of the ever-famous colt single action, chambered in .45 LC. If 6 shots are more than enough, 12 is overkill.",
+    "weight": "1048 g",
+    "volume": "324 ml",
+    "longest_side": "208 mm",
+    "barrel_length": "231 mm",
+    "price": "948 USD",
+    "price_postapoc": "50 USD",
+    "material": [ "steel", "wood" ],
+    "ammo": [ "45colt" ],
+    "dispersion": 400,
+    "clip_size": 12,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "double fire", 2, "VOLLEY" ] ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "45colt": 12 } } ]
+  },
+  {
+    "id": "maresleg",
+    "copy-from": "gun_base_handgun_manual",
+    "looks_like": "sw_619",
+    "type": "ITEM",
+    "subtypes": [ "GUN", "ARTIFACT" ],
+    "name": { "str": "Mare's leg" },
+    "description": "A very famous lever action rifle, modified w/ a sawn off stock, shortened barrel, & a large lever loop. In order to chamber the next round, you have to spin it. I mean, you could do it like a regular lever action, but what's the fun in that? Either way, this gun will help you Trackdown your enemies. ",
+    "weight": "1248 g",
+    "volume": "424 ml",
+    "longest_side": "525 mm",
+    "barrel_length": "229 mm",
+    "price": "479 USD",
+    "price_postapoc": "25 USD",
+    "material": [ "steel", "wood" ],
+    "ammo": [ "44" ],
+    "use_action": [
+      {
+        "type": "effect_on_conditions",
+        "menu_text": "Spin your %s",
+        "description": "Yeehaw!",
+        "need_wielding": true,
+        "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
+      }
+    ],
+    "dispersion": 230,
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "sights", 1 ],
+      [ "rail mount", 1 ],
+      [ "stock mount", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "clip_size": 7,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "44": 7 } } ],
+    "passive_effects": [ { "id": "YEEHAW_ench" } ],
+    "flags": [ "ALLOWS_BODY_BLOCK", "RELOAD_ONE", "NO_TURRET", "EASY_CLEAN", "NEVER_JAMS", "LEVER_ACTION", "MUNDANE" ]
+  }
 ]

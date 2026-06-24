@@ -1,0 +1,38 @@
+[
+    {
+    "id": "pieperRevolv",
+    "copy-from": "gun_base_handgun_manual",
+    "looks_like": "sw_619",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "name": { "str": "pieper revolver" },
+    "description": "This weapon is an aged, rugged revolver, using a special gas-seal system w/ an integrated suppressor at the end. It's old, but reliable, & reloads surprisingly quick w/ a swing-out cylinder. Uses .38 special & .357 magnum.",
+    "weight": "950 g",
+    "volume": "734 ml",
+    "longest_side": "355 mm",
+    "barrel_length": "125 mm",
+    "price": "479 USD",
+    "price_postapoc": "25 USD",
+    "to_hit": -1,
+    "material": [ "steel", "wood" ],
+    "ammo": [ "38", "357mag" ],
+    "dispersion": 160,
+    "durability": 6,
+    "clip_size": 6,
+    "blackpowder_tolerance": 56,
+    "//proportional": { "reload": 0.75 },
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "sights", 1 ],
+      [ "rail mount", 1 ],
+      [ "stock mount", 1 ],
+      [ "underbarrel mount", 1 ]
+    ],
+    "flags": [ "RELOAD_ONE", "RELOAD_EJECT", "NEVER_JAMS", "EASY_CLEAN" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "38": 6, "357mag": 6 } } ],
+    "melee_damage": { "bash": 8 },
+    "ranged_damage": { "damage_type": "bullet", "amount": 5, "armor_penetration": 3 }
+  }
+]

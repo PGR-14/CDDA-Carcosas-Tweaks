@@ -2,3 +2,12 @@
     {
     }
 ]
+
+,
+            {
+                "type": "effect_on_conditions",
+                "menu_text": "Quickdraw",
+                "description": "Ready yourself up for one hell of a shot",
+                "need_wielding": true,
+                "effect_on_conditions": [ "EOC_REVOLVER_QD" ]
+            }   

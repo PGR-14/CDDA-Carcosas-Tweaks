@@ -64,7 +64,10 @@
           { "id": "overlay_wielded_american_180_recreated", "fg": 618, "rotates": false },
           { "id": "overlay_wielded_ppsh_recreated", "fg": 618, "rotates": false },
           { "id": "overlay_wielded_winchester_1887_recreated", "fg": 1001, "rotates": false },
-          { "id": "overlay_wielded_lever_shotgun_recreated", "fg": 1001, "rotates": false }
+          { "id": "overlay_wielded_lever_shotgun_recreated", "fg": 1001, "rotates": false },
+          { "id": "overlay_wielded_colt_walker_carcosa", "fg": 616, "rotates": false },
+          { "id": "overlay_wielded_saa_carcosa", "fg": 616, "rotates": false },
+          { "id": "overlay_wielded_maresleg", "fg": 574, "rotates": false }
         ]
       },
       {
@@ -74,7 +77,22 @@
         "sprite_offset_x": -16,
         "sprite_offset_y": -48,
         "//": "Probably works? ADD 3791! 3791 - 3998",
-        "tiles": [ { "id": "mon_headless_cryptid", "fg": [ 3937 ] } ]
+        "tiles": [ { "id": "rid_mon_oldan", "fg": [ 3888 ] }, { "id": "mon_headless_cryptid", "fg": [ 3937 ] } ]
+      }
+    ]
+  },
+  {
+    "type": "mod_tileset",
+    "compatibility": [ "UltiCa" ],
+    "tiles-new": [
+      {
+        "file": "gfx/large_ridden.png",
+        "//": "range 1 to 5",
+        "sprite_width": 64,
+        "sprite_height": 64,
+        "sprite_offset_x": -16,
+        "sprite_offset_y": -27,
+        "tiles": [ { "id": [ "rid_mon_oldan" ], "fg": [ 3 ] } ]
       }
     ]
   }

@@ -14,3 +14,7 @@ Find Alvar:
                                              └──────> Gives you recipes for better ammo?
                                                       └──────> After ~ a week, he wants a body. Req any robot body to be taken to Jenny.
                                                                └──────> 3 days later, he's a special companion.
+
+
+                
+

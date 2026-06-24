@@ -4,8 +4,8 @@
     "copy-from": "gun_base_handgun_manual",
     "looks_like": "sw_619",
     "type": "ITEM",
-    "subtypes": [ "GUN" ],
-    "name": { "str": "ornated SAA" },
+    "subtypes": [ "GUN", "ARTIFACT" ],
+    "name": { "str": "Ornated Colt Single Action Army" },
     "description": "A famous revolver for many westerns, the Colt Single Action Army has seen plenty of military service, production ends, and production restarts.  While originally in a large amount of chamberings, it is mostly found in .45 Colt chamberings today.  While reloading is slow due to the lack of a swing-out cylinder, it was still much faster than earlier revolvers of the time thanks to using metallic cartridges.  This one is beautifully ornated w/ engravings all along the gun, & a nice maple grip.",
     "weight": "1048 g",
     "volume": "324 ml",
@@ -16,6 +16,16 @@
     "price_postapoc": "25 USD",
     "material": [ "steel", "wood" ],
     "ammo": [ "45colt", "4570", "500" ],
+    "use_action": [
+      {
+        "type": "effect_on_conditions",
+        "menu_text": "Spin your revolver",
+        "description": "Yeehaw!",
+        "need_wielding": true,
+        "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
+      },
+      { "type": "cast_spell", "spell_id": "QD_SPELL", "no_fail": true, "level": 1, "need_wielding": true }
+    ],
     "dispersion": 230,
     "valid_mod_locations": [
       [ "barrel", 1 ],
@@ -26,17 +36,20 @@
       [ "stock mount", 1 ],
       [ "underbarrel mount", 1 ]
     ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "fan-fire 3", 3, "VOLLEY" ], [ "AUTO", "fan-fire 6", 6, "VOLLEY" ] ],
     "clip_size": 6,
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "45colt": 6, "4570": 6, "500": 6 } } ]
+    "passive_effects": [ { "id": "QUICKDRAW_ench" }, { "id": "YEEHAW_ench" } ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "45colt": 6, "4570": 6, "500": 6 } } ],
+    "flags": [ "ALLOWS_BODY_BLOCK", "RELOAD_ONE", "NO_TURRET", "EASY_CLEAN", "NEVER_JAMS", "SINGLE_ACTION", "MUNDANE" ]
   },
   {
     "id": "colt_walker_carcosa",
     "copy-from": "gun_base_handgun_manual",
     "looks_like": "sw_619",
     "type": "ITEM",
-    "subtypes": [ "GUN" ],
+    "subtypes": [ "GUN", "ARTIFACT" ],
     "name": { "str": "Colt Walker" },
-    "description": "At first glance, this just seems like an ordinary cap & ball firearm, like the one you'd find in a museum. You'd never expect it to be effective, & you'd be shocked if it even fires, but the trigger has a good pull to it, & the lever glides like butter. This is one powerful firearm.",
+    "description": "At first glance, this just seems like an ordinary cap & ball firearm, like the one you'd find in a museum or an antique shop. You'd never expect it to be effective, & you'd be shocked if it even fires, but the trigger has a good pull to it, & the lever glides like butter. Technically bypasses firearm restrictions, due to not legally being a firearm, but still..",
     "weight": "1888 g",
     "volume": "1250 ml",
     "longest_side": "390 mm",
@@ -44,38 +57,101 @@
     "price_postapoc": "30 USD",
     "material": [ "steel", "wood" ],
     "ammo": [ "44paper", "flintlock" ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "fan-fire 3", 3, "VOLLEY" ], [ "AUTO", "fan-fire 6", 6, "VOLLEY" ] ],
+    "use_action": [
+      {
+        "type": "effect_on_conditions",
+        "menu_text": "Spin your revolver",
+        "description": "Yeehaw!",
+        "need_wielding": true,
+        "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
+      },
+      { "type": "cast_spell", "spell_id": "QD_SPELL", "no_fail": true, "level": 1, "need_wielding": true }
+    ],
     "dispersion": 450,
-    "valid_mod_locations": [ [ "barrel", 1 ], [ "stock mount", 1 ], [ "underbarrel_mount", 1 ], [ "rail_mount", 1 ], [ "sights", 1 ] ],
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "stock mount", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "underbarrel_mount", 1 ],
+      [ "rail_mount", 1 ],
+      [ "sights", 1 ]
+    ],
     "durability": 8,
     "barrel_length": "225 mm",
     "blackpowder_tolerance": 96,
     "clip_size": 6,
-    "ranged_damage": { "damage_type": "bullet", "amount": 20, "armor_penetration": 10 },
-    "flags": [ "NO_UNLOAD", "ALLOWS_BODY_BLOCK", "RELOAD_ONE", "NO_TURRET", "EASY_CLEAN", "NEVER_JAMS" ],
+    "ranged_damage": { "damage_type": "bullet", "amount": 10, "armor_penetration": 5 },
+    "flags": [ "NO_UNLOAD", "ALLOWS_BODY_BLOCK", "RELOAD_ONE", "NO_TURRET", "EASY_CLEAN", "NEVER_JAMS", "SINGLE_ACTION", "MUNDANE" ],
+    "passive_effects": [ { "id": "QUICKDRAW_ench" }, { "id": "YEEHAW_ench" } ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "44paper": 6, "flintlock": 6 } } ]
   },
   {
-    "id": "pieperRevolv",
+    "id": "colt_walker_exodii",
     "copy-from": "gun_base_handgun_manual",
+    "looks_like": "colt_walker_carcosa",
+    "type": "ITEM",
+    "subtypes": [ "GUN", "ARTIFACT" ],
+    "name": { "str": "Caellut Wheeler" },
+    "description": "Naford was one of many wasteland towns ensnared by the Aranzazu & Xiao förmatag, forcing people out, or killing them if they refused. Just as this was at a Climax, their own Cataclysm happened, & the Exodii accidentally landed right ontop of the förmatag's headquarters. The people, seeing them as gods, showered them w/ gifts, including many of these revolvers. The Exodii don't really have a use for handguns, but they made a copy of the patent just for appeasement's sake. Chambered in 12.3ln, the only reason you have this thing is because someone wanted a revolver. Go get 'em 'heyifhund'!.",
+    "weight": "1888 g",
+    "volume": "1250 ml",
+    "longest_side": "390 mm",
+    "price": "430 USD",
+    "price_postapoc": "30 USD",
+    "material": [ "steel", "wood" ],
+    "ammo": [ "123ln" ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "fan-fire 3", 3, "VOLLEY" ], [ "AUTO", "fan-fire 6", 6, "VOLLEY" ] ],
+    "use_action": [
+      {
+        "type": "effect_on_conditions",
+        "menu_text": "Spin your revolver",
+        "description": "Yeehaw!",
+        "need_wielding": true,
+        "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
+      },
+      { "type": "cast_spell", "spell_id": "QD_SPELL", "no_fail": true, "level": 1, "need_wielding": true }
+    ],
+    "dispersion": 350,
+    "valid_mod_locations": [
+      [ "barrel", 1 ],
+      [ "stock mount", 1 ],
+      [ "grip", 1 ],
+      [ "mechanism", 2 ],
+      [ "underbarrel_mount", 1 ],
+      [ "rail_mount", 1 ],
+      [ "sights", 1 ]
+    ],
+    "durability": 8,
+    "barrel_length": "225 mm",
+    "blackpowder_tolerance": 96,
+    "clip_size": 6,
+    "ranged_damage": { "damage_type": "bullet", "amount": 10, "armor_penetration": 5 },
+    "flags": [ "NO_UNLOAD", "ALLOWS_BODY_BLOCK", "RELOAD_ONE", "NO_TURRET", "EASY_CLEAN", "NEVER_JAMS", "SINGLE_ACTION", "MUNDANE" ],
+    "passive_effects": [ { "id": "QUICKDRAW_ench" }, { "id": "YEEHAW_ench" } ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "123ln": 6 } } ]
+  },
+  {
+    "id": "maresleg_talon",
+    "copy-from": "maresleg",
     "looks_like": "sw_619",
     "type": "ITEM",
-    "subtypes": [ "GUN" ],
-    "name": { "str": "bandit knell revolver" },
-    "description": "This weapon is an aged, ruged revolver. It's old, but reliable, & reloads surprisingly quick. Uses .38 special & .357 magnum.",
-    "weight": "950 g",
-    "volume": "734 ml",
-    "longest_side": "355 mm",
-    "barrel_length": "125 mm",
-    "price": "479 USD",
-    "price_postapoc": "25 USD",
-    "to_hit": -1,
+    "subtypes": [ "GUN", "ARTIFACT" ],
+    "name": { "str": "Mare's Talon" },
+    "description": "A modified lever action rifle, w/ a sawn off stock, a shortened, bayonetted barrel, & a large lever loop w/ some spikes on it. In order to chamber the next round, you have to spin it, though you might hurt yourself...",
+    "price_postapoc": "75 USD",
     "material": [ "steel", "wood" ],
-    "ammo": [ "38", "357mag" ],
-    "dispersion": 160,
-    "durability": 6,
-    "clip_size": 6,
-    "blackpowder_tolerance": 56,
-    "//proportional": { "reload": 0.75 },
+    "use_action": [
+      {
+        "type": "effect_on_conditions",
+        "menu_text": "Spin your %s",
+        "description": "Yeehaw!",
+        "need_wielding": true,
+        "effect_on_conditions": [ "EOC_REVOLVER_SPIN" ]
+      }
+    ],
+    "dispersion": 230,
     "valid_mod_locations": [
       [ "barrel", 1 ],
       [ "grip", 1 ],
@@ -83,23 +159,11 @@
       [ "sights", 1 ],
       [ "rail mount", 1 ],
       [ "stock mount", 1 ],
-      [ "underbarrel mount", 1 ]
+      [ "underbarrel mount", 1 ],
+      [ "bayonet lug", 1 ]
     ],
-    "flags": [ "RELOAD_ONE", "RELOAD_EJECT", "NEVER_JAMS", "EASY_CLEAN" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "38": 6, "357mag": 6 } } ],
-    "melee_damage": { "bash": 8 },
-    "ranged_damage": { "damage_type": "bullet", "amount": 5, "armor_penetration": 3 }
-  },
-  {
-    "id": "colt_saa_dual_carc",
-    "type": "ITEM",
-    "subtypes": [ "GUN" ],
-    "copy-from": "colt_saa_dual",
-    "valid_mod_locations": [ [ "barrel", 2 ], [ "mechanism", 5 ], [ "stock mount", 2 ] ],
-    "name": "dual ornated Colt Single Action Armies",
-    "description": "A pair of pearl-handled colt single actions, both in .45-70. If 6 shots are more than enough, 12 is overkill. It has a rotating message written on each of the cylinders:\n\n I want a 10-gallon Stetson,\n and a horse that bears my brand.\n A thousand head of cattle,\n on a great big piece of land.\n\n I want a ranch in Arizona,\n where they never sleep inside.\n I want a gaze at the moon and stars above,\n I want to learn to rope and ride. The other half of the message is inscribed on the other gun:\n\n I want two pearl handled six guns,\n the kind that really shoot.\n A saddle trimmed with silver,\n and a pair of yellow boots.\n\n I'll have my name carved on my belt,\n I'll line my saddle seat with felt,\n I'm gonna be a cowboy,\n Yes sirree!",
-    "ammo": [ "4570" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "4570": 12 } } ],
-    "clip_size": 12
+    "default_mods": [ "inter_bayonet" ],
+    "passive_effects": [ { "id": "YEEHAW_ench" } ],
+    "extend": { "flags": [ "DURABLE_MELEE" ] }
   }
 ]

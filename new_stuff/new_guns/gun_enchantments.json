@@ -1,0 +1,34 @@
+[
+  {
+    "type": "enchantment",
+    "id": "QUICKDRAW_ench",
+    "name": "Quickdraw",
+    "description": "This gun is just rarin' to fire..",
+    "condition": { "u_has_effect": "revolver_quickdraw_hands" },
+    "has": "WIELD",
+    "values": [
+      { "value": "RANGE", "add": { "math": [ "10" ] } },
+      { "value": "RANGED_ARMOR_PENETRATION", "add": { "math": [ "10" ] } },
+      { "value": "RECOIL_MODIFIER", "add": { "math": [ "-50" ] } },
+      { "value": "SPEED", "add": { "math": [ "50" ] } },
+      { "value": "WEAKPOINT_ACCURACY", "add": { "math": [ "100" ] } },
+      { "value": "WEAPON_DISPERSION", "add": { "math": [ "-500" ] } }
+    ]
+  },
+  {
+    "type": "enchantment",
+    "id": "YEEHAW_ench",
+    "name": "Cowboah",
+    "description": "This gun would love a cowboy's touch.",
+    "condition": { "u_has_trait": "cowboy" },
+    "has": "WIELD",
+    "values": [
+      { "value": "RANGE", "add": { "math": [ "6" ] } },
+      { "value": "RANGED_ARMOR_PENETRATION", "add": { "math": [ "3" ] } },
+      { "value": "RANGED_DAMAGE", "add": { "math": [ "6" ] } },
+      { "value": "RECOIL_MODIFIER", "add": { "math": [ "-10" ] } },
+      { "value": "SPEED", "add": { "math": [ "5" ] } },
+      { "value": "WEAKPOINT_ACCURACY", "add": { "math": [ "5" ] } }
+    ]
+  }
+]
