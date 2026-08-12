@@ -29,46 +29,46 @@
     "id": "JOHN_GAS",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ 
-        { "item": "jp8", "prob": 50, "charges": 8000, "container-item": "jerrycan" },
-        { "item": "jp8", "prob": 25, "charges": 20000, "container-item": "jerrycan_big" },
-        { "item": "diesel", "prob": 100, "charges": 8000, "container-item": "jerrycan" },
-        { "item": "diesel", "prob": 50, "charges": 20000, "container-item": "jerrycan_big" },
-        { "item": "biodiesel", "prob": 200, "charges": 8000, "container-item": "jerrycan" },
-        { "item": "biodiesel", "prob": 100, "charges": 20000, "container-item": "jerrycan_big" },
-        { "item": "gasoline", "prob": 100, "charges": 8000, "container-item": "jerrycan" },
-        { "item": "gasoline", "prob": 50, "charges": 20000, "container-item": "jerrycan_big" }
+    "items": [
+      { "item": "jp8", "prob": 50, "charges": 8000, "container-item": "jerrycan" },
+      { "item": "jp8", "prob": 25, "charges": 20000, "container-item": "jerrycan_big" },
+      { "item": "diesel", "prob": 100, "charges": 8000, "container-item": "jerrycan" },
+      { "item": "diesel", "prob": 50, "charges": 20000, "container-item": "jerrycan_big" },
+      { "item": "biodiesel", "prob": 200, "charges": 8000, "container-item": "jerrycan" },
+      { "item": "biodiesel", "prob": 100, "charges": 20000, "container-item": "jerrycan_big" },
+      { "item": "gasoline", "prob": 100, "charges": 8000, "container-item": "jerrycan" },
+      { "item": "gasoline", "prob": 50, "charges": 20000, "container-item": "jerrycan_big" }
     ]
   },
   {
     "id": "JOHN_ALCOHOL",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ 
-        { "group": "beer_in_container_full", "prob": 100 }, 
-        { "group": "beer_in_container_full", "prob": 100 }, 
-        { "group": "beer_in_container_full", "prob": 100 }, 
-        { "group": "beer_in_container_full", "prob": 100 }, 
-        { "group": "liquor_and_spirits", "prob": 108 },
-        { "group": "liquor_and_spirits", "prob": 108 },
-        { "group": "wines_worthy", "prob": 100 },
-        { "group": "wines_worthy", "prob": 100 },
-        { "group": "mixed_alcoholic_drinks", "prob": 100 },
-        { "group": "mixed_alcoholic_drinks", "prob": 100 },
-        { "item": "moonshine", "prob": 500 }
+    "items": [
+      { "group": "beer_in_container_full", "prob": 100 },
+      { "group": "beer_in_container_full", "prob": 100 },
+      { "group": "beer_in_container_full", "prob": 100 },
+      { "group": "beer_in_container_full", "prob": 100 },
+      { "group": "liquor_and_spirits", "prob": 108 },
+      { "group": "liquor_and_spirits", "prob": 108 },
+      { "group": "wines_worthy", "prob": 100 },
+      { "group": "wines_worthy", "prob": 100 },
+      { "group": "mixed_alcoholic_drinks", "prob": 100 },
+      { "group": "mixed_alcoholic_drinks", "prob": 100 },
+      { "item": "moonshine", "prob": 500 }
     ]
   },
   {
     "id": "JOHN_STOCK",
     "type": "item_group",
     "subtype": "collection",
-    "items": [ 
-        { "group": "JOHN_GAS", "prob": 100 }, 
-        { "group": "JOHN_ALCOHOL", "prob": 100 },
-        { "group": "JOHN_GAS", "prob": 100 }, 
-        { "group": "JOHN_ALCOHOL", "prob": 100 },
-        { "group": "JOHN_GAS", "prob": 100 }, 
-        { "group": "JOHN_ALCOHOL", "prob": 100 }
+    "items": [
+      { "group": "JOHN_GAS", "prob": 100 },
+      { "group": "JOHN_ALCOHOL", "prob": 100 },
+      { "group": "JOHN_GAS", "prob": 100 },
+      { "group": "JOHN_ALCOHOL", "prob": 100 },
+      { "group": "JOHN_GAS", "prob": 100 },
+      { "group": "JOHN_ALCOHOL", "prob": 100 }
     ]
   },
   {
@@ -165,7 +165,7 @@
     "name_suffix": "Bartender and Gas Jockey",
     "class": "NC_JOHN",
     "attitude": 0,
-    "mission": 0,
+    "mission": "SHOPKEEP",
     "chat": "TALK_JOHN",
     "faction": "respite",
     "age": 80,
@@ -175,100 +175,5 @@
     "int": 12,
     "per": 10,
     "personality": { "aggression": 2, "bravery": 10, "collector": 0, "altruism": 5 }
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN",
-    "dynamic_line": "&[As you walk up to the counter, you can see someone cleaning a glass w/ a spitrag.] \n\n \"Howdy, the name's John. I'm the owner of this fine establishment, and I'm sellin' Gas 'n Alcohol. Want some?\"",
-    "responses": [
-      { "text": "I'll have some fuel for me, & fuel for my car.", "effect": "start_trade", "topic": "TALK_JOHN" },
-      { "text": "Do you have any family?", "topic": "TALK_JOHN_FAMILY" },
-      { "text": "What's that red shirt you're wearin' under that dress shirt?", "topic": "TALK_JOHN_MAGA" },
-      { "text": "[Leave] \"No thanks sir.\"", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN_AFTER_ANGER",
-    "dynamic_line": "&[He lowers his shotgun.] \n\n \"Alright. Despite your lack of respect, I'm still willing to trade with you.\"",
-    "responses": [
-      { "text": "I'll have some fuel for me, & fuel for my car.", "effect": "start_trade", "topic": "TALK_JOHN" },
-      { "text": "[Leave] \"I'll just... go \"", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN_FAMILY",
-    "dynamic_line": "&[He looks you up and down.] \n\n \"Well, it was just me and Dora for a long time. I always wanted kids y'know, someone to raise and to teach. I tried and succeeded with Dora, but...\" \n\n[He stares down into the glass he was cleaning just a few seconds earlier.]",
-    "responses": [
-      { "text": "But what?.", "topic": "TALK_JOHN_FAMILY_A" },
-      { "text": "I'm sorry for your loss...", "topic": "TALK_JOHN_FAMILY_B" },
-      { "text": "[Leave in the middle of the dammed conversation.]", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN_FAMILY_A",
-    "dynamic_line": "&[He looks back up towards you.] \n\n \"She... Had a miscarriage not long after the Cataclysm. When her water broke, there was no doctor arround; Dennis hadn't shown up yet, and I wasn't skilled enough to do it. Baby died, turned into a bloody mess, thankfully Dora survived. She's upstairs in a coma. When Dennis finally arrived sh- *he* did a checkup on her, claims that she's stable, but in a deep coma. She'll wake up though, I know she will.\" \n \"She's tough like that.\"",
-    "responses": [
-      { "text": "I'm sorry to hear that..", "topic": "TALK_JOHN" },
-      {
-        "text": "Are you sure she'll wake up? It sounds like she's in there pretty deep.",
-        "topic": "TALK_JOHN_FAMILY_A_ANGER"
-      },
-      { "text": "[Leave]", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN_FAMILY_A_ANGER",
-    "dynamic_line": "&[He scowls at you.] \n\n \"Take that back you SONOFABITCH!\"\n\n[You can see both barrels of his shotgun pointed square at your chest.]",
-    "responses": [
-      { "text": "I take it back! I take it back!", "topic": "TALK_JOHN_AFTER_ANGER" },
-      {
-        "text": "I don't think she'll wake up at all! In fact, you're a crazy old man!",
-        "effect": "hostile",
-        "topic": "TALK_DONE"
-      },
-      { "text": "[RUN!]", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN_FAMILY_B",
-    "dynamic_line": "&[He looks back up sharply.] \n\n \"What!? No! She ain't dead, she's sleepin' upstairs!\"",
-    "responses": [
-      { "text": "Oh, I'm sorry. What happened?", "topic": "TALK_JOHN_A" },
-      { "text": "I-Just... Nevermind.", "topic": "TALK_JOHN" },
-      { "text": "[Leave] \"Sorry...\"", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN_MAGA",
-    "dynamic_line": "&[He beams proudly.] \n\n \"Make America Great Again! Voted for Trump in the 2nd election, after I saw his attitude on immigrants. While I'm good friends with Mexicans, them Chinamen have no place in the Great U S of A. Hell, they retaliated with all these mind-controlled cannibals and deadheads.\"",
-    "responses": [
-      { "text": "Oh, alright then.", "topic": "TALK_JOHN" },
-      { "text": "Hell yeah brother.", "topic": "TALK_JOHN" },
-      { "text": "What if I'm Chinese?.", "topic": "TALK_JOHN_MAGA_CHINA" },
-      { "text": "[Leave] \"Sorry...\"", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_JOHN_MAGA_CHINA",
-    "dynamic_line": "&[He stares at you for a while. The tension in the air is thick as diesel.] \n\n[Suddenly, he breaks out laughing, barely even able to breath.] \n\n \"Oh, that's a good one, you're obviously no Chink. Besides, even if your parents were Chinese, you ain't part of this shit.\"",
-    "responses": [
-      { "text": "That's... Not what I expected.", "topic": "TALK_JOHN" },
-      { "text": "[Leave] \"...\"", "topic": "TALK_DONE" }
-    ],
-    "replace_built_in_responses": true
   }
 ]

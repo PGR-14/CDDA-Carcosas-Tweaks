@@ -252,6 +252,12 @@
   },
   {
     "type": "mutation",
+    "id": "SHORTER_FINGERS",
+    "copy-from": "SHORTER_FINGERS",
+    "extend": { "category": [ "WENDIGO" ] }
+  },
+  {
+    "type": "mutation",
     "id": "PAWS",
     "copy-from": "PAWS",
     "extend": { "category": [ "WENDIGO" ] }

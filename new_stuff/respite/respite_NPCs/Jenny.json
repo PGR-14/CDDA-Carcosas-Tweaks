@@ -212,10 +212,7 @@
     "id": "base_stuff",
     "type": "item_group",
     "subtype": "collection",
-    "items": [
-      { "group": "gunmod_common", "prob": 75 },
-      { "group": "gunmod_rare", "prob": 75 }
-    ]
+    "items": [ { "group": "gunmod_common", "prob": 75 }, { "group": "gunmod_rare", "prob": 75 } ]
   },
   {
     "id": "new_stuff",
@@ -287,7 +284,12 @@
   {
     "type": "snippet",
     "category": "<jenny_bye>",
-    "text": [ "Come again!", "See'ye later buddy!", "Don't get eaten' by them ghouls, ye snack.", "Treat my guns nicely, would'ye?" ]
+    "text": [
+      "Come again!",
+      "See'ye later buddy!",
+      "Don't get eaten' by them ghouls, ye snack.",
+      "Treat my guns nicely, would'ye?"
+    ]
   },
   {
     "type": "npc_class",
@@ -349,7 +351,7 @@
     "name_suffix": "Hub handler",
     "class": "NC_JENNY",
     "attitude": 0,
-    "mission": 0,
+    "mission": "SHOPKEEP",
     "chat": "JENNY_TALK_INTRO",
     "faction": "respite",
     "age": 30,
