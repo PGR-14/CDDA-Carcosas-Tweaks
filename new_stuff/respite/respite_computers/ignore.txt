@@ -25,12 +25,18 @@ g_Alvar_has_name - Changes the console from a white [A] to a blue [Alvar]
 u_Alvar_told_english - Explained how he learned, also pathway into discovering pacifism. Could be good for convincing Jenny.
 u_Alvar_told_hack - Confessed his hacking into Dennis' computer. Also what he has read. Can get him into trouble.
 u_Alvar_told_hack_spread - Confessed his hacking into basically everything else. Can get him into a lot of trouble.
+u_Alvar_more_consoles - Wants to go to more consoles
 u_Alvar_told_paci - Explained his aversion towards hurting others. Should be used for convincing Jenny.
 u_player_question_Alvar_understand - Pathway into telling him about the Cataclysm. Could be good for convincing Jenny.
 g_Alvar_understand_cata - Actually knows what the hell is happening now. Still works for convincing Jenny.
 u_Alvar_told_fear - Told how he's scared of Jenny. Could help convince her.
 
-
+Jenny shit
+g_Jenny_know_Alvar - Told Jenny about Alvar
+g_Jenny_know_english - Told Jenny how he learned english, as well as pacifism.
+g_Jenny_know_hack - Told Jenny of the hacking of Dennis' computer.
+g_Jenny_know_hack_spread - Told Jenny about more hacking
+g_Jenny_know_more_consoles - Told Jenny about his marketing skills, & his want to manage the other consoles.
 
 │Console<color_blue>[Alvar]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n
 │Console[A]-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=││Console<color_red>[B]</color>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-│\n

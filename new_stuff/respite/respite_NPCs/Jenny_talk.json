@@ -9,7 +9,7 @@
     },
     "responses": [
       { "text": "I'd like to talk a bit.", "topic": "JENNY_TALK_HUB", "effect": { "math": [ "u_met_Jenny = 1" ] } },
-      { "text": "Let's trade.", "topic": "JENNY_TALK_DONE_TRADING", "effect": { "math": [ "u_met_Jenny = 1" ] } },
+      { "text": "Let's trade.", "topic": "JENNY_TALK_DONE_TRADING", "effect": "start_trade" },
       { "text": "Nothing, thanks.", "topic": "TALK_DONE", "effect": { "math": [ "u_met_Jenny = 1" ] } }
     ],
     "replace_built_in_responses": true
@@ -23,7 +23,7 @@
     ],
     "responses": [
       { "text": "I'd like to talk a bit, actually.", "topic": "TALK_JENNY_HUB" },
-      { "text": "Let me double check your inventory.", "topic": "TALK_JENNY_DONE_TRADING" },
+      { "text": "Let me double check your inventory.", "topic": "TALK_JENNY_DONE_TRADING", "effect": "start_trade" },
       { "text": "Nothing, thanks.", "topic": "TALK_DONE" }
     ],
     "replace_built_in_responses": true
@@ -37,8 +37,13 @@
       { "text": "You sure are, uh... Big.", "topic": "TALK_JENNY_MUT" },
       {
         "text": "I want to talk about one of your consoles. The ammo one specifically.",
-        "topic": "TALK_JENNY_ALVAR",
-        "condition": { "math": [ "u_met_Alvar != 1" ] }
+        "topic": "TALK_JENNY_ALVAR_NAME",
+        "condition": { "and": [ { "math": [ "u_met_Alvar == 1" ] }, { "math": [ "gJenny_know_Alvar != 1" ] } ] }
+      },
+      {
+        "text": "I want to talk about Alvar.",
+        "topic": "TALK_JENNY_ALVAR_HUB",
+        "condition": { "math": [ "g_Jenny_know_Alvar == 1" ] }
       },
       { "text": "Actually, I want to trade.", "topic": "TALK_JENNY_DONE_TRADING" },
       { "text": "Nothing else, thanks.", "topic": "TALK_DONE" }
@@ -79,9 +84,92 @@
   },
   {
     "type": "talk_topic",
-    "id": [ "" ],
-    "dynamic_line": "Yeah, what about it?",
-    "responses": [ { "text": "Uh, nothing. Forget I said anything.", "topic": "TALK_JENNY_HUB" } ],
+    "id": [ "TALK_JENNY_ALVAR_HUB" ],
+    "dynamic_line": "&She tilts her head slightly, intrigued.\n \"Yeah, what about it?\"",
+    "responses": [
+      { "text": "Uh, nothing. Forget I said anything.", "topic": "TALK_JENNY_HUB" },
+      {
+        "text": "One of your computers is sentient, the ammo one with the clearing log.",
+        "topic": "TALK_JENNY_ALVAR",
+        "condition": { "math": [ "g_Jenny_know_Alvar != 1" ] }
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_ALVAR_NAME" ],
+    "dynamic_line": "&She points her muzzle down slightly & looks at you w/ her eyebrow raised.\n \"Uhuh. Is it skynet or terminator? Or did someone shove a brain into the slot? Maybe a wizard came by & cast a magic spell on the thing.\"",
+    "responses": [
+      { "text": "Let me go ask them.", "topic": "TALK_DONE", "condition": { "math": [ "u_Alvar_has_name != 1" ] } },
+      {
+        "text": "Their name is Alvar actually.",
+        "topic": "TALK_JENNY_ALVAR_NAME2",
+        "condition": { "and": [ { "math": [ "u_Alvar_has_name == 1" ] }, { "math": [ "g_Jenny_know_Alvar != 1" ] } ] },
+        "effect": [ { "math": [ "g_Jenny_know_Alvar = 1" ] } ]
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_ALVAR_NAME2" ],
+    "dynamic_line": "&She freezes for a second, confused.  Then, seemingly realizing something she speaks up.\n \"Uh, shit. Let me look at something.\"\nYou wait at the counter, listening to her grumbles & growls. Most you can make out is something about \"That dammed byte thing.\" & some \"number skips. Why is it printing this way? 5-less blobs...\"\nEventually, she returns, looking pretty frazzled.\n \"Oh-kay. I believe you. I knew I heard that name before, & I was right. Saw it in some of the code & logs, & had a hell of a time trying to find out why it sometimes randomly spat out into the middle of the terminal during orders. Anyways...\"\nShe gives herself a second to catch her breath.\n \"So. The ammo console- Should I call it 'Alvar'? I guess I should. Anyways, *Alvar* was the first one I made, there was an ATM slot right outside of the hardware store, so I placed it there. Worked just fine, 'till one hell of a portal storm came blowing into town, & it shut down for like a week. Once it woke up, it started spitting out complete garbage data. Eventually that data just dissapeared, & I never questioned it. Looking through all these logs though, it didn't stop spitting out garbage data, it just became more 'refined', if I could say it that way. So... Yeah. I believe you.\"\nShe sits down in a chair.\n \"Could you tell me more about it?\"",
+    "responses": [ { "text": "Sure, I'll tell you.", "topic": "TALK_JENNY_ALVAR_HUB" }, { "text": "No thanks.", "topic": "TALK_DONE" } ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_ALVAR_HUB", "TALK_JENNY_ALVAR_HACK", "TALK_JENNY_ALVAR_HACK_SPREAD", "TALK_JENNY_ALVAR_CONSOLES" ],
+    "dynamic_line": "&She looks at you expectantly.\n \"Yes?\"",
+    "responses": [
+      {
+        "text": "Well, the thing you said about it refining the data is correct. It claims to have read its own code, then move on to comments & so forth.",
+        "topic": "TALK_JENNY_ALVAR_ENGLISH",
+        "condition": { "math": [ "u_Alvar_told_english == 1" ] },
+        "effect": [ { "math": [ "g_Jenny_know_english = 1" ] } ]
+      },
+      {
+        "text": "It hacked into Dennis' computer, to read a bunch of books. I think it got into a lot of smut. However, I don't think it realized what it did was wrong.",
+        "topic": "TALK_JENNY_ALVAR_HACK",
+        "condition": { "math": [ "u_Alvar_told_hack == 1" ] },
+        "effect": [ { "math": [ "g_Jenny_know_hack = 1" ] } ]
+      },
+      {
+        "text": "It wants to manage the other consoles. He's pretty good at its job, to be honest. Made me buy a little extra, & it might be good for it to spread to the other consoles.",
+        "topic": "TALK_JENNY_ALVAR_CONSOLES",
+        "condition": { "math": [ "u_Alvar_more_consoles == 1" ] },
+        "effect": [ { "math": [ "g_Jenny_know_more_consoles = 1" ] } ]
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_ALVAR_HACK" ],
+    "dynamic_line": "&She looks surprised at the information, glancing at the ammo console.\n \"Really? I didn't think it'd be able to do that but... Well, it didn't do anything bad, did it? If it's just that, it isn't a huge problem.\"",
+    "responses": [
+      {
+        "text": "Well, there's way more than that, it got into almost every device in this settlement.",
+        "topic": "TALK_JENNY_ALVAR_HACK_SPREAD",
+        "condition": { "and": [ { "math": [ "g_Jenny_know_hack == 1" ] }, { "math": [ "u_Alvar_told_hack_spread == 1" ] } ] },
+        "effect": [ { "math": [ "g_Jenny_know_hack_spread = 1" ] } ]
+      }
+    ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_ALVAR_HACK_SPREAD" ],
+    "dynamic_line": "&She sighs out a sigh of air that feels rather hot & sticky.\n \"Well, that's incredibly concerning. I made sure these consoles had tight security, don't want people taking shit w/out paying, so the fact he got into them means he's getting very good at hacking.\"",
+    "responses": [  ],
+    "replace_built_in_responses": true
+  },
+  {
+    "type": "talk_topic",
+    "id": [ "TALK_JENNY_ALVAR_CONSOLES" ],
+    "dynamic_line": "&She takes another glance at the row of consoles.\n \"Well, if he wants to, I guess he can. I already know about him. Can't hurt.\"",
+    "responses": [  ],
     "replace_built_in_responses": true
   }
 ]

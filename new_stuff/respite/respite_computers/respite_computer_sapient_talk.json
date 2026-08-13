@@ -40,7 +40,8 @@
       {
         "text": "You got into someone's computer, right? What else have you gotten into?",
         "topic": "ALVAR_TALK_HACK",
-        "condition": { "math": [ "u_Alvar_told_hack == 1" ] }
+        "condition": { "math": [ "u_Alvar_told_hack == 1" ] },
+        "effect": { "run_eocs": [ "u_Alvar_told_hack_spread = 1" ] }
       },
       {
         "text": "Do you even know what's going on?",
@@ -157,18 +158,10 @@
       {
         "text": "That could get you into a lot of trouble.",
         "topic": "ALVAR_TALK_HACK_TROUBLE",
-        "effect": [ { "math": [ "u_Alvar_told_hack_spread = 1" ] }, { "math": [ "u_Alvar_told_fear = 1" ] } ]
+        "effect": [ { "math": [ "u_Alvar_told_fear = 1" ] } ]
       },
-      {
-        "text": "Could I talk to you through the other consoles?",
-        "topic": "ALVAR_TALK_HACK_CONSOLES",
-        "effect": [ { "math": [ "u_Alvar_told_hack_spread = 1" ] } ]
-      },
-      {
-        "text": "Good to know.",
-        "topic": "ALVAR_TALK_HUB",
-        "effect": [ { "math": [ "u_Alvar_told_hack_spread = 1" ] } ]
-      }
+      { "text": "Could I talk to you through the other consoles?", "topic": "ALVAR_TALK_HACK_CONSOLES" },
+      { "text": "Good to know.", "topic": "ALVAR_TALK_HUB" }
     ],
     "replace_built_in_responses": true
   },
@@ -185,7 +178,7 @@
       {
         "text": "Could I talk to you through the other consoles?",
         "topic": "ALVAR_TALK_HACK_CONSOLES",
-        "effect": [ { "math": [ "u_Alvar_told_hack_spread = 1" ] } ]
+        "effect": [ { "math": [ "u_Alvar_more_consoles = 1" ] } ]
       }
     ],
     "replace_built_in_responses": true
